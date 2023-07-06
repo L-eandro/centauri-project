@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CentaureApplication {
+public class CentauriApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CentaureApplication.class, args);
+		SpringApplication.run(CentauriApplication.class, args);
 	}
 
 }
