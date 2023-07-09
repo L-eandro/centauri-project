@@ -13,4 +13,6 @@ import org.springframework.boot.autoconfigure.jdbc.XADataSourceAutoConfiguration
 	public static void main(String[] args) {
 		SpringApplication.run(CentauriApplication.class, args);
 
-		System.out.println("Vencemos, o código pegou, papai");}}
+		System.out.println("Vencemos, o código pegou, papai");
+	}
+}
