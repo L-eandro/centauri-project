@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <link rel="stylesheet" href="/cadastro_login/css/cadastro_usuario.css">
+    <title>Cadastro do usuario</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-image">
+            
+            <img src="/cadastro_login/img//cadastro_usuario.svg" alt="">
+        </div>
+
+        <div class="form">
+            <form action="#">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastre-se</h1>
+                    </div>
+                    <div class="login-button">
+                        <button><a href="/cadastro_login/view/login.html">Entrar</a></button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="nome">Nome</label>
+                        <input id="nome" type="text" name="nome" placeholder="Digite seu nome completo" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="cpf">CPF</label>
+                        <input id="cpf" type="text" name="cpf" placeholder="Digite seu CPF" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="number">Celular</label>
+                        <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+                    </div>
+
+                  
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                    </div>
+
+
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                    </div>
+
+
+                    <div class="input-box">
+                        <label for="dataNascimento" class="nome-data">Data Nascimento</label>
+                        <input id="dataNascimento" type="date" name="dataNascimento" class="linha-data">
+                    </div>
+
+                </div>
+                <div class="input-box">
+                <div class="gender-inputs">
+                    <div class="gender-title">
+                        <h6>Sexo</h6>
+                    </div>
+
+                    <div class="gender-group">
+                        <div class="gender-input">
+                            <input id="feminino" type="radio" name="sexo">
+                            <label for="feminino">Feminino</label>
+                        </div>
+
+                        <div class="gender-input">
+                            <input id="masculino" type="radio" name="sexo">
+                            <label for="masculino">Masculino</label>
+                        </div>
+
+                        <div class="gender-input">
+                            <input id="outro" type="radio" name="sexo">
+                            <label for="outro">Outro</label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="continue-button">
+                    <button><a href="/cadastro_login/view/cadastro_endereco.html">Continuar</a> </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
