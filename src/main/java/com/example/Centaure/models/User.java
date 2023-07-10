@@ -1,17 +1,19 @@
 package com.example.Centaure.models;
 
-
-import org.springframework.format.annotation.DateTimeFormat;
-
+import lombok.*;
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
+@Data
 @Entity
 @Table(name = "user")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     @Column(nullable = false)
     private String name;
 
@@ -20,6 +22,9 @@ public class User {
 
     @Column(nullable = false)
     private String celular;
+
+    @Column(nullable = false)
+    private String endereco;
 
     @Column(unique = true, nullable = false)
     private String email;
@@ -34,5 +39,11 @@ public class User {
     @Column(name = "sexo")
     private Sexo sexo;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "userMotor_id")
+    private UserMotor userMotor;
+
+    @OneToMany(mappedBy = "user")
+    private List<ServicoUser> servicos;
 
 }
