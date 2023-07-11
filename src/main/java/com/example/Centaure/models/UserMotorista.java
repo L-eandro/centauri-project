@@ -4,8 +4,8 @@ import lombok.*;
 import javax.persistence.*;
 @Data
 @Entity
-@Table(name = "userMotor")
-public class UserMotor {
+@Table(name = "userMotorista")
+public class UserMotorista {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
