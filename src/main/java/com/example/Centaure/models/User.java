@@ -40,8 +40,8 @@ public class User {
     private Sexo sexo;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "userMotorista_id")
-    private UserMotorista userMotorista;
+    @JoinColumn(name = "userMotor_id")
+    private UserMotorista userMotor;
 
     @OneToMany(mappedBy = "user")
     private List<ServicoUser> servicos;
