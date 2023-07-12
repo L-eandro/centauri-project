@@ -1,7 +1,9 @@
 package com.example.Centaure.models;
 
-import javax.persistence.*;
+import lombok.*;
 
+import javax.persistence.*;
+@Data
 @Entity
 @Table(name = "address")
 public class Address {
