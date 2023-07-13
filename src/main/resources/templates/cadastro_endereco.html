@@ -1,19 +1,22 @@
 <!DOCTYPE html 5>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <link rel="stylesheet" href="/cadastro_login/css/cadastro_endereco.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/cadastro_endereco.css}">
     
     <title>Cadastro do Endereço</title>
 </head>
 
 <body>
-    <script src="/cadastro_login/js/cadastro_endereco.js" defer></script>
-    
+    <script th:src="@{/js/cadastro_endereco.js}" defer></script>
+
     <div class="container">
         <div class="form-image">
             
-            <img src="/cadastro_login/img//cadastro_endereco.svg" alt="">
+            <img src="/img/cadastro_endereco.svg" alt="imagem cadastro-endereco">
             </div>
 
    
@@ -21,7 +24,7 @@
           <div class="form">
 
             <div class="voltar-button">
-                <button><a href="/cadastro_login/view/cadastro_usuario.html">Voltar</a></button>
+                <button><a href="#">Voltar</a></button>
             </div>
 
             <form id="endereco-form">
@@ -74,7 +77,7 @@
                 </div>
 
                 <div class="btn-cadastrar">
-                    <button id="btn-cadastrar" type="submit"><a href="/cadastro_login/view/login.html">Cadastrar</a> </button>
+                    <button id="btn-cadastrar" type="submit"><a href="#">Cadastrar</a> </button>
                 </div>
                
 
@@ -82,6 +85,7 @@
             </form>
         </div>
     </div>
+    
 </body>
 
 </html>

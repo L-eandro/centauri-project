@@ -1,20 +1,22 @@
 <!DOCTYPE html 5>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    
-    <link rel="stylesheet" href="../static/css/cadastro_motorista.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/cadastro_motorista.css}">
     
     <title>Cadastro Motorista</title>
 </head>
 
 <body>
-    <script src="../static/js/cadastro_motorista.js" defer></script>
+    <script th:src="@{/js/cadastro_motorista.js}" defer></script>
     
     <div class="container">
         <div class="form-image">
             
-            <img src="../static/img/cadastro_motorista.svg" alt="">
+            <img src="/img/cadastro_motorista.svg" alt="imagem cadastro Motorista">
             </div>
 
    
@@ -89,7 +91,7 @@
                 </div>
 
                 <div class="btn-cadastrar">
-                    <button id="btn-cadastrar" type="submit"><a href="/cadastro_login/view/cadastro_veiculo.html">Continuar</a> </button>
+                    <button id="btn-cadastrar" type="submit"><a href="#">Continuar</a> </button>
                 </div>
                
                 

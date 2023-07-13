@@ -1,19 +1,21 @@
-<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
-<!DOCTYPE html >
-<html lang="pt-br">
 
+<!DOCTYPE html >
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/css/login.css}">
     <title>Login</title>
 </head>
 
 <body>
-    <script src="/cadastro_login/js/login.js" defer></script>
+    <script th:src="@{/js/login.js}" defer></script>
     
     <div class="container">
         <div class="form-image">
             
-            <img src="/cadastro_login/img//login.GIF" alt="">
+            <img src="/img/login.GIF" alt="git de login">
             </div>
 
    
@@ -57,7 +59,7 @@
                     <button id="btn-cadastrar" type="submit"><a href="#">Entrar</a> </button>
                 </div>
                
-                <a href="/cadastro_login/view/esqueceu_senha.html" class="esqueceu-senha">Esqueceu a senha?</a>
+                <a href="/esqueceu_senha.html" class="esqueceu-senha">Esqueceu a senha?</a>
 
                 
             </form>

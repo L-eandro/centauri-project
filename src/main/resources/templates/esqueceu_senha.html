@@ -1,49 +1,42 @@
 <!DOCTYPE html 5>
-<html lang="pt-br">
-
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link rel="stylesheet" href="/cadastro_login/css/esqueceu_senha.css">
-    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{css/esqueceu_senha.css}">
     <title>Esqueceu senha</title>
 </head>
 
 <body>
-    <script src="#" defer></script>
+    <script></script>
     
     <div class="container">
+
         <div class="form-image">
-            
-            <img src="/cadastro_login/img/link_recuperar_senha.svg" alt="">
-            </div>
+            <img src="/img/link_recuperar_senha.svg" alt="">
+        </div>
 
-   
-    
           <div class="form">
-
             <form id="endereco-form">
                 <div class="form-header">
                     <div class="title">
                         <h1>Confirme email</h1>
-                    </div>
-
-                   
+                    </div>  
                 </div>
 
                 <div class="input-group">
-
-                   
                     <div class="input-box">
                         <label for="email">Enviaremos um link para você redefinir a senha </label>
                         <input id="email" type="email" name="email" class="linha-email" placeholder="Informe o email" required data-input>
                     </div>
-
                 </div>
 
                 <div class="btn-cadastrar">
                     <button id="btn-cadastrar" type="submit"><a href="#">Enviar</a> </button>
                 </div>
                
-                <a href="/cadastro_login/view/login.html" class="esqueceu-senha">Lembrou da senha?</a>
+                <a href="/login.html" class="esqueceu-senha">Lembrou da senha?</a>
 
                 
             </form>

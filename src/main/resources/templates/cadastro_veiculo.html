@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
-
-    <link rel="stylesheet" href="/cadastro_login/css/cadastro_veiculo.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/cadastro_veiculo.css}">
     <title>Cadastro Veiculo</title>
 </head>
 
 <body>
-    
+    <script></script>
 
     <div class="container">
         <div class="form-image">
             
-            <img src="/cadastro_login/img/cadastro_veiculo02.jpg" alt="">
+            <img src="/img/cadastro_veiculo02.jpg" alt="imagem cadastro veiculo">
         </div>
 
         <div class="form">
@@ -26,10 +27,12 @@
                 </div>
 
                 <div class="input-group">
+
                     <div class="input-box">
                         <label for="">Numero do documento do veiculo</label>
                         <input id="numero_veiculo" type="text" name="numero_veiculo" class="linha-numero_veiculo" placeholder="Informe Documento Veiculo" required data-input>  
                     </div>
+
                     <div class="input-box">
                         <label for="">Placa veiculo</label>
                         <input id="placa_veiculo" type="text" name="placa_veiculo" class="linha-placa_veiculo" placeholder="Informe a placa do Veiculo" required data-input>  
@@ -40,7 +43,6 @@
                         <input id="ano_fabricacao" type="year" name="ano_fabricacao" class="linha-ano_fabricacao" placeholder="Informe o Ano Fabricação" required data-input>  
                     </div>
 
-                  
                     <div class="input-box">
                         <label for="">Cor Veiculo</label>
                         <input id="cor_veiculo" type="text" name="cor_veiculo" class="linha-cor_veiculo" placeholder="Informe a do Cor Veiculo" required data-input>
@@ -49,13 +51,12 @@
                     <div class="input-box">
                         <label for="foto">Selecione fotos do Veiculo</label>
                         <input type="file" id="foto" name="foto" accept="image/*">
-                        </div>
-
+                    </div>
 
                     <div class="gender-inputs">
                         <div class="gender-title">
-                            <h6>Veiculo Possui</h6>
-                        </div>
+                        <h6>Veiculo Possui</h6>
+                    </div>
     
                         <div class="gender-group">
 
@@ -90,7 +91,7 @@
                 </div>
 
                 <div class="continue-button">
-                    <button><a href="/cadastro_login/view/cadastro_endereco.html">Continuar</a> </button>
+                    <button><a href="#">Continuar</a> </button>
                 </div>
             </form>
         </div>

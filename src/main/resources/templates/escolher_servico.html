@@ -1,44 +1,41 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/escolher_servico.css">
     <title>Escolher Serviço</title>
-    <link rel="stylesheet" href="css/escolher_servico.css">
   </head>
   <body>
+          <script></script>
 
     <header>
-
       <nav class="nav-bar">
-  
       <div class="logo">
-     <a href="#" class="nav-link"> <h1>Centauri</h1></a>
+     <a href="/" class="nav-link"> <h1>Centauri</h1></a>
       </div>
-  
       <div class="nav-list">
   <ul>
       <li class="nav-item"><a href="#" class="nav-link">Editar Dados</a></li>
       <li class="nav-item"><a href="#" class="nav-link">Minhas Viagens</a></li>
       <li class="nav-item"><a href="#" class="nav-link">Mudar Perfil</a></li>
       <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
-  
   </ul>
       </div>
-  
       <div class="login-button">
-          <button><a href="/cadastro_login/view/login.html">Sair</a></button>
-          
+          <button><a href="/">Sair</a></button>  
       </div>
   </header>
+
+
 
     <div class="container" >
       <!-- Card 1 -->
       <div class="card card-1">
-        <!-- card-header -->
         <div class="card-header">
-          <img src="/cadastro_login/img/viagem2.jpg" class="card-img" />
+          <img src="/img/viagem2.jpg" class="card-img" />
         </div>
-        <!-- card-header -->
-
         <!-- card-body -->
         <div class="card-body">
           <h2 class="card-titulo">Viagem</h2>
@@ -52,29 +49,23 @@
             <option value="van">Onibus</option>
           </select>
           <br>
-         
           <label for="">Quantidade minima de acentos</label>
           <input type="text">
         </div>
       </div>
         <!-- card-body -->
-
-        <!-- card-footer -->
         <div class="card-footer">
           <a href="#">Concluir</a>
         </div>
-        <!-- card-footer -->
       </div>
       <!-- Card 1 -->
 
+
       <!-- Card 2 -->
       <div class="card card-2">
-        <!-- card-header -->
         <div class="card-header">
-          <img src="/cadastro_login/img/mudanca.JPG" class="card-img" />
+          <img src="/img/mudanca.JPG" class="card-img" />
         </div>
-        <!-- card-header -->
-
         <!-- card-body -->
         <div class="card-body">
           <h2 class="card-titulo">Mudança</h2>
@@ -85,29 +76,23 @@
             <option value="caminhao">Caminhão</option>
           </select>
           <br>
-         
           <label for="">Carga minima em KG</label>
           <input type="text">
         </div>
       </div>
         <!-- card-body -->
-
-        <!-- card-footer -->
         <div class="card-footer">
           <a href="#">Concluir</a>
         </div>
-        <!-- card-footer -->
       </div>
       <!-- Card 2 -->
 
+
       <!-- Card 3 -->
       <div class="card card-3">
-        <!-- card-header -->
         <div class="card-header">
-          <img src="/cadastro_login/img/frete02.JPG" class="card-img" />
+          <img src="/img/frete02.JPG" class="card-img" />
         </div>
-        <!-- card-header -->
-
         <!-- card-body -->
         <div class="card-body">
           <h2 class="card-titulo">Frete</h2>
@@ -118,18 +103,14 @@
             <option value="caminhonete">Caminhonete</option>
           </select>
           <br>
-         
           <label for="">Carga minima em Litros</label>
           <input type="text">
         </div>
       </div>
         <!-- card-body -->
-
-        <!-- card-footer -->
         <div class="card-footer">
           <a href="#">Concluir</a>
         </div>
-        <!-- card-footer -->
       </div>
       <!-- Card 3 -->
       

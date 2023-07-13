@@ -1,17 +1,19 @@
-<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/css/cadastro_usuario.css}">
     <title>Cadastro do usuario</title>
 </head>
 
 <body>
+    <script></script>
     <div class="container">
         <div class="form-image">
             
-            <img src="/cadastro_login/img//cadastro_usuario.svg" alt="">
+            <img src="/img/cadastro_usuario.svg" alt="imagem cadastro do usuario">
         </div>
 
         <div class="form">
@@ -21,7 +23,7 @@
                         <h1>Cadastre-se</h1>
                     </div>
                     <div class="login-button">
-                        <button><a href="/cadastro_login/view/login.html">Entrar</a></button>
+                        <button><a href="#">Entrar</a></button>
                     </div>
                 </div>
 
@@ -30,10 +32,12 @@
                         <label for="nome">Nome</label>
                         <input id="nome" type="text" name="nome" placeholder="Digite seu nome completo" required>
                     </div>
+
                     <div class="input-box">
                         <label for="cpf">CPF</label>
                         <input id="cpf" type="text" name="cpf" placeholder="Digite seu CPF" required>
                     </div>
+
 
                     <div class="input-box">
                         <label for="number">Celular</label>
@@ -85,7 +89,7 @@
                 </div>
 
                 <div class="continue-button">
-                    <button><a href="/cadastro_login/view/cadastro_endereco.html">Continuar</a> </button>
+                    <button><a href="/cadastro_endereco.html">Continuar</a> </button>
                 </div>
             </form>
         </div>
