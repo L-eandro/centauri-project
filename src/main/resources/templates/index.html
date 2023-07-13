@@ -1,39 +1,57 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home/css/estilo.css">
-    <script></script>
-    <title>Home</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <title>Index</title>
 </head>
 <body>
     
-<header>
+
+  <header>
 
     <nav class="nav-bar">
 
     <div class="logo">
-    <h1>Centauri</h1>
+        <a href="#" class="nav-link"> <h1>Centauri</h1></a>
     </div>
 
     <div class="nav-list">
-<ul>
-    <li class="nav-item"><a href="#" class="nav-link">Inicio</a></li>
-    <li class="nav-item"><a href="#" class="nav-link">Mudar Perfil</a></li>
-    <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Saiba Mais</a></li>
 
-</ul>
     </div>
 
     <div class="login-button">
-        <button><a href="/cadastro_login/view/login.html">Entrar</a></button>
-        <button><a href="/cadastro_login/view/cadastro_usuario.html">Cadastre-se</a></button>
+        <button><a th:href="@{/login.html}">Entrar</a></button>
+        <button><a th:href="@{/cadastro_usuario.html}">Cadastre-se</a></button>
     </div>
-
-
 </header>
 
+    <div class="content">
+
+        <div class="slides">
+
+            <input class="input" type="radio" name="slide" id="slide1" checked>
+            <input class="input" type="radio" name="slide" id="slide2">
+            <input class="input" type="radio" name="slide" id="slide3">
+
+            <div class="slide s1">
+                <img th:src="@{/img/cadastrando-index.JPG}" alt=""/>
+                
+            </div>
+
+            <div class="slide">
+                <img th:src="@{/img/planejando-viagem-index.JPG}" alt=""/>
+            </div>
+
+            <div class="slide">
+                <img th:src="@{/img/viagem-celular-index.JPG}" alt=""/>
+            </div>
+        </div>
+    </div>
+
+    <script th:src="@{js/index.js}"></script>
 </body>
 </html>
