@@ -1,8 +1,10 @@
 package com.example.Centaure.models;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.sql.Blob;
-
+@Data
 @Entity
 @Table(name = "vehicleregistration")
 public class VehicleRegistration {

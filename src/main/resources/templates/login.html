@@ -1,10 +1,9 @@
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <!DOCTYPE html >
 <html lang="pt-br">
 
 <head>
-    
-    <link rel="stylesheet" href="../static/css/login.css">
-    
+    <link rel="stylesheet" th:href="@{/css/login.css}">
     <title>Login</title>
 </head>
 
@@ -22,7 +21,7 @@
           <div class="form">
 
             <div class="login-button">
-                <button><a href="/cadastro_login/view/cadastro_usuario.html">Cadastre-se</a></button>
+                <button><a href="/cadastro">Cadastre-se</a></button>
             </div>
 
             <form id="endereco-form">
