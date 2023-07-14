@@ -16,5 +16,5 @@ public class UserMotorista {
 
     @OneToOne
     @JoinColumn(name = "user_id")
-    private User user;
+    private Usuario usuario;
 }

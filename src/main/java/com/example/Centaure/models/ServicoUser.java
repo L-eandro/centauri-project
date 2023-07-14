@@ -33,7 +33,7 @@ public class ServicoUser {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User user;
+    private Usuario usuario;
 
 
 }

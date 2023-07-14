@@ -8,7 +8,7 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "user")
-public class User {
+public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,9 +22,6 @@ public class User {
 
     @Column(nullable = false)
     private String celular;
-
-    @Column(nullable = false)
-    private String endereco;
 
     @Column(unique = true, nullable = false)
     private String email;

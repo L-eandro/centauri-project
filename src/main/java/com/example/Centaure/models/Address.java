@@ -1,6 +1,6 @@
 package com.example.Centaure.models;
 
-import lombok.Data;
+import lombok.*;
 import javax.persistence.*;
 
 @Data
