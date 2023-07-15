@@ -1,0 +1,38 @@
+target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### Java ###
+application.properties
+/src/main/resources/templates/tests
+src/main/java/start/project/higia/controllers/TestsController.java
+/bin
+
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
