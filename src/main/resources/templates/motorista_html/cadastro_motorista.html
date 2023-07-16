@@ -1,0 +1,105 @@
+<!DOCTYPE html >
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/cadastro_motorista.css}">
+    
+    <title>Cadastro Motorista</title>
+</head>
+
+<body>
+    <script th:src="@{/js/cadastro_motorista.js}" defer></script>
+    
+    <div class="container">
+        <div class="form-image">
+            
+            <img src="/img/cadastro_motorista.svg" alt="imagem cadastro Motorista">
+            </div>
+
+   
+    
+          <div class="form">
+
+            <form id="endereco-form">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastro Motorista</h1>
+                    </div>
+
+                   
+                </div>
+
+                <div class="input-group">
+
+                   
+                    <div class="input-box">
+                        <label for="">Selecione o serviço que vai se cadastrar</label>
+                        
+                        <select id="servico" onchange="ocultar_servico()">
+                          <option id="" value="" ></option>
+                          <option value="frete">frete</option>
+                          <option value="mudanca">mudanca</option>
+                          <option value="viagem">viagem</option>
+                        </select>
+                        
+                    </div>
+
+                    <div class="input-box">
+                        <label for="">Selecione o Veiculo</label>
+                        <select name="veiculo" id="veiculo">
+                            <option value=""></option>
+                            <option id="carro" value="carro" style="display: none;">Carro</option>
+                            <option id="kombi" value="kombi" style="display: none;">Kombi</option>
+                            <option id="van" value="van" style="display: none;">Van</option>
+                            <option id="onibus" value="onibus" style="display: none;">Onibus</option>
+                            <option id="caminhonete" value="caminhonete" style="display: none;">Caminhonete</option>
+                            <option id="caminhao" value="caminhao" style="display: none;">Caminhão</option>
+                        </select>  
+                    </div>
+
+                    <label id="kg" style="display: none;">
+                    <div class="input-box" >
+                        <label for="" >Informe a Capacidade Maxima em KG </label>
+                        <input id="max_kg" type="number" name="max_kg" class="linha-max_kg" placeholder=" Capacidade Maxima em KG" required data-input minlength="1000"> 
+                    </div>
+                 </label>
+
+                 <label id="litro" style="display: none;">
+                    <div class="input-box">
+                        <label for="">Informe a Capacidade Maxima em Litros </label>
+                        <input id="max_litros" type="number" name="max_litros" class="linha-max_litros" placeholder="Capacidade Maxima em Litros " required data-input > 
+                    </div>
+                </label>
+
+                <label id="lugar" style="display: none;">
+                    <div class="input-box">
+                        <label for="">Quantidades Maxima de lugares</label>
+                        <input id="max_lugar" type="number" name="max_lugar" class="linha-max_lugar" placeholder="Capacidade Maxima de acentos " required data-input> 
+                    </div>
+                </label>
+                    
+                    <div class="input-box">
+                        <label for="numero_cnh">Numero da CNH</label>
+                        <input id="numero_cnh" type="text" name="numero_cnh" class="linha-numero_cnh" placeholder="Informe numero da CHN" required data-input>
+                    </div>
+
+                    
+
+                </div>
+
+                <div class="btn-cadastrar">
+                    <button id="btn-cadastrar" type="submit"><a href="#">Continuar</a> </button>
+                </div>
+               
+                
+
+                
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
