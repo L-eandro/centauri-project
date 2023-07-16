@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{css/redefinindo_senha.css}">
+    <link rel="stylesheet" th:href="@{/css/motorista_css/redefinindo_senha_motorista.css}">
     
     <title>Redefinir Senha</title>
 </head>
 
 <body>
-    <script th:src="@{/js/redefinindo_senha.js}" defer></script>
+    <script th:src="@{/js/motorista_js/redefinindo_senha_motorista.js}" defer></script>
     
     <div class="container">
         <div class="form-image">
             
-            <img src="/img/alterar_senha.svg" alt="alterar a senha">
+            <img  th:src="@{/img/motorista_img/redefinindo_senha_motorista.svg}" alt="alterar a senha">
             </div>
 
     <div class="form">
@@ -31,6 +31,11 @@
 
                 <div class="input-group">
                    
+                    <div class="input-box">
+                        <label for="codigo">Codigo</label>
+                        <input id="codigo" type="text" name="codigo" class="linha-nova_senha" placeholder="Codigo recebido no email" required data-input>
+                    </div>
+
                     <div class="input-box">
                         <label for="password">Nova senha</label>
                         <input id="password" type="password" name="password" class="linha-nova_senha" placeholder="Informe a nova senha" required data-input>

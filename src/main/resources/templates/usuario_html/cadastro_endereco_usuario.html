@@ -1,0 +1,91 @@
+<!DOCTYPE html >
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/usuario_css/cadastro_endereco_usuario.css}">
+    
+    <title>Cadastro do Endereço</title>
+</head>
+
+<body>
+    <script th:src="@{/js/usuario_js/cadastro_endereco_usuario.js}" defer></script>
+
+    <div class="container">
+        <div class="form-image">
+            
+            <img th:src="@{/img/usuario_img/cadastro_endereco.svg}" alt="imagem cadastro-endereco">
+            </div>
+
+   
+    
+          <div class="form">
+
+            <div class="voltar-button">
+                <button><a href="#">Voltar</a></button>
+            </div>
+
+            <form id="endereco-form">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastro do Endereço</h1>
+                    </div>
+
+                   
+                </div>
+
+                <div class="input-group">
+
+                    <div class="input-box">
+                        <label for="cep">Cep</label>
+                        <input id="cep" type="text" class="linha-cep" name="cep" placeholder="Digite seu Cep" minlength="8" maxlength="8" required>
+    
+                    </div>
+                    <div class="input-box">
+                        <label for="rua">Rua</label>
+                        <input id="rua" type="text"  name="rua" placeholder="Nome da Rua" disabled required data-input>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="numero">Numero</label>
+                        <input id="numero" type="text" name="numero" placeholder="Numero da residencia" disabled required data-input>
+                    </div>
+
+                  
+                    <div class="input-box">
+                        <label for="bairro">Bairro</label>
+                        <input id="bairro" type="text" name="bairro" placeholder="Digite seu Bairro" disabled required data-input>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="complemento">Complemento</label>
+                        <input id="complemento" type="text" name="complemento" placeholder="Digite seu complemento"disabled data-input>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="cidade">Cidade</label>
+                        <input id="cidade" type="text" name="cidade" placeholder="Digite sua Cidade"disabled required data-input>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="estado">Estado</label>
+                        <input id="estado" type="text" name="estado" placeholder="Digite seu Estado"disabled required data-input>
+                    </div>
+
+                </div>
+
+                <div class="btn-cadastrar">
+                    <button id="btn-cadastrar" type="submit"><a href="#">Cadastrar</a> </button>
+                </div>
+               
+
+                
+            </form>
+        </div>
+    </div>
+    
+</body>
+
+</html>

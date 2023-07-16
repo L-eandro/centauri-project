@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{/css/cadastro_veiculo.css}">
+    <link rel="stylesheet" th:href="@{/css/veiculo_css/cadastro_veiculo.css}">
     <title>Cadastro Veiculo</title>
 </head>
 
@@ -14,7 +14,7 @@
     <div class="container">
         <div class="form-image">
             
-            <img src="/img/cadastro_veiculo02.jpg" alt="imagem cadastro veiculo">
+            <img th:src="@{/img/veiculo_img/cadastro_veiculo2.jpg}" alt="imagem cadastro veiculo">
         </div>
 
         <div class="form">
@@ -39,6 +39,11 @@
                     </div>
 
                     <div class="input-box">
+                        <label for="">Nome/Modelo</label>
+                        <input id="nome-modelo" type="text" name=""nome-modelo" class="linha-nome-modelo" placeholder="Informe nome/modelo do veiculo" required data-input>  
+                    </div>
+
+                    <div class="input-box">
                         <label for="">Ano Fabricação</label>
                         <input id="ano_fabricacao" type="year" name="ano_fabricacao" class="linha-ano_fabricacao" placeholder="Informe o Ano Fabricação" required data-input>  
                     </div>
@@ -49,38 +54,8 @@
                     </div>
 
                     <div class="input-box">
-                        <label for="foto">Selecione fotos do Veiculo</label>
+                        <label for="foto">Selecione uma foto do Veiculo</label>
                         <input type="file" id="foto" name="foto" accept="image/*">
-                    </div>
-
-                    <div class="gender-inputs">
-                        <div class="gender-title">
-                        <h6>Veiculo Possui</h6>
-                    </div>
-    
-                        <div class="gender-group">
-
-                            <div class="gender-input">
-                                <input id="ar-Condicionado" type="checkbox" name="ar-Condicionado" >
-                                <label for="ar-Condicionado">Ar-Condicionado</label>
-                            </div>
-    
-                             <div class="gender-input">
-                                 <input id="wifi" type="checkbox" name="wifi" >
-                                 <label for="wifi">Wifi</label>
-                             </div>
-    
-                             <div class="gender-input">
-                                <input id="tv" type="checkbox" name="tv" >
-                                <label for="tv">Tv</label>
-                            </div>
-
-                            <div class="gender-input">
-                                <input id="som" type="checkbox" name="som" >
-                                <label for="som">Som</label>
-                            </div>
-    
-                        </div>
                     </div>
        
                         <div class="input-box">

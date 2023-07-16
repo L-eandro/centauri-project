@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{/css/login.css}">
+    <link rel="stylesheet" th:href="@{/css/motorista_css/login_motorista.css}">
     <title>Login</title>
 </head>
 
 <body>
-    <script th:src="@{/js/login.js}" defer></script>
+    <script th:src="@{/js/motorista_js/login_motorista.js}" defer></script>
     
     <div class="container">
         <div class="form-image">
             
-            <img src="/img/login.GIF" alt="git de login">
+            <img th:src="@{/img/motorista_img/login_motorista.gif}"  alt="git de login">
             </div>
 
    
@@ -23,7 +23,7 @@
           <div class="form">
 
             <div class="login-button">
-                <button><a href="/cadastro">Cadastre-se</a></button>
+                <button><a href="#">Cadastre-se</a></button>
             </div>
 
             <form id="endereco-form">
@@ -59,7 +59,7 @@
                     <button id="btn-cadastrar" type="submit"><a href="#">Entrar</a> </button>
                 </div>
                
-                <a href="/esqueceu_senha.html" class="esqueceu-senha">Esqueceu a senha?</a>
+                <a href="#" class="esqueceu-senha">Esqueceu a senha?</a>
 
                 
             </form>

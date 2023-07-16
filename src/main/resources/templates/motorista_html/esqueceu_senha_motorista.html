@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{css/esqueceu_senha.css}">
+    <link rel="stylesheet" th:href="@{/css/motorista_css/esqueceu_senha_motorista.css}">
     <title>Esqueceu senha</title>
 </head>
 
@@ -14,7 +14,7 @@
     <div class="container">
 
         <div class="form-image">
-            <img src="/img/link_recuperar_senha.svg" alt="">
+            <img  th:src="@{/img/motorista_img/esqueceu_senha_motorista.svg}"  alt="">
         </div>
 
           <div class="form">
@@ -27,7 +27,7 @@
 
                 <div class="input-group">
                     <div class="input-box">
-                        <label for="email">Enviaremos um link para você redefinir a senha </label>
+                        <label for="email">Enviaremos um codigo para seu Email </label>
                         <input id="email" type="email" name="email" class="linha-email" placeholder="Informe o email" required data-input>
                     </div>
                 </div>

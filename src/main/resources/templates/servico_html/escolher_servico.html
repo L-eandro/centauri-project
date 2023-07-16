@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{css/escolher_servico.css}">
+    <link rel="stylesheet" th:href="@{css/servico_css/escolher_servico.css}">
     <title>Escolher Serviço</title>
   </head>
   <body>
@@ -18,8 +18,6 @@
       <div class="nav-list">
   <ul>
       <li class="nav-item"><a href="#" class="nav-link">Editar Dados</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">Minhas Viagens</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">Mudar Perfil</a></li>
       <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
   </ul>
       </div>
@@ -34,7 +32,7 @@
       <!-- Card 1 -->
       <div class="card card-1">
         <div class="card-header">
-          <img src="/img/viagem2.jpg" class="card-img" />
+          <img th:src="@{/img/servico_img/viagem_servico.svg}" class="card-img"/>
         </div>
         <!-- card-body -->
         <div class="card-body">
@@ -55,7 +53,7 @@
       </div>
         <!-- card-body -->
         <div class="card-footer">
-          <a href="#">Concluir</a>
+          <a href="#">Buscar</a>
         </div>
       </div>
       <!-- Card 1 -->
@@ -64,7 +62,7 @@
       <!-- Card 2 -->
       <div class="card card-2">
         <div class="card-header">
-          <img src="/img/mudanca.JPG" class="card-img" />
+        <img th:src="@{/img/servico_img/mudanca_servico.svg}" class="card-img"/>
         </div>
         <!-- card-body -->
         <div class="card-body">
@@ -82,7 +80,7 @@
       </div>
         <!-- card-body -->
         <div class="card-footer">
-          <a href="#">Concluir</a>
+          <a href="#">Buscar</a>
         </div>
       </div>
       <!-- Card 2 -->
@@ -91,7 +89,7 @@
       <!-- Card 3 -->
       <div class="card card-3">
         <div class="card-header">
-          <img src="/img/frete02.JPG" class="card-img" />
+          <img th:src="@{/img/servico_img/frete_servico.svg}" class="card-img"/>
         </div>
         <!-- card-body -->
         <div class="card-body">
@@ -109,7 +107,7 @@
       </div>
         <!-- card-body -->
         <div class="card-footer">
-          <a href="#">Concluir</a>
+          <a href="#">Buscar</a>
         </div>
       </div>
       <!-- Card 3 -->
