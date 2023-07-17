@@ -7,15 +7,16 @@
 <body>
 
 <table>
-  <tr>
-    <th>Nome</th>
+    <tr>
+        <th>Nome Motorista</th>
 
-  </tr>
-  <tr th:each="usuario : ${usuario}">
-    <td th:text="${usuario.teste}"> </td>
+    </tr>
+    <tr th:each="motorista : ${motorista}">
+        <td th:text="${motorista.nome}"> </td>
 
-  </tr>
+    </tr>
 </table>
+
 
 </body>
 </html>
