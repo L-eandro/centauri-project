@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 
-    <title>Servico Mudança</title>
+    <title>Servico Frete</title>
 </head>
 <body style="background-color:#d9ebf581;">
 
@@ -39,7 +39,7 @@
 
   <div class="container" style="width: 60%; padding-bottom: 50px; ">
   <br>
-    <h3 style="width:100%">Lista dos Motorista Disponiveis para serviço de Mudanças</h3>
+    <h3 style="width:100%">Lista dos Motorista Disponiveis para serviço de Fretes</h3>
   <br>
   <div class="card mb-3" style="max-width: 740px; " th:each="# :${#}">
     <div class="row g-0">
@@ -49,19 +49,19 @@
       <div class="col-md-8">
         <div class="card-body">
           <label for="" style="font-size: 0.83rem;">Nome do motorista</label>
-          <h5 class="card-title"><span th:text="$ {#.#}">Felipe Santana</span></h5>
+          <h5 class="card-title"><span th:text="$ {#.#}">jose silva</span></h5>
 
           <label for="" style="font-size: 0.83rem;">Nome/Modelo veiculo</label>
-          <h5 class="card-title"><span th:text="$ {#.#}">Mercedes-Bens acstro</span></h5>
+          <h5 class="card-title"><span th:text="$ {#.#}">Hilux 4x4</span></h5>
 
-          <label for="" style="font-size: 0.83rem;">Carga Maxima KG</label>
-          <h5 class="card-title"><span th:text="$ {#.#}">2000kg</span></h5>
+          <label for="" style="font-size: 0.83rem;">Carga Maxima Litros</label>
+          <h5 class="card-title"><span th:text="$ {#.#}">1000Litros</span></h5>
 
           <label for="" style="font-size: 0.83rem;">Ano Veiculo</label>
-          <h5 class="card-title"><span th:text="$ {#.#}">2019</span></h5>
+          <h5 class="card-title"><span th:text="$ {#.#}">2022</span></h5>
 
           <label for="" style="font-size: 0.83rem;">obeservações adicionais</label>
-          <h6 class="card-text"><span th:utext="${#strings.abbreviate (#.#, 200)} ">estou disponiveil para realizar mudança, meu veiculo possui ar-codicionado e wifi</span></h6>   
+          <h6 class="card-text"><span th:utext="${#strings.abbreviate (#.#, 200)} ">estou disponiveil para realizar fretes, meu veiculo possui ar-codicionado e tv</span></h6>   
         </div>
       </div>
     </div>
