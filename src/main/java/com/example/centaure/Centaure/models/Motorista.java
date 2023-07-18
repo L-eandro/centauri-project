@@ -12,11 +12,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Usuario {
-
+public class Motorista {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private int id;
     private String nome;
-
+    private String email;
+    private String cnh;
+    private String telefone;
+    private String senha;
 }
