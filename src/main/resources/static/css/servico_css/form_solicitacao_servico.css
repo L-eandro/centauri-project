@@ -1,0 +1,113 @@
+
+
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, rgba(122, 138, 255, 0.845), rgba(206, 208, 255, 0.827));
+    position: flex;
+}
+.box{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-20%);
+    background-color: rgba(0, 0, 0, 0.6);
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
+    padding: 60px;
+    border-radius: 30px;
+    width: 30%;
+    
+}
+
+.box:hover{
+    box-shadow: 1px 1px 10px #0091ff;
+    transition: all 0.8s; 
+    transform: translate(-50%,-20%); 
+    padding: 62px;
+}
+
+
+fieldset{
+    border: 3px solid dodgerblue;
+    
+}
+
+fieldset:hover {
+    box-shadow: 1px 1px 10px #ffffff;
+    transition: all 0.8s;  
+   
+}
+
+legend{
+    border: 1px solid rgb(0, 123, 245);
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(0, 96, 192);
+    border-radius: 8px;
+}
+.inputBox{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.inputUser{
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: rgb(255, 255, 255);
+    font-size: 11.9px;
+    width: 100%;
+    letter-spacing: 2px;
+    
+}
+.labelInput{
+    color: rgba(195, 195, 195, 0.806);
+    position: absolute;
+    top: 0px;
+    left: 2px;
+    pointer-events: none;
+    transition: .5s;
+    
+}
+
+.inputUser:focus ~ .labelInput,
+.inputUser:valid ~ .labelInput{
+    top: -20px;
+    font-size: 10px;
+    color: dodgerblue;
+}
+#data-servico{
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+}
+
+#horario{
+    border: none;
+    padding: 8px;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+}
+
+
+#submit{
+    background-image: linear-gradient(to right,rgb(0, 92, 197), rgb(90, 20, 220));
+    width: 100%;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+#submit:hover{
+    background-image: linear-gradient(to right,rgb(0, 80, 172), rgb(80, 19, 195));
+}
+
+
+
