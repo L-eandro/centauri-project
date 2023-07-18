@@ -1,6 +1,6 @@
 function ocultar_servico() {
 
-     var servico = document.getElementById("servico").value;
+    var servico = document.getElementById("servico").value;
     var kg = document.getElementById("kg");
     var litro = document.getElementById("litro");
     var lugar = document.getElementById("lugar");
@@ -38,16 +38,14 @@ function ocultar_servico() {
   };
 
 
+
   function buscarCepPartida() {
 
-   
     const cepInput = document.querySelector("#cep");
     const logradouroInput = document.querySelector("#logradouro");
     const bairroInput = document.querySelector("#bairro");
     const cidadeInput = document.querySelector("#cidade");
     const complementoInput = document.querySelector("#complemento");
- 
-    
     
     //validação basica do cep
     cepInput.addEventListener("keypress", (e) => {
@@ -109,18 +107,13 @@ function ocultar_servico() {
         complementoInput.setAttribute("desabled","desabled");
         cidadeInput.setAttribute("desabled","desabled");
         bairroInput.setAttribute("desabled","desabled");
-       
-            
-    }
-    
-    };
-    
+                
+    }};
     }
 
 
     function buscarCepChegada(){
-       
-      
+
     const cepInput = document.querySelector("#cep-chegada");
     const logradouroInput = document.querySelector("#logradouro-chegada");
     const bairroInput = document.querySelector("#bairro-chegada");
@@ -180,22 +173,16 @@ function ocultar_servico() {
           logradouroInput.removeAttribute("disabled");
             complementoInput.removeAttribute("disabled");
             cidadeInput.removeAttribute("disabled");
-            bairroInput.removeAttribute("disabled");
-            
+            bairroInput.removeAttribute("disabled");       
     
      }else {
             //se precisar adicionar desable novamente
           logradouroInput.setAttribute("desabled","desabled");
         complementoInput.setAttribute("desabled","desabled");
         cidadeInput.setAttribute("desabled","desabled");
-        bairroInput.setAttribute("desabled","desabled");
-       
-            
-    }
-    
-    };
-
-    }
+        bairroInput.setAttribute("desabled","desabled");         
+    }};
+  }
    
 
 
