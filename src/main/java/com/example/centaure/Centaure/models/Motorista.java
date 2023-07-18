@@ -17,4 +17,8 @@ public class Motorista {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nome;
+    private String email;
+    private String cnh;
+    private String telefone;
+    private String senha;
 }

@@ -8,11 +8,27 @@
 
 <table>
     <tr>
-        <th>Nome Motorista</th>
+        <th>Dados Motorista</th>
 
     </tr>
     <tr th:each="motorista : ${motorista}">
         <td th:text="${motorista.nome}"> </td>
+
+    </tr>
+    <tr th:each="motorista : ${motorista}">
+        <td th:text="${motorista.email}"> </td>
+
+    </tr>
+    <tr th:each="motorista : ${motorista}">
+        <td th:text="${motorista.cnh}"> </td>
+
+    </tr>
+    <tr th:each="motorista : ${motorista}">
+        <td th:text="${motorista.telefone}"> </td>
+
+    </tr>
+    <tr th:each="motorista : ${motorista}">
+        <td th:text="${motorista.senha}"> </td>
 
     </tr>
 </table>
