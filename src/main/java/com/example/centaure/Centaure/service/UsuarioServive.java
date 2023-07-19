@@ -17,15 +17,22 @@ public class UsuarioServive {
     @Autowired
     private UsuarioRepositores usuarioRepositores;
 
+    public static final int complexidadeSenha = 10;
+
     public Usuario criar(Usuario usuario){
         return usuarioRepositores.save(usuario);
     }
+
 
     public List<Usuario> listar(Usuario usuario){
         return usuarioRepositores.findAll();
     }
     public Optional<Usuario> editar(Integer id){
         return usuarioRepositores.findById(id);
+    }
+    public String deletar(Integer id){
+        usuarioRepositores.deleteById(id);
+        return "";
     }
 
 }

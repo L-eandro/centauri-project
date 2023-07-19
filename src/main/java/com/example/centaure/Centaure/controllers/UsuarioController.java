@@ -39,6 +39,11 @@ public class UsuarioController {
         model.addAttribute("usuario", usuario);
         return "usuario_editar";
     }
+    @GetMapping("/usuario/deletar/{id}")
+    public String deletar(@PathVariable Integer id){
+        usuarioServive.deletar(id);
+        return "redirect:/usuario/listar";
+    }
 
 
 }

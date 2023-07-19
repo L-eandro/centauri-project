@@ -15,7 +15,10 @@
   </tr>
   <tr th:each="usuario : ${usuario}">
     <td th:text="${usuario.nome}" > </td>
-      <td><a th:href="|usuario/editar/${usuario.id}"> editar </a></td>
+      <td><a th:href="|/usuario/editar/${usuario.id}"> editar </a>
+          <a th:href="|/usuario/deletar/${usuario.id}"> deletar </a>
+      </td>
+
 
   </tr>
 </table>

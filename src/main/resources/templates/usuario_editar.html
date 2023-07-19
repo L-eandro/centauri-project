@@ -7,7 +7,7 @@
 <body>
     <form action="/cadastro/usuario" method="post" th:object="${usuario}">
         <input type="hidden" th:field="*{id}">
-        <input type="text" th:field="nome" placeholder="nome">
+        <input type="text" th:field="*{nome}" placeholder="nome">
         <button type="submit">Cadastrar</button>
     </form>
 </body>
