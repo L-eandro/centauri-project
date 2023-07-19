@@ -9,10 +9,13 @@
 <table>
   <tr>
     <th>Nome Usuario</th>
+      <th>Ação</th>
+
 
   </tr>
   <tr th:each="usuario : ${usuario}">
-    <td th:text="${usuario.nome}"> </td>
+    <td th:text="${usuario.nome}" > </td>
+      <td><a th:href="|usuario/editar/${usuario.id}"> editar </a></td>
 
   </tr>
 </table>
