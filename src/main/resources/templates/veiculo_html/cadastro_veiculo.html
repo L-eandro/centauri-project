@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{/css/veiculo_css/cadastro_veiculo.css}">
+  <!-- <link rel="stylesheet" th:href="@{/css/veiculo_css/cadastro_veiculo.css}">   
+  <img th:src="@{/img/veiculo_img/cadastro_veiculo2.jpg}" alt="imagem cadastro veiculo">
+    --> 
+    <link rel="stylesheet" href="/principal/css/veiculo_css/cadastro_veiculo.css">
     <title>Cadastro Veiculo</title>
 </head>
 
 <body>
-    <script></script>
+    <script src="/principal/js/veiculo_js/cadastrar_veiculo.js"></script>
 
     <div class="container">
         <div class="form-image">
-            
-            <img th:src="@{/img/veiculo_img/cadastro_veiculo2.jpg}" alt="imagem cadastro veiculo">
+    
+            <img src="/principal/img/veiculo_img/cadastro_veiculo02.jpg">
         </div>
 
         <div class="form">
@@ -27,6 +30,32 @@
                 </div>
 
                 <div class="input-group">
+
+                    <div class="input-box">
+                        <label for="" class="nome-select">Selecione o Veiculo</label>
+                        <select name="veiculo" id="veiculo" onchange="ocultar_servico()">
+                            <option value=""></option>
+                            <option id="carro" value="carro" >Carro</option>
+                            <option id="kombi" value="kombi" >Kombi</option>
+                            <option id="van" value="van" >Van</option>
+                            <option id="onibus" value="onibus" >Onibus</option>
+                            <option id="caminhonete" value="caminhonete">Caminhonete</option>
+                            <option id="caminhao" value="caminhao" >Caminhão</option>
+                        </select>  
+                    </div>
+
+                    <div class="input-box">
+                        <label id="servico" for="" class="nome-select">Servico Selecionado</label>
+                        <select name="servico" id="servico" onchange="ocultar_servico()" disabled>
+                            <option id="" value=""></option>
+                            <option id="frete" value="frete" disabled>Frete</option>
+                            <option id="mudanca" value="mudanca" disabled>Mudança</option>
+                            <option id="viagem" value="viagem" disabled>Viagem</option>
+                           
+                        </select>  
+                    </div>
+
+
 
                     <div class="input-box">
                         <label for="">Numero do documento do veiculo</label>
@@ -54,13 +83,45 @@
                     </div>
 
                     <div class="input-box">
+
+                        <label id="teste"  onchange="ocultar_servico()" >
+                            <div class="input-box" >
+                                <label for="" >Informe a </label>
+                                <input id="teste" type="number" name="teste" disabled> 
+                            </div>
+                         </label>
+
+                        <label id="kg" style="display: none;" onchange="ocultar_servico()">
+                            <div class="input-box" >
+                                <label for="" >Informe a Capacidade Maxima em KG </label>
+                                <input id="max_kg" type="number" name="max_kg" class="linha-max_kg" placeholder=" Capacidade Maxima em KG" required data-input minlength="1000"> 
+                            </div>
+                         </label>
+        
+                         <label id="litro" style="display: none;" onchange="ocultar_servico()">
+                            <div class="input-box">
+                                <label for="">Informe a Capacidade Maxima em Litros </label>
+                                <input id="max_litros" type="number" name="max_litros" class="linha-max_litros" placeholder="Capacidade Maxima em Litros " required data-input > 
+                            </div>
+                        </label>
+        
+                        <label id="lugar" style="display: none;" onchange="ocultar_servico()">
+                            <div class="input-box">
+                                <label for="">Informe a Quantidades Maxima de lugares</label>
+                                <input id="max_lugar" type="number" name="max_lugar" class="linha-max_lugar" placeholder="Capacidade Maxima de acentos " required data-input> 
+                            </div>
+                        </label>
+
+                    </div>
+
+                    <div class="input-box">
                         <label for="foto">Selecione uma foto do Veiculo</label>
-                        <input type="file" id="foto" name="foto" accept="image/*">
+                        <input type="file" id="foto" name="foto" accept="image/*" style="width: 480px;">
                     </div>
        
                         <div class="input-box">
                             <label for="">Observações Adicionais</label>
-                            <textarea id="mensagem" name="mensagem" rows="4" cols="60"></textarea>
+                            <textarea id="mensagem" name="mensagem" rows="4" cols="65"></textarea>
                         </div>
 
                 </div>

@@ -31,7 +31,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #202e64;
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
     padding: 1rem;
 }
 
@@ -48,7 +48,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    padding: 3rem;
+    padding: 2rem;
 }
 
 /*traço de baixo do nome cadastro*/
@@ -63,6 +63,29 @@ body {
     
 }
 
+select {
+    width: 227px;
+    max-height: 38px;
+    padding: 8px;
+    font-size: 16px;
+    box-shadow: 1px 1px 6px #403aaaef;
+    outline: 1px solid #332cb8;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 0.6rem;
+    
+  }
+
+  select:hover {  
+    background-color: #d9ebf5fb;
+}
+  
+  /* Estilo personalizado para cada opção */
+  option {
+    background-color: #d9ebf5fb;
+    color: #000000;
+  }
+
 .input-group {
     display: flex;
     flex-wrap: wrap;
@@ -73,13 +96,13 @@ body {
 .input-box {
     display: flex;
     flex-direction: column;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
 }
 
 /*Luz de fora nos campos para digitar*/
 .input-box input {
-    margin: 0.4rem ;
-    padding: 0.8rem 1.2rem;
+    margin: 0.2rem ;
+    padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 10px;
     box-shadow: 1px 1px 6px #403aaaef;
@@ -108,17 +131,12 @@ body {
     color: #554df5e1;
 }
 
-.gender-input label {
-    font-size: 0.81rem;
-    font-weight: 600;
-    color: #000000c0;
-}
 
 /*botao continue*/
 .continue-button button {
     width: 100%;
     border: none;
-    background-color: #202e64;
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
     padding: 0.62rem;
     border-radius: 5px;
     cursor: pointer;
@@ -137,8 +155,7 @@ body {
 }
 
 textarea { 
-    padding: 8px;
-    border: 3px solid #4972af52;
+    border: 2px solid #4972af52;
     border-radius: 9px;
   }
 
