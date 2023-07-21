@@ -12,65 +12,82 @@
 <body style="background-color:#d9ebf581;">
 
 
-     <header>
+  <header>
 
-  <nav class="nav-bar">
-  
-      <div class="logo">
-     <a href="#" class="nav-link"> <h1>Centauri</h1></a>
-      </div>
-  
-      <div class="nav-list">
-      <ul>
-      <li class="nav-item"><a href="#" class="nav-link">Editar Dados</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">Editar Endereço</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
-  
-      </ul>
-      </div>
-  
-      <div class="login-button">
-          <button><a href="#">Sair</a></button>
-          
-      </div>
-  </nav>
-  </header>
+<nav class="nav-bar">
+
+   <div class="logo">
+  <a href="#" class="nav-link"> <h1>Centauri</h1></a>
+   </div>
+
+   <div class="nav-list">
+   <ul>
+   <li class="nav-item"><a href="#" class="nav-link">Editar Dados</a></li>
+   <li class="nav-item"><a href="#" class="nav-link">Minhas Solicitações</a></li>
+   <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
+
+   </ul>
+   </div>
+
+   <div class="login-button">
+       <button><a href="#">Sair</a></button>
+       
+   </div>
+</nav>
+</header>
 <section >
 
-  <div class="container" style="width: 60%; padding-bottom: 50px; ">
-  <br>
-    <h3 style="width:100%">Lista dos Motorista Disponiveis para serviço de Mudanças</h3>
-  <br>
-  <div class="card mb-3" style="max-width: 740px; " th:each="# :${#}">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="/cadastro_login/img/frete02.JPG" class="img-fluid rounded-start"  style="max-width: 270px; height: 400px;" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <label for="" style="font-size: 0.83rem;">Nome do motorista</label>
-          <h5 class="card-title"><span th:text="$ {#.#}">Felipe Santana</span></h5>
+<div class="container" style="width: 60%; padding-bottom: 30px;">
+<br>
+ <h3 style="width:100%">Lista dos Motorista Disponiveis para serviço de Mudanças</h3>
+<br>
 
-          <label for="" style="font-size: 0.83rem;">Nome/Modelo veiculo</label>
-          <h5 class="card-title"><span th:text="$ {#.#}">Mercedes-Bens acstro</span></h5>
+<div class="card mb-3" style="max-width: 840px; padding: 0.62rem;box-shadow: 1px 1px 10px #403aaaef;"  th:each="# :${#}">
+ <div class="row g-0" >
+   <div class="col-md-4">
+     <img src="/principal/img/servico_img/mudanca_servico.JPG" style=" width: 400px; height: 200px;  box-shadow: 1px 1px 5px #403aaaef; " class="img-fluid rounded-start"   alt="...">
+   </div> 
+   <div class="col-md-8" >
+     <div class="card">
+       <div class="label-card" >
+         <div class="group" >
+       <label for="" style="font-size: 0.83rem;">Nome do motorista</label>
+       <h5 class="card-title"><span th:text="$ {#.#}">jose silva</span></h5>
+         </div>
 
-          <label for="" style="font-size: 0.83rem;">Carga Maxima KG</label>
-          <h5 class="card-title"><span th:text="$ {#.#}">2000kg</span></h5>
+         <div class="group">
+       <label for="" style="font-size: 0.83rem;">Nome/Modelo veiculo</label>
+       <h5 class="card-title"><span th:text="$ {#.#}">Hilux 4x4</span></h5>
+     </div>
+   </div>
 
-          <label for="" style="font-size: 0.83rem;">Ano Veiculo</label>
-          <h5 class="card-title"><span th:text="$ {#.#}">2019</span></h5>
+   <div class="label-card">
+     <div class="group">
+       <label for="" style="font-size: 0.83rem;">Carga Maxima Litros</label>
+       <h5 class="card-title"><span th:text="$ {#.#}">1000Litros</span></h5>
+     </div>
 
-          <label for="" style="font-size: 0.83rem;">obeservações adicionais</label>
-          <h6 class="card-text"><span th:utext="${#strings.abbreviate (#.#, 200)} ">estou disponiveil para realizar mudança, meu veiculo possui ar-codicionado e wifi</span></h6>   
-        </div>
-      </div>
-    </div>
-    <div class="btn-cadastrar">
-      <button id="btn-cadastrar" type="submit"><a href="#">Gostei desse Motorista</a> </button>
-  </div>
-  </div>
+     <div class="group">
+       <label for="" style="font-size: 0.83rem;">Ano Veiculo</label>
+       <h5 class="card-title"><span th:text="$ {#.#}">2022</span></h5>
+     </div>
+   </div>
+   <div class="group">
+       <label for="" style="font-size: 0.83rem;">obeservações adicionais</label>
+       <h6 class="card-text"><span th:utext="${#strings.abbreviate (#.#, 100)} ">estou disponiveil para realizar fretes, meu veiculo possui ar-codicionado e tv
+       </div>
+         
+       </span></h6>   
+     </div>
+   </div>
+ </div>
+ <div class="btn-cadastrar">
+   <button id="btn-cadastrar" type="submit"><a href="#">Gostei desse Motorista</a> </button>
+</div>
 
-  
+</div>
+
+
 </section>
 
 

@@ -12,7 +12,7 @@ body{
 
 /*parte de cima da tela*/
 header{
-    background-color: #202e64;
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
 
 }
 
@@ -71,7 +71,7 @@ header{
 /*Constumizando botao*/
 .login-button button{
     border: none;
-    background-color:  #332cb8;;
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
     padding: 10px 15px;
     transition: all 0.5s;
     border-radius: 5px;    
@@ -91,24 +91,29 @@ header{
     font-size: 1.1rem; 
 }
 
-.c{
-    width: 90%; 
-    padding-bottom: 30px;
+.label-card{
+    display: flex;
+    
+    
 }
 
-.imagem{
-    width: 150px; /* Defina a largura desejada */
-      height: auto
+.group{
+    margin-right: 120px; 
 }
+
+.group h5 {
+    margin-bottom: 12px; /* Espaçamento entre o h3 e o label */
+  }
+
 
 h3{
-    margin-bottom: 50%;
+    margin-bottom: 40%;
     position: center;
 }
 .btn-cadastrar button {
     width: 100%;
     border: none;
-    background-color: #202e64;
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
     padding: 0.62rem;
     border-radius: 5px;
     cursor: pointer;

@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Open+Sans:wght@300;400;500;600&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/*inicio nav-bar*/
+header{
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
+  
+  }
+  
+  /*posicionar os elementos*/
+  .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      padding: 1.5rem 6rem;
+  }
+  
+  /*mechendo na logo*/
+  .logo{
+      display: flex;
+      align-items: center;
+  }
+  
+  /*cor na logo*/
+  .logo h1{
+      color: rgb(232, 232, 231);
+  }
+  
+  /*constumizando o links do menu*/
+  /*deixando centralizado*/
+  .nav-list{
+      display: flex;
+      align-items: center;
+  }
+  
+  /*colocando certo um do lado do outro*/
+  .nav-list ul{
+      display: flex;
+      justify-content: center;
+      list-style: none;
+  }
+  
+  /*colocando espaço entre itens*/
+  .nav-item{
+      margin: 0 15px;
+  }
+  
+  /*editando fonte*/
+  .nav-link{
+      text-decoration: none;
+      font-size: 1.15rem;
+      color: rgb(232, 232, 231);
+      transition: all 0.5s;   
+      font-weight: 400;
+      
+  }
+  .nav-link:hover{
+      color: rgb(255, 255, 255);
+      font-size: 1.36rem;
+   
+  }
+
+ /*Constumizando botao*/
+ .login-button button{
+    border: none;
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
+    padding: 10px 15px;
+    transition: all 0.5s;
+    border-radius: 5px;    
+}
+/* mudando a cor quando passar o mouse por cima*/
+.login-button button:hover{
+    background:  #332cb8a8; 
+    transform: scale3d(1.1, 1.1, 1);
+    transition: all 0.3s;
+}
+
+.login-button button a{
+    text-decoration: none;
+    color: rgb(232, 231, 231);
+    font-weight: 400;
+    transition: all 0.3s;
+    font-size: 1.1rem; 
+}
+
+/*fim nav-bar*/
+
+
+
+
+/*tela inteira*/
+body {
+      background: #d9ebf5fb; 
+}
+
+/*quadrado do meio*/
+.container {
+    display: flex;  
+    width: 80%;
+    height: 80vh; 
+    box-shadow: 5px 5px 10px #202e64;;
+    border-radius: 10px;
+    top: 10px;
+    left: 80%;
+    transform: translate(12%,3%);
+
+}
+
+
+
+
+/*div da imagem*/
+.form-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
+    padding: 1rem;
+}
+
+.form-image img {
+    width: 28rem;
+    height: 25rem;
+    box-shadow: 6px 5px 10px #939afdfb;
+}
+
+.form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 2rem;
+}
+
+/*traço de baixo do nome cadastro*/
+.form-header h1::after {
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.3rem;
+    background-color: #202e64;;
+    margin: 0 auto;
+    position: absolute;
+    
+}
+
+select {
+    width: 227px;
+    max-height: 38px;
+    padding: 8px;
+    font-size: 16px;
+    box-shadow: 1px 1px 6px #403aaaef;
+    outline: 1px solid #332cb8;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 0.6rem;
+    
+  }
+
+  select:hover {  
+    background-color: #d9ebf5fb;
+}
+  
+  /* Estilo personalizado para cada opção */
+  option {
+    background-color: #d9ebf5fb;
+    color: #000000;
+  }
+
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0.1rem;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.2rem;
+}
+
+/*Luz de fora nos campos para digitar*/
+.input-box input {
+    margin: 0.2rem ;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #403aaaef;
+    font-size: 0.8rem;
+}
+
+/*luz de dentro quando clicar acender*/
+.input-box input:hover {
+    background-color: #d9ebf536;
+}
+
+/*acende linhas do campo de digitar*/
+.input-box input:focus-visible {
+    outline: 1px solid #332cb8;
+}
+
+/*cor da letra dos campos solicitando os dados ex: nome cpf*/
+.input-box label,
+.gender-title h6 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #020202c0;
+}
+
+.input-box input::placeholder {
+    color: #554df5e1;
+}
+
+
+/*botao continue*/
+.continue-button button {
+    width: 100%;
+    border: none;
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
+    padding: 0.62rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/*acendendo botao continue*/
+.continue-button button:hover {
+    background-color: #332cb8;
+}
+
+/*nome continue dentro do*/
+.continue-button button a {
+    text-decoration: none;
+    font-size: 0.93rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+textarea { 
+    border: 2px solid #4972af52;
+    border-radius: 9px;
+  }
+
+  textarea:hover {
+    background-color: #3e38db18;
+    
+}
+
+textarea:focus-visible {
+    outline: 1px solid #332cb8;
+}
+
+
+/*responsivo tela tablet*/
+@media screen and (max-width:1330px) {
+    .form-image{
+        display:none;
+    }
+.container{
+    width: 50%;
+}
+.form{
+    width: 100%;
+}
+}
+
+/*responsivo tela celular*/
+@media screen and (max-width:1064px){
+    .container{
+        width: 90%;
+        height: auto;
+    }
+    /*barra de rolagem*/
+    .input-group{
+        flex-direction: column;
+        overflow-y: scroll;
+        flex-wrap: nowrap;
+        max-height: 12rem;
+        max-width: 14rem;
+    }
+   
+}

@@ -1,22 +1,19 @@
-<!DOCTYPE html 5>
-<html lang="pt-br"  xmlns:th="http://www.thymeleaf.org">
-
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
-    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- <link rel="stylesheet" th:href="@{/css/motorista_css/cadastro_motorista.css}">
-    <script th:src="@{/js/motorista_js/cadastro_motorista.js}" defer></script>
-    <img th:src="@{/img/motorista_img/cadastro_motorista.svg}" alt="imagem cadastro-endereco" alt="">
+    <!--
+    <link rel="stylesheet" th:href="@{/css/usuario_css/cadastro_usuario.css}">
+    <img th:src="@{/img/usuario_img/cadastro_usuario.svg}" alt="imagem cadastro do usuario">
     -->
-    <link rel="stylesheet" href="/principal/css/motorista_css/editar_motorista.css">
-    <title>Cadastro Motorista</title>
+    <link rel="stylesheet" href="/principal/css/usuario_css/editar_usuario.css">
+    <title>Editar do usuario</title>
 </head>
 
 <body>
-    <script src="/principal/js/motorista_js/editar_motorista.js"></script>
-
+    <script></script>
 
     <header>
         <nav class="nav-bar">
@@ -26,7 +23,7 @@
         <div class="nav-list">
     <ul>
         <li class="nav-item"><a href="#" class="nav-link">Editar Dados</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Meus Veiculos</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Listar Servicos Solicitados</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
     </ul>
         </div>
@@ -35,20 +32,20 @@
         </div>
     </header>
     
+
+
+
     <div class="container">
-
-
-        
         <div class="form-image">
+            <img src="/principal/img/usuario_img/cadastro_usuario.svg" alt="">
             
-             <img src="/principal/img/motorista_img/cadastro_motorista.svg">
         </div>
 
         <div class="form">
             <form action="#">
                 <div class="form-header">
                     <div class="title">
-                        <h1>Cadastro Do Motorista</h1>
+                        <h1>Editar Usuario</h1>
                     </div>
                     
                 </div>
@@ -60,19 +57,14 @@
                     </div>
 
                     <div class="input-box">
-                        <label for="cnh">CNH</label>
-                        <input id="cnh" type="text" name="cnh" placeholder="Digite numero da CNH" required>
+                        <label for="cpf">CPF</label>
+                        <input id="cpf" type="text" name="cpf" placeholder="Digite seu CPF" required>
                     </div>
 
 
                     <div class="input-box">
                         <label for="number">Celular</label>
                         <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
-                    </div>
-
-                    <div class="input-box">
-                        <label for="dataNascimento" class="nome-data">Data Nascimento</label>
-                        <input id="dataNascimento" type="date" name="dataNascimento" class="linha-data">
                     </div>
 
                   
@@ -87,8 +79,11 @@
                         <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
                     </div>
 
-                    
-                   
+
+                    <div class="input-box">
+                        <label for="dataNascimento" class="nome-data">Data Nascimento</label>
+                        <input id="dataNascimento" type="date" name="dataNascimento" class="linha-data">
+                    </div>
 
                 </div>
                 <div class="input-box">
@@ -117,18 +112,10 @@
                 </div>
 
                 <div class="continue-button">
-                    <button><a href="#">Ir Cadastrar Veiculo</a> </button>
+                    <button><a href="#">Salvar</a> </button>
                 </div>
             </form>
         </div>
-
-   
-    
-               
-                
-
-                
-          
     </div>
 </body>
 

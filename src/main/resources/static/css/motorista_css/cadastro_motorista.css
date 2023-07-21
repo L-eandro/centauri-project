@@ -1,5 +1,3 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Open+Sans:wght@300;400;500;600&display=swap');
 * {
     padding: 0;
@@ -33,13 +31,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #202e64;
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
     padding: 1rem;
 }
 
 .form-image img {
-    width: 31rem;
-    box-shadow: 6px 5px 10px #d9ebf5fb;
+    width: 27rem;
+    box-shadow: 6px 5px 10px #f5d9d9;
 }
 
 .form {
@@ -49,33 +47,34 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    padding: 0.5rem 5rem;
+    padding: 3rem;
 }
 
 .form-header {
     display: flex;
     justify-content: space-between;
+    
 }
 
-.voltar-button {  
-    position: absolute;
-    top: 100px;
-    right: 170px;
+.login-button {
+    display: flex;
+    align-items: center;
+    
 }
 
-.voltar-button button {  
+.login-button button {
     border: none;
-    background-color: #202e64;;
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
     padding: 0.4rem 1rem;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.voltar-button button:hover {  
+.login-button button:hover {
     background-color: #332cb8;
 }
 
-.voltar-button button a { 
+.login-button button a {
     text-decoration: none;
     font-weight: 500;
     color: #fff;
@@ -88,12 +87,11 @@ body {
     width: 5rem;
     height: 0.3rem;
     background-color: #202e64;;
-    margin: 1 auto;
+    margin: 0 auto;
     position: absolute;
     
 }
 
-/*configura tamanho e posição dos inputs*/
 .input-group {
     display: flex;
     flex-wrap: wrap;
@@ -104,7 +102,7 @@ body {
 .input-box {
     display: flex;
     flex-direction: column;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.5rem;
 }
 
 /*Luz de fora nos campos para digitar*/
@@ -119,7 +117,7 @@ body {
 
 /*luz de dentro quando clicar acender*/
 .input-box input:hover {
-    background-color: #9dc9ec25;
+    background-color: #d9ebf536;
 }
 
 /*acende linhas do campo de digitar*/
@@ -139,37 +137,56 @@ body {
     color: #554df5e1;
 }
 
-/*botao cadastrar*/
-.btn-cadastrar button {
+.gender-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.62rem;
+    padding: 0 .5rem;
+}
+
+.gender-input {
+    display: flex;
+    align-items: center;
+}
+
+.gender-input input {
+    margin-right: 0.35rem;
+}
+
+.gender-input label {
+    font-size: 0.81rem;
+    font-weight: 600;
+    color: #000000c0;
+}
+
+/*botao continue*/
+.continue-button button {
     width: 100%;
     margin-top: 2.5rem;
     border: none;
-    background-color: #202e64;
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
     padding: 0.62rem;
     border-radius: 5px;
     cursor: pointer;
 }
-
-/*acendendo botao cadastrar*/
-.btn-cadastrar button:hover {
+/*acendendo botao continue*/
+.continue-button button:hover {
     background-color: #332cb8;
 }
 
-/*nome cadastrar dentro do botao*/
-.btn-cadastrar button a {
+/*nome continue dentro do*/
+.continue-button button a {
     text-decoration: none;
     font-size: 0.93rem;
     font-weight: 500;
     color: #fff;
 }
 
-/*mechendo cep*/
-.linha-cep{
-    width: 28rem;
-    height: 2.8rem;
+.linha-data{
+    width: 13rem;
+    height: 2.6rem;
+    color: #554df5e1;
 }
-
-
 
 /*responsivo tela tablet*/
 @media screen and (max-width:1330px) {
@@ -182,13 +199,6 @@ body {
 .form{
     width: 100%;
 }
-
-.voltar-button {  
-    position: absolute;
-    top: 110px;
-    right: 300px;
-}
-
 }
 
 /*responsivo tela celular*/
@@ -205,27 +215,5 @@ body {
         max-height: 12rem;
         max-width: 14rem;
     }
-
-    .linha-cep{
-        
-        width: 14rem;
-        height: 2.8rem;
-    }
-
-    .voltar-button {
-     position: fixed;  
-    top: 33%;
-    right: 46%; 
-}
-
-}
-
-@media screen and (max-width:558px){
-
-    .voltar-button {
-        
-        position: fixed;  
-         top: 36%;
-         right: 40%; 
-   }
+   
 }

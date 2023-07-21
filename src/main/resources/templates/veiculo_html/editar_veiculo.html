@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" th:href="@{/css/veiculo_css/cadastro_veiculo.css}">   
+  <img th:src="@{/img/veiculo_img/cadastro_veiculo2.jpg}" alt="imagem cadastro veiculo">
+    --> 
+    <link rel="stylesheet" href="/principal/css/veiculo_css/editar_veiculo.css">
+    <title>Editar Veiculo</title>
+</head>
+
+<body>
+    <script src="/principal/js/veiculo_js/editar_veiculo.js"></script>
+
+
+
+    <header>
+        <nav class="nav-bar">
+        <div class="logo">
+       <a href="/" class="nav-link"> <h1>Centauri</h1></a>
+        </div>
+        <div class="nav-list">
+    <ul>
+        <li class="nav-item"><a href="#" class="nav-link">Editar Dados</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Editar veiculo</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
+    </ul>
+        </div>
+        <div class="login-button">
+            <button><a href="/">Sair</a></button>  
+        </div>
+        
+    </header>
+
+
+    <div class="container">
+        <div class="form-image">
+    
+            <img src="/principal/img/veiculo_img/cadastro_veiculo02.jpg">
+        </div>
+
+        <div class="form">
+            <form action="#">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Editar Veiculo</h1>
+                        <br>
+                    </div>
+                </div>
+
+                <div class="input-group">
+
+                    <div class="input-box">
+                        <label for="" class="nome-select">Selecione o Veiculo</label >
+                        <select name="veiculo" id="veiculo" onchange="ocultar_servico()" disabled>
+                            <option value=""></option>
+                            <option id="carro" value="carro" >Carro</option>
+                            <option id="kombi" value="kombi" >Kombi</option>
+                            <option id="van" value="van" >Van</option>
+                            <option id="onibus" value="onibus" >Onibus</option>
+                            <option id="caminhonete" value="caminhonete">Caminhonete</option>
+                            <option id="caminhao" value="caminhao" >Caminhão</option>
+                        </select>  
+                    </div>
+
+                    <div class="input-box">
+                        <label id="servico" for="" class="nome-select">Servico Selecionado</label>
+                        <select name="servico" id="servico" onchange="ocultar_servico()" disabled>
+                            <option id="" value=""></option>
+                            <option id="frete" value="frete" disabled>Frete</option>
+                            <option id="mudanca" value="mudanca" disabled>Mudança</option>
+                            <option id="viagem" value="viagem" disabled>Viagem</option>
+                           
+                        </select>  
+                    </div>
+
+
+
+                    <div class="input-box">
+                        <label for="">Numero do documento do veiculo</label>
+                        <input id="numero_veiculo" type="text" name="numero_veiculo" class="linha-numero_veiculo" placeholder="Informe Documento Veiculo" required data-input disabled>  
+                    </div>
+
+                    <div class="input-box">
+                        <label for="">Placa veiculo</label>
+                        <input id="placa_veiculo" type="text" name="placa_veiculo" class="linha-placa_veiculo" placeholder="Informe a placa do Veiculo" required data-input>  
+                    </div>
+
+                    <div class="input-box">
+                        <label for="">Nome/Modelo</label>
+                        <input id="nome-modelo" type="text" name=""nome-modelo" class="linha-nome-modelo" placeholder="Informe nome/modelo do veiculo" required data-input>  
+                    </div>
+
+                    <div class="input-box">
+                        <label for="">Ano Fabricação</label>
+                        <input id="ano_fabricacao" type="year" name="ano_fabricacao" class="linha-ano_fabricacao" placeholder="Informe o Ano Fabricação" required data-input>  
+                    </div>
+
+                    <div class="input-box">
+                        <label for="">Cor Veiculo</label>
+                        <input id="cor_veiculo" type="text" name="cor_veiculo" class="linha-cor_veiculo" placeholder="Informe a do Cor Veiculo" required data-input>
+                    </div>
+
+                    <div class="input-box">
+
+                        <label id="teste"  onchange="ocultar_servico()" >
+                            <div class="input-box" >
+                                <label for="" >Informe a </label>
+                                <input id="teste" type="number" name="teste" disabled> 
+                            </div>
+                         </label>
+
+                        <label id="kg" style="display: none;" onchange="ocultar_servico()">
+                            <div class="input-box" >
+                                <label for="" >Informe a Capacidade Maxima em KG </label>
+                                <input id="max_kg" type="number" name="max_kg" class="linha-max_kg" placeholder=" Capacidade Maxima em KG" required data-input minlength="1000"> 
+                            </div>
+                         </label>
+        
+                         <label id="litro" style="display: none;" onchange="ocultar_servico()">
+                            <div class="input-box">
+                                <label for="">Informe a Capacidade Maxima em Litros </label>
+                                <input id="max_litros" type="number" name="max_litros" class="linha-max_litros" placeholder="Capacidade Maxima em Litros " required data-input > 
+                            </div>
+                        </label>
+        
+                        <label id="lugar" style="display: none;" onchange="ocultar_servico()">
+                            <div class="input-box">
+                                <label for="">Informe a Quantidades Maxima de lugares</label>
+                                <input id="max_lugar" type="number" name="max_lugar" class="linha-max_lugar" placeholder="Capacidade Maxima de acentos " required data-input> 
+                            </div>
+                        </label>
+
+                    </div>
+
+                    <div class="input-box">
+                        <label for="foto">Selecione uma foto do Veiculo</label>
+                        <input type="file" id="foto" name="foto" accept="image/*" style="width: 480px;">
+                    </div>
+       
+                        <div class="input-box">
+                            <label for="">Observações Adicionais</label>
+                            <textarea id="mensagem" name="mensagem" rows="4" cols="65"></textarea>
+                        </div>
+
+                </div>
+
+                <div class="continue-button">
+                    <button><a href="#">Salvar</a> </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

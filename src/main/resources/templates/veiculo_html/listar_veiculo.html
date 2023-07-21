@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" th:href="@{/css/veiculo_css/cadastro_veiculo.css}">   
+  <img th:src="@{/img/veiculo_img/cadastro_veiculo2.jpg}" alt="imagem cadastro veiculo">
+    --> 
+    <link rel="stylesheet" href="/principal/css/veiculo_css/listar_veiculo.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Litar Veiculo</title>
+</head>
+
+<body>
+    <script src="/principal/js/veiculo_js/listar_veiculo.js"></script>
+
+
+
+    <header>
+        <nav class="nav-bar">
+        <div class="logo">
+       <a href="/" class="nav-link"> <h1>Centauri</h1></a>
+        </div>
+        <div class="nav-list">
+    <ul>
+        <li class="nav-item"><a href="#" class="nav-link">Editar Dados</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Listar Veiculos</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
+    </ul>
+        </div>
+        <div class="login-button">
+            <button><a href="/">Sair</a></button>  
+        </div>
+        
+    </header>
+
+
+    <div class="container">
+
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Imagem</th>
+                <th scope="col">Documento Veiculo</th>
+                <th scope="col">Nome-Modelo</th>
+                <th scope="col">Servico</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td><img src="/principal/img/servico_img/frete_servico.JPG" alt=""></td>
+                <td>12345678910</td>
+                <td>Hilux</td>
+                <td>frete</td>
+               <td>
+                <a class="btn btn-primary" href="#" role="button" style=" background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));">Editar</a>
+                <a class="btn btn-primary" href="#" role="button" style=" background: linear-gradient(to right, rgba(100, 2, 0, 0.9), rgb(255, 0, 0));">Exluir</a>
+            </td>
+              </tr>
+             
+
+    </div>
+    </body>
+</html>

@@ -12,7 +12,7 @@ body{
 
 /*parte de cima da tela*/
 header{
-    background-color: #202e64;
+  background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
 
 }
 
@@ -71,7 +71,7 @@ header{
 /*Constumizando botao*/
 .login-button button{
     border: none;
-    background-color:  #332cb8;;
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
     padding: 10px 15px;
     transition: all 0.5s;
     border-radius: 5px;    
@@ -161,15 +161,15 @@ header{
   
   /* Cores Cards */
   .card-1 .card-footer {
-    background-color: #202e64;
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
   }
   
   .card-2 .card-footer {
-    background-color: #202e64;
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
   }
   
   .card-3 .card-footer {
-    background-color: #202e64;
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
   }
   
   
