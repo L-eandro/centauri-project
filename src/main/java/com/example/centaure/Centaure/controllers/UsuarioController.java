@@ -31,7 +31,7 @@ public class UsuarioController {
         try {
             usuarioServive.salvando(usuario);
             usuarioServive.criar(usuario);
-            return "redirect:/";
+            return "redirect:/cadastro/usuario";
         }
         catch (UserInvalid e) {
             ra.addFlashAttribute("msgError", e.getMessage());
