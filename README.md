@@ -1,2 +1,2 @@
-# centauri-project
-Projeto final do Start
+# Centauri
+<h1>Sobre:</h1>
