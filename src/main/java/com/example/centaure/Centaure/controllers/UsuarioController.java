@@ -2,12 +2,16 @@ package com.example.centaure.Centaure.controllers;
 
 import com.example.centaure.Centaure.models.Usuario;
 import com.example.centaure.Centaure.service.UsuarioServive;
+import extencao.UserInvalid;
 import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
 
 import java.util.Optional;
 
@@ -23,11 +27,17 @@ public class UsuarioController {
     }
 
     @PostMapping("/cadastro/usuario")
-    public String criar(Usuario usuario){
-        this.usuarioServive.criar(usuario);
+    public String criar( Usuario usuario,RedirectAttributes ra  )  {
+        try {
+            usuarioServive.salvando(usuario);
+            usuarioServive.criar(usuario);
+            return "redirect:/";
+        }
+        catch (UserInvalid e) {
+            ra.addFlashAttribute("msgError", e.getMessage());
+        }
         return "redirect:/cadastro/usuario";
     }
-
     @GetMapping("/usuario/listar")
     public String listar(Model model, Usuario usuario ){
         model.addAttribute("usuario", this.usuarioServive.listar(usuario));
@@ -44,6 +54,4 @@ public class UsuarioController {
         usuarioServive.deletar(id);
         return "redirect:/usuario/listar";
     }
-
-
 }

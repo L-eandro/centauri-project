@@ -8,16 +8,21 @@
 
 <table>
   <tr>
-    <th>Nome Usuario</th>
-      <th>Ação</th>
-
+      <th>Nome Usuario</th>
+      <th>Email Usuario</th>
+      <th>CPF Usuario</th>
+      <th>Numero Usuario</th>
 
   </tr>
   <tr th:each="usuario : ${usuario}">
-    <td th:text="${usuario.nome}" > </td>
+
+      <td th:text="${usuario.nome}" > </td>
+      <td th:text="${usuario.email}"> </td>
+      <td th:text="${usuario.cpf}"></td>
+      <td th:text="${usuario.numero}"></td>
+
       <td><a th:href="|/usuario/editar/${usuario.id}"> editar </a>
           <a th:href="|/usuario/deletar/${usuario.id}"> deletar </a>
-      </td>
 
 
   </tr>
