@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/cadastro/motorista" method="post" th:object="${motorista}">
+    <input type="hidden" th:field="*{id}">
+    <input type="text" th:field="*{nome}" placeholder="nome">
+    <input type="text" th:field="*{cnh}" placeholder="cnh">
+    <input type="text" th:field="*{email}" placeholder="email">
+    <input type="text" th:field="*{telefone}" placeholder="telefone">
+    <input type="text" th:field="*{senha}" placeholder="senha">
+    <input type="text" th:field="*{data}" placeholder="data">
+    <button type="submit">Cadastrar</button>
+</form>
+</body>
+</html>

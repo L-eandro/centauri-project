@@ -1,12 +1,12 @@
 package com.example.centaure.Centaure.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 
 @Entity
 @Data
@@ -15,10 +15,25 @@ import lombok.NoArgsConstructor;
 public class Motorista {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
+
+    @Column(nullable = false)
     private String nome;
-    private String email;
+
+    @Column(nullable = false, unique = true)
     private String cnh;
+
+    @Column(nullable = false)
     private String telefone;
+
+    @Column(nullable = false)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date data;
+
+    @Column(nullable = false, unique = true)
+    private String email;
+
+    @Column(nullable = false)
     private String senha;
+
 }

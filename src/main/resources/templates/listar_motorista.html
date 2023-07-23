@@ -13,24 +13,17 @@
     </tr>
     <tr th:each="motorista : ${motorista}">
         <td th:text="${motorista.nome}"> </td>
-
-    </tr>
-    <tr th:each="motorista : ${motorista}">
-        <td th:text="${motorista.email}"> </td>
-
-    </tr>
-    <tr th:each="motorista : ${motorista}">
         <td th:text="${motorista.cnh}"> </td>
-
-    </tr>
-    <tr th:each="motorista : ${motorista}">
+        <td th:text="${motorista.email}"> </td>
         <td th:text="${motorista.telefone}"> </td>
-
-    </tr>
-    <tr th:each="motorista : ${motorista}">
         <td th:text="${motorista.senha}"> </td>
-
+        <td th:text="${motorista.data}"> </td>
+        <td><a th:href="|/motorista/editar/${motorista.id}"> editar </a>
+            <a th:href="|/motorista/deletar/${motorista.id}"> deletar </a>
+        </td>
     </tr>
+
+
 </table>
 
 
