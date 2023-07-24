@@ -6,6 +6,7 @@ import com.example.centaure.Centaure.repositores.MotoristaRepositores;
 import extencao.MotoristaInvalid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,9 +18,17 @@ public class MotoristaService {
     @Autowired
     private MotoristaRepositores motoristaRepositores;
 
+    private static final int complexidadeSenha = 10;
+
+    //salvar usuario
     public Motorista criar(Motorista motorista){
         return motoristaRepositores.save(motorista);
     }
+
+    public String criptografarSenha(Motorista motorista){
+        return BCrypt.hashpw(motorista.getSenha(), BCrypt.gensalt(complexidadeSenha));
+    }
+
 
     public void salvar(Motorista motorista) throws MotoristaInvalid {
         if (motorista.getNome().trim().isEmpty() || motorista.getCnh().trim().isEmpty()
