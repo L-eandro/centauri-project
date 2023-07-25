@@ -1,7 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,57 +11,43 @@
 
 </head>
 <body>
-    <script th:src="@{js/index_js/index.js}" defer></script>
+<script th:src="@{js/index_js/index.js}" defer></script>
 
-  <header>
-
+<header>
     <nav class="nav-bar">
-
-    <div class="logo">
-        <a href="/" class="nav-link"> <h1>Centauri</h1></a>
-    </div>
-
-    <div class="nav-list">
-      <li class="nav-item"><a href="#" class="nav-link">Saiba Mais</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">Cadastre-se Usuario</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">Cadastre-se Motorista</a></li>
-
-    </div>
-
-
-
-    <div class="login-button">
-
-        <button><a th:href="#">Entrar-Usuario</a></button>
-        <button><a th:href="#">Entrar-Motorista</a></button>
-
-
-    </div>
+        <div class="logo">
+            <a th:href="@{/}" class="nav-link"><h1>Centauri</h1></a>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item"><a href="#">Saiba Mais</a></li>
+            <li class="nav-item"><a href="#">Cadastre-se Usuário</a></li>
+            <li class="nav-item"><a href="#">Cadastre-se Motorista</a></li>
+        </ul>
+        <div class="login-button">
+            <button><a th:href="@{/entrar-usuario}">Entrar-Usuário</a></button>
+            <button><a th:href="@{/entrar-motorista}">Entrar-Motorista</a></button>
+        </div>
+    </nav>
 </header>
 
-    <div class="content">
+<div class="content">
+    <div class="slides">
+        <input class="input" type="radio" name="slide" id="slide1" checked>
+        <input class="input" type="radio" name="slide" id="slide2">
+        <input class="input" type="radio" name="slide" id="slide3">
 
-        <div class="slides">
+        <div class="slide s1">
+            <img th:src="@{/img/index_img/cadastrando-index.JPG}" alt="cadastrando-index">
+        </div>
 
-            <input class="input" type="radio" name="slide" id="slide1" checked>
-            <input class="input" type="radio" name="slide" id="slide2">
-            <input class="input" type="radio" name="slide" id="slide3">
+        <div class="slide">
+            <img th:src="@{/img/index_img/planejando-viagem-index.JPG}" alt="planejando-viagem-index">
+        </div>
 
-            <div class="slide s1">
-                <img src="/img/index_img/cadastrando-index.JPG" alt="cadastrando-index"/>
-                
-            </div>
-
-            <div class="slide">
-                <img src="/img/index_img/planejando-viagem-index.JPG" alt="planejando-viagem-index"/>
-            </div>
-
-            <div class="slide">
-                <img src="/img/index_img/viagem-celular-index.JPG" alt="viagem-celular-index"/>
-            </div>
+        <div class="slide">
+            <img th:src="@{/img/index_img/viagem-celular-index.JPG}" alt="viagem-celular-index">
         </div>
     </div>
-
-   
+</div>
 </body>
 </html>
