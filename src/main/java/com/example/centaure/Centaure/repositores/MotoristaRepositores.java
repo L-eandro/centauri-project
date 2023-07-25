@@ -9,11 +9,11 @@ import java.util.Date;
 @Component
 public interface MotoristaRepositores extends JpaRepository<Motorista, Integer> {
 
-    boolean existsByNome(String nome);
+    public Motorista findByEmailAndSenha(String email, String senha);
+
+
     boolean existsByCnh(String cnh);
-    boolean existsByTelefone(String telefone);
-    boolean existsByData(Date data);
     boolean existsByEmail(String email);
-    boolean existsBySenha(String senha);
+
 
 }

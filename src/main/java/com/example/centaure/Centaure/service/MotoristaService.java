@@ -36,10 +36,10 @@ public class MotoristaService {
                 motorista.getSenha().trim().isEmpty()) {
             throw new MotoristaInvalid("Os campos obrigatórios não podem estar vazio.");
         }
-        if (this.motoristaRepositores.existsByNome(motorista.getNome())
-                || motoristaRepositores.existsByCnh(motorista.getCnh()) || motoristaRepositores.existsByTelefone(motorista.getTelefone())
-        || motoristaRepositores.existsByEmail(motorista.getEmail()) || motoristaRepositores.existsBySenha(motorista.getSenha())) {
-            throw new MotoristaInvalid("Já existe um Usuário com esse atributo");
+        if (this.motoristaRepositores.existsByCnh(motorista.getCnh())) {
+            throw new MotoristaInvalid("CNH já cadastrada!");
+        } else if(this.motoristaRepositores.existsByEmail(motorista.getEmail())){
+            throw  new MotoristaInvalid("Email já cadastrado!");
         }
     }
 
