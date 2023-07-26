@@ -36,6 +36,8 @@ public class MotoristaService {
                 motorista.getSenha().trim().isEmpty()) {
             throw new MotoristaInvalid("Os campos obrigatórios não podem estar vazio.");
         }
+
+
         if (this.motoristaRepositores.existsByCnh(motorista.getCnh())) {
             throw new MotoristaInvalid("CNH já cadastrada!");
         } else if(this.motoristaRepositores.existsByEmail(motorista.getEmail())){

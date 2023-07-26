@@ -29,6 +29,7 @@ public class MotoristaController {
         try {
             motoristaService.salvar(motorista);
             motoristaService.criar(motorista);
+            ra.addFlashAttribute("msgSucess", "Conta criada com socesso!");
             return "redirect:/cadastro/motorista";
 
         } catch (MotoristaInvalid e ){
