@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--
-    <link rel="stylesheet" th:href="@{/css/usuario_css/cadastro_usuario.css}">
-    <img th:src="@{/img/usuario_img/cadastro_usuario.svg}" alt="imagem cadastro do usuario">
-    -->
-    <link rel="stylesheet" href="/principal/css/usuario_css/editar_usuario.css">
+    
+    <link rel="stylesheet" th:href="@{/css/usuario_css/editar_usuario.css}">
+    
+    
+    
     <title>Editar do usuario</title>
 </head>
 
@@ -22,14 +22,15 @@
         </div>
         <div class="nav-list">
     <ul>
-        <li class="nav-item"><a href="#" class="nav-link">Editar Dados</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Listar Servicos Solicitados</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
+        <li class="nav-item"><a  th:href="@{/usuario/editar/}" class="nav-link">Editar Dados</a></li>
+        <li class="nav-item"><a  th:href="@{/}" class="nav-link">Listar Servicos Solicitados</a></li>
+        <li class="nav-item"><a  th:href="@{/}" class="nav-link">Sobre</a></li>
     </ul>
         </div>
         <div class="login-button">
             <button><a href="/">Sair</a></button>  
         </div>
+        </nav>
     </header>
     
 
@@ -37,7 +38,7 @@
 
     <div class="container">
         <div class="form-image">
-            <img src="/principal/img/usuario_img/cadastro_usuario.svg" alt="">
+            <img th:src="@{/img/usuario_img/cadastro_usuario.svg}" alt="imagem cadastro do usuario">
             
         </div>
 

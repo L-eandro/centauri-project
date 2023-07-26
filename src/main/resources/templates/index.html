@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
 
@@ -24,9 +24,9 @@
 
     <div class="nav-list">
        <ul>
-      <li class="nav-item"><a href="#" class="nav-link">Saiba Mais</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">Cadastre-se Usuario</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">Cadastre-se Motorista</a></li>
+      <li class="nav-item"><a th:href="@{/}" class="nav-link">Saiba Mais</a></li>
+      <li class="nav-item"><a  th:href="@{/cadastro/usuario}" class="nav-link">Cadastre-se Usuario</a></li>
+      <li class="nav-item"><a  th:href="@{/cadastro/motorista}" class="nav-link">Cadastre-se Motorista</a></li>
        </ul>
     </div>
 

@@ -64,7 +64,7 @@ body {
 
 .login-button button {
     border: none;
-    background-color: #202e64;;
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
     padding: 0.4rem 1rem;
     border-radius: 5px;
     cursor: pointer;
@@ -86,7 +86,7 @@ body {
     display: block;
     width: 5rem;
     height: 0.3rem;
-    background-color: #202e64;;
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
     margin: 0 auto;
     position: absolute;
     
@@ -164,23 +164,21 @@ body {
     width: 100%;
     margin-top: 2.5rem;
     border: none;
-    background-color: #202e64;
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
     padding: 0.62rem;
     border-radius: 5px;
     cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.93rem;
+    font-weight: 500;
 }
 /*acendendo botao continue*/
 .continue-button button:hover {
     background-color: #332cb8;
 }
 
-/*nome continue dentro do*/
-.continue-button button a {
-    text-decoration: none;
-    font-size: 0.93rem;
-    font-weight: 500;
-    color: #fff;
-}
+
 
 .linha-data{
     width: 13rem;
