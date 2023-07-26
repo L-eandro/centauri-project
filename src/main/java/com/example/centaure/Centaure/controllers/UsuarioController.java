@@ -23,7 +23,7 @@ public class UsuarioController {
 
     @GetMapping("/cadastro/usuario")
     public String cadastro(){
-        return "cadastro_usuario";
+        return "usuario_html/cadastro_usuario";
     }
 
     @PostMapping("/cadastro/usuario")
@@ -47,7 +47,7 @@ public class UsuarioController {
     public String editar(@PathVariable Integer id, Model model){
         Optional<Usuario> usuario = this.usuarioServive.editar(id);
         model.addAttribute("usuario", usuario);
-        return "usuario_editar";
+        return "usuario_html/editar_usuario";
     }
     @GetMapping("/usuario/deletar/{id}")
     public String deletar(@PathVariable Integer id){
