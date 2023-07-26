@@ -13,21 +13,31 @@
 <body>
 <script th:src="@{js/index_js/index.js}" defer></script>
 
-<header>
+
+  <header>
+
     <nav class="nav-bar">
-        <div class="logo">
-            <a th:href="@{/}" class="nav-link"><h1>Centauri</h1></a>
-        </div>
-        <ul class="nav-list">
-            <li class="nav-item"><a href="#">Saiba Mais</a></li>
-            <li class="nav-item"><a href="#">Cadastre-se Usuário</a></li>
-            <li class="nav-item"><a href="#">Cadastre-se Motorista</a></li>
-        </ul>
-        <div class="login-button">
-            <button><a th:href="@{/entrar-usuario}">Entrar-Usuário</a></button>
-            <button><a th:href="@{/entrar-motorista}">Entrar-Motorista</a></button>
-        </div>
-    </nav>
+
+    <div class="logo">
+         <a th:href="@{/}" class="nav-link"><h1>Centauri</h1></a>
+    </div>
+
+    <div class="nav-list">
+       <ul>
+      <li class="nav-item"><a href="#" class="nav-link">Saiba Mais</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Cadastre-se Usuario</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Cadastre-se Motorista</a></li>
+       </ul>
+    </div>
+
+
+
+    <div class="login-button">
+
+        <button><a th:href="@{/entrar-usuario}">Entrar-Usuário</a></button>
+           <button><a th:href="@{/entrar-motorista}">Entrar-Motorista</a></button>
+    </div>
+     </nav>
 </header>
 
 <div class="content">

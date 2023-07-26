@@ -8,6 +8,7 @@
 
 body {
   background: #d9ebf5fb;
+   overflow-y: hidden;
   
 }
 
@@ -21,13 +22,45 @@ header{
 .nav-bar {
     display: flex;
     justify-content: space-between;
-    padding: 1.5rem 6rem;
+    padding: 1.5rem 4rem ;
 }
 
 /*mechendo na logo*/
 .logo{
     display: flex;
     align-items: center;
+}
+
+.nav-list{
+  display: flex;
+  align-items: center;
+}
+
+/*colocando certo um do lado do outro*/
+.nav-list ul{
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+/*colocando espaço entre itens*/
+.nav-item{
+  margin: 0 15px;
+}
+
+/*editando fonte*/
+.nav-link{
+  text-decoration: none;
+  font-size: 1.15rem;
+  color: rgb(232, 232, 231);
+  transition: all 0.5s;   
+  font-weight: 400;
+  
+}
+.nav-link:hover{
+  color: rgb(255, 255, 255);
+  font-size: 1.36rem;
+
 }
 
 /*editando fonte*/
@@ -52,7 +85,8 @@ header{
     background-color:  #332cb8;;
     padding: 10px 15px;
     transition: all 0.5s;
-    border-radius: 5px;    
+    border-radius: 5px;  
+     margin: 0 5px;  
 }
 /* mudando a cor quando passar o mouse por cima*/
 .login-button button:hover{
@@ -68,18 +102,17 @@ header{
     transition: all 0.3s;
     font-size: 1.1rem; 
 }
-
 /*------------------------------------------------------------*/
 
 .content {
   
-  height: 35rem;
-  width: 85rem;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
   position: absolute;
-  top: 62%;
+  top: 64%;
   left: 50%;
-  transform: translate(-50%, -56%);
+  transform: translate(-50%, -50%);
   box-shadow: 0px 0px 10px 6px rgba(1, 48, 255, 0.932);
 }
 
