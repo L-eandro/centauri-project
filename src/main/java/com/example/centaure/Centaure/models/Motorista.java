@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -35,5 +36,10 @@ public class Motorista {
 
     @Column(nullable = false)
     private String senha;
+
+    @OneToMany(mappedBy = "motorista")
+    List<Veiculo> veiculos;
+
+  
 
 }
