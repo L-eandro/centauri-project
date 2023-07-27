@@ -42,7 +42,7 @@
         </div>
 
         <div class="form">
-            <form action="#">
+            <form action="/cadastro/motorista" method="post" th:object="${motorista}">
                 <div class="form-header">
                     <div class="title">
                         <h1>Editar Dados Motorista</h1>
@@ -53,35 +53,36 @@
                 <div class="input-group">
                     <div class="input-box">
                         <label for="nome">Nome</label>
-                        <input id="nome" type="text" name="nome" placeholder="Digite seu nome completo" required>
+                        <input type="hidden" th:field="*{id}">
+                        <input id="nome" type="text" th:field="*{nome}" placeholder="Digite seu nome completo" required>
                     </div>
 
                     <div class="input-box">
                         <label for="cnh">CNH</label>
-                        <input id="cnh" type="text" name="cnh" placeholder="Digite numero da CNH" required>
+                        <input id="cnh" type="text" th:field="*{cnh}" placeholder="Digite numero da CNH" required>
                     </div>
 
 
                     <div class="input-box">
                         <label for="number">Celular</label>
-                        <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+                        <input id="number" type="tel" th:field="*{celular}" placeholder="(xx) xxxx-xxxx" required>
                     </div>
 
                     <div class="input-box">
                         <label for="dataNascimento" class="nome-data">Data Nascimento</label>
-                        <input id="dataNascimento" type="date" name="dataNascimento" class="linha-data">
+                        <input id="dataNascimento" type="date" th:field="*{dataNascimento}" class="linha-data">
                     </div>
 
                   
                     <div class="input-box">
                         <label for="email">E-mail</label>
-                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                        <input id="email" type="email" th:field="*{email}" placeholder="Digite seu e-mail" required>
                     </div>
 
 
                     <div class="input-box">
                         <label for="password">Senha</label>
-                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                        <input id="password" type="password" th:field="*{senha}" placeholder="Digite sua senha" required>
                     </div>
 
                     
@@ -114,7 +115,7 @@
                 </div>
 
                 <div class="continue-button">
-                    <button><a href="#">Salvar</a> </button>
+                    <button type="submit"><a href="#">Salvar</a> </button>
                 </div>
             </form>
         </div>

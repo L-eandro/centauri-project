@@ -31,8 +31,7 @@ public class MotoristaController {
         Motorista motorista = motoristaService.login(email,senha);
         if(motorista != null){
             session.setAttribute("logado", motorista);
-            re.addFlashAttribute("msg2", "Logado com sucesso!");
-            return "redirect:/login/motorista";
+            return "redirect:/escolher-servico";
         } else {
             re.addFlashAttribute("msg", "login ou senha incorretas!");
             return "redirect:/login/motorista";
@@ -41,10 +40,13 @@ public class MotoristaController {
 
     @GetMapping("/esqueci-senha")
     public String esqueciSenha(){
-        return "esqueci_senha";
+        return "/motorista_html/esqueceu_senha_motorista";
     }
 
-
+    @GetMapping("/escolher-servico")
+    public String escolherServico(){
+        return "/servico_html/escolher_servico";
+    }
 
 
 
@@ -83,7 +85,7 @@ public class MotoristaController {
     public String editar(@PathVariable Integer id, Model model){
         Optional<Motorista> motorista = this.motoristaService.editar(id);
         model.addAttribute("motorista", motorista);
-        return "motorista_editar";
+        return "motorista_html/editar_motorista";
     }
 
     @GetMapping("/motorista/deletar/{id}")
