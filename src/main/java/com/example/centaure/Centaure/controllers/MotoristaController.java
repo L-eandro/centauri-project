@@ -21,7 +21,7 @@ public class MotoristaController {
 
     @GetMapping("/cadastro/motorista")
     public String cadastroMotorista() {
-        return "cadastro_motorista";
+        return "motorista_html/cadastro_motorista";
     }
 
     @PostMapping("/cadastro/motorista")
