@@ -1,8 +1,8 @@
 package com.example.centaure.Centaure.models;
 
+
 import com.example.centaure.Centaure.enums.ServicoEnum;
 import com.example.centaure.Centaure.enums.VeiculosEnum;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -21,8 +21,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class Veiculo {
 
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

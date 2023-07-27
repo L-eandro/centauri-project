@@ -1,6 +1,7 @@
 package com.example.centaure.Centaure.enums;
 
 public enum VeiculosEnum {
+  
     
     CARRO,
     KOMBI,
@@ -8,4 +9,5 @@ public enum VeiculosEnum {
     ONIBUS,
     CAMINHONETE,
     CAMINHAO;
+    
 }
