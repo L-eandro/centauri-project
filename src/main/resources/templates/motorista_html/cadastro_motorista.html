@@ -23,7 +23,7 @@
         </div>
 
         <div class="form">
-            <form action="#">
+            <form action="/cadastro/motorista" method="post">
                 <div class="form-header">
                     <div class="title">
                         <h1>Cadastro Do Motorista</h1>
@@ -34,35 +34,35 @@
                 <div class="input-group">
                     <div class="input-box">
                         <label for="nome">Nome</label>
-                        <input id="nome" type="text" name="nome" placeholder="Digite seu nome completo" required>
+                        <input id="nome" type="text" name="nome" placeholder="Digite seu nome completo" required="required">
                     </div>
 
                     <div class="input-box">
                         <label for="cnh">CNH</label>
-                        <input id="cnh" type="text" name="cnh" placeholder="Digite numero da CNH" required>
+                        <input id="cnh" type="text" name="cnh" placeholder="Digite numero da CNH" required="required">
                     </div>
 
 
                     <div class="input-box">
                         <label for="number">Celular</label>
-                        <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+                        <input id="number" type="tel" name="celular" placeholder="(xx) xxxx-xxxx" required="required">
                     </div>
 
                     <div class="input-box">
                         <label for="dataNascimento" class="nome-data">Data Nascimento</label>
-                        <input id="dataNascimento" type="date" name="dataNascimento" class="linha-data">
+                        <input id="dataNascimento" type="date" name="dataNascimento" class="linha-data" required="required">
                     </div>
 
                   
                     <div class="input-box">
                         <label for="email">E-mail</label>
-                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required="required">
                     </div>
 
 
                     <div class="input-box">
                         <label for="password">Senha</label>
-                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                        <input id="password" type="password" name="senha" placeholder="Digite sua senha" required="required">
                     </div>
 
                     
@@ -95,7 +95,10 @@
                 </div>
 
                 <div class="continue-button">
-                    <button><a href="#">Salvar</a> </button>
+                    <button type="submit"><a>Cadastrar</a> </button>
+
+                    <div th:text="${msgError}" style="color:green"> </div>
+                    <div th:text="${msgSucess}" style="color:green"> </div>
                 </div>
             </form>
         </div>

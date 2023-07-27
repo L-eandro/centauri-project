@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <h1>Login</h1>
+
+<form action="/login/motorista" method="post">
+    <input type="text" name="email" placeholder="email" ><br>
+    <input type="text" name="senha" placeholder="senha" ><br>
+
+
+    <button type="submit">Entrar</button>
+    <a th:href="@{/esqueci-senha}">Esqueci a senha</a>
+
+    <div th:text="${msg}" style="color:blue"> </div>
+    <div th:text="${msg2}" style="color:blue"> </div>
+
+</form>
+</body>
+</html>
