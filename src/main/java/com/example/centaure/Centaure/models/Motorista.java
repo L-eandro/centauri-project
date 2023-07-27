@@ -25,11 +25,11 @@ public class Motorista {
     private String cnh;
 
     @Column(nullable = false)
-    private String telefone;
+    private String celular;
 
     @Column(nullable = false)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date data;
+    private Date dataNascimento;
 
     @Column(nullable = false, unique = true)
     private String email;

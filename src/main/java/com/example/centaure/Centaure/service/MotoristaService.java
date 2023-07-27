@@ -18,6 +18,18 @@ public class MotoristaService {
     @Autowired
     private MotoristaRepositores motoristaRepositores;
 
+    public Motorista login(String email, String senha) {
+
+        Motorista motorista = motoristaRepositores.findByEmailAndSenha(email, senha);
+        if(motorista != null && motorista.getSenha().equals(senha)){
+            return motorista;
+        }
+        return null;
+    }
+
+
+
+
     private static final int complexidadeSenha = 10;
 
     //salvar usuario
@@ -32,7 +44,7 @@ public class MotoristaService {
 
     public void salvar(Motorista motorista) throws MotoristaInvalid {
         if (motorista.getNome().trim().isEmpty() || motorista.getCnh().trim().isEmpty()
-                || motorista.getTelefone().trim().isEmpty() || motorista.getEmail().trim().isEmpty() ||
+                || motorista.getCelular().trim().isEmpty() || motorista.getEmail().trim().isEmpty() ||
                 motorista.getSenha().trim().isEmpty()) {
             throw new MotoristaInvalid("Os campos obrigatórios não podem estar vazio.");
         }
