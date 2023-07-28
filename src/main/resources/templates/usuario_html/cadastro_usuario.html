@@ -23,27 +23,31 @@
                         <h1>Cadastre-se</h1>
                     </div>
                     <div class="login-button">
-                        <button><a href="#">Entrar</a></button>
+                        <button><a th:href="@{/login/usuario}">Entrar</a></button>
                     </div>
                 </div>
 
                 <div class="input-group">
                     <div class="input-box">
-                        <label for="nome">Nome</label>
-                        <input id="nome" type="text" name="nome" placeholder="Digite seu nome completo" required="required">
+                        <label for="nome">Nome Sobrenome</label>
+                        <input id="nome" type="text" name="nome" placeholder="Digite seu Nome e ultimo Sobrenome" required="required">
                     </div>
 
                     <div class="input-box">
                         <label for="cpf">CPF</label>
-                        <input id="cpf" type="text" name="cpf" placeholder="Digite seu CPF" required="required">
+                        <input id="cpf" type="text" name="cpf" placeholder="Digite seu CPF" required="required" maxlength="11">
                     </div>
 
 
                     <div class="input-box">
                         <label for="numero">Celular</label>
-                        <input id="numero" type="text" name="numero" placeholder="(xx) xxxx-xxxx" required="required">
+                        <input id="numero" type="text" name="numero" placeholder="(xx) xxxxx-xxxx" required="required" maxlength="15">
                     </div>
 
+                    <div class="input-box">
+                        <label for="dataNascimento" class="nome-data">Data Nascimento</label>
+                        <input id="dataNascimento" type="date" name="dataNascimento" class="linha-data" required="required">
+                    </div>
                   
                     <div class="input-box">
                         <label for="email">E-mail</label>
@@ -57,10 +61,7 @@
                     </div>
 
 
-                    <div class="input-box">
-                        <label for="dataNascimento" class="nome-data">Data Nascimento</label>
-                        <input id="dataNascimento" type="date" name="dataNascimento" class="linha-data" required="required">
-                    </div>
+                  
 
                 </div>
                 <div class="input-box">
@@ -88,7 +89,7 @@
                     </div>
                 </div>
                 <div class="continue-button" >
-                    <button type="submit">Continuar</button>
+                    <button type="submit">Cadastrar</button>
                     <div th:text="${msgError}" style="color:red"> </div>
                 </div>
 
