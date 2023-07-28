@@ -1,4 +1,3 @@
-
 <!DOCTYPE html >
 <html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -10,61 +9,61 @@
 </head>
 
 <body>
-    <script th:src="@{/js/usuario_js/login.js}" defer></script>
-    
-    <div class="container">
-        <div class="form-image">
-            
-            <img th:src="@{/img/usuario_img/login_usuario.gif}" alt="gif de login">
-            </div>
+<script th:src="@{/js/usuario_js/login.js}" defer></script>
 
-   
-    
-          <div class="form">
+<div class="container">
+    <div class="form-image">
 
-            <div class="login-button">
-                <button><a href="#">Cadastre-se</a></button>
-            </div>
+        <img th:src="@{/img/usuario_img/login_usuario.gif}" alt="gif de login">
+    </div>
 
-            <form id="endereco-form">
-                <div class="form-header">
-                    <div class="title">
-                        <h1>Login</h1>
-                    </div>
 
-                   
+
+    <div class="form">
+
+        <div class="login-button">
+            <button><a href="#">Cadastre-se</a></button>
+        </div>
+
+        <form action="/login" method="post">
+            <div class="form-header">
+                <div class="title">
+                    <h1>Login</h1>
                 </div>
 
-                <div class="input-group">
 
-                   
-                    <div class="input-box">
-                        <label for="email">Login</label>
-                        <input id="email" type="email" name="email" class="linha-email" placeholder="Informe o email" required data-input>
-                    </div>
+            </div>
 
-                    <div class="input-box">
-                        <label for="password">Senha</label>
-                        <input id="password" type="password" name="password" class="linha-senha" placeholder="Digite a Senha" required data-input>
-                    </div>
+            <div class="input-group">
 
-                    <div class="input-exibir-senha">
+
+                <div class="input-box">
+                    <label for="email">Login</label>
+                    <input id="email" type="email" name="email" class="linha-email" placeholder="Informe o email" required data-input>
+                </div>
+
+                <div class="input-box">
+                    <label for="password">Senha</label>
+                    <input id="senha" type="password" name="senha" class="linha-senha" placeholder="Digite a Senha" required data-input>
+                </div>
+
+                <div class="input-exibir-senha">
                     <label for="password">Exibir Senha</label>
                     <input type="checkbox" id="password" onchange="exibirPassword()">
-                    </div>
-
                 </div>
 
-                <div class="btn-cadastrar">
-                    <button id="btn-cadastrar" type="submit"><a href="#">Entrar</a> </button>
-                </div>
-               
-                <a href="#" class="esqueceu-senha">Esqueceu a senha?</a>
+            </div>
 
-                
-            </form>
-        </div>
+            <div class="btn-cadastrar">
+                <button id="btn-cadastrar" type="submit"><a href="/servico">Entrar</a> </button>
+            </div>
+
+            <a href="#" class="esqueceu-senha">Esqueceu a senha?</a>
+
+
+        </form>
     </div>
+</div>
 </body>
 
 </html>

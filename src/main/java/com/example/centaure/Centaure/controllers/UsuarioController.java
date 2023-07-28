@@ -3,13 +3,12 @@ package com.example.centaure.Centaure.controllers;
 import com.example.centaure.Centaure.models.Usuario;
 import com.example.centaure.Centaure.service.UsuarioServive;
 import extencao.UserInvalid;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
 
@@ -21,6 +20,32 @@ public class UsuarioController {
     @Autowired
     private UsuarioServive usuarioServive;
 
+    @GetMapping("/login/usuario")
+    public String login(){
+        return "usuario_html/login_usuario";
+    }
+    @PostMapping("/login/usuario")
+    public String login(Usuario usuario, HttpSession session, Model model, @RequestParam String email, @RequestParam String senha){
+        usuario = usuarioServive.findByEmailAndSenha(email, senha);
+        if (usuario !=null){
+            session.setAttribute("logado", usuario);
+            return "redirect:/servico";
+        } else {
+            model.addAttribute("menssage","Email invalido");
+            return "/login/usuario";
+        }
+
+    }
+    @GetMapping("/servico")
+    String servico(){
+        return "/servico_html/escolher_servico";
+    }
+    @GetMapping("usuario/sair")
+    public String sair(HttpSession session){
+        session.invalidate();
+        return "redirect:/";
+    }
+
     @GetMapping("/cadastro/usuario")
     public String cadastro(){
         return "usuario_html/cadastro_usuario";
@@ -31,7 +56,7 @@ public class UsuarioController {
         try {
             usuarioServive.salvando(usuario);
             usuarioServive.criar(usuario);
-            return "redirect:/cadastro/usuario";
+            return "redirect:/login/usuario";
         }
         catch (UserInvalid e) {
             ra.addFlashAttribute("msgError", e.getMessage());
@@ -46,7 +71,7 @@ public class UsuarioController {
     @GetMapping("/usuario/editar/{id}")
     public String editar(@PathVariable Integer id, Model model){
         Optional<Usuario> usuario = this.usuarioServive.editar(id);
-        model.addAttribute("usuario", usuario);
+        model.addAttribute("usuario", this.usuarioServive.editar(id));
         return "usuario_html/editar_usuario";
     }
     @GetMapping("/usuario/deletar/{id}")
