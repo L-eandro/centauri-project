@@ -31,37 +31,37 @@ public class MotoristaController {
         Motorista motorista = motoristaService.login(email,senha);
         if(motorista != null){
             session.setAttribute("logado", motorista);
-            return "redirect:/cadastro-veiculo";
+            return "redirect:/listar/veiculo";
         } else {
             re.addFlashAttribute("msg", "login ou senha incorretas!");
             return "redirect:/login/motorista";
         }
     }
 
-    @GetMapping("/cadastro-veiculo")
+    @GetMapping("/cadastro/veiculo")
     public String cadastroVeiculo(){
         return "/veiculo_html/cadastro_veiculo";
     }
 
-    @GetMapping("/edit-veiculo")
+    @GetMapping("/editar/veiculo")
     public String editVeiculo(){
         return "/veiculo_html/editar_veiculo";
     }
 
 
-    @GetMapping("/listar-veiculo")
+    @GetMapping("/listar/veiculo")
     public String listarVeiculo(){
         return "/veiculo_html/listar_veiculo";
     }
 
 
 
-    @GetMapping("/esqueci-senha")
+    @GetMapping("/esqueci/senha")
     public String esqueciSenha(){
         return "/motorista_html/esqueceu_senha_motorista";
     }
 
-    @GetMapping("/escolher-servico")
+    @GetMapping("/escolher/servico")
     public String escolherServico(){
         return "/servico_html/escolher_servico";
     }

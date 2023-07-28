@@ -29,10 +29,10 @@ public class Veiculo {
     private Integer id;
 
     @Enumerated(EnumType.STRING)
-    private VeiculosEnum veiculosEnum;
+    private VeiculosEnum veiculo;
 
     @Enumerated(EnumType.STRING)
-    private ServicoEnum servicoEnum;
+    private ServicoEnum servico;
 
     @Column(nullable = false, unique = true)
     private String documento;
@@ -55,6 +55,9 @@ public class Veiculo {
     @Lob
     @Column
     private byte[]foto;
+
+    @Column
+    private String observacoes;
 
     @ManyToOne
     private Motorista motorista;

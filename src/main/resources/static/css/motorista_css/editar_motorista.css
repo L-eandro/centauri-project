@@ -17,19 +17,13 @@ body {
 /*quadrado do meio*/
 .container {
     display: flex;
-   
     width: 80%;
     height: 80vh; 
     box-shadow: 5px 5px 10px #202e64;;
     border-radius: 10px;
-
     top: 10px;
     left: 80%;
     transform: translate(12%,3%);
-    
-
-
-
 
 }
 
