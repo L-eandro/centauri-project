@@ -31,12 +31,18 @@ public class MotoristaController {
         Motorista motorista = motoristaService.login(email,senha);
         if(motorista != null){
             session.setAttribute("logado", motorista);
-            return "redirect:/escolher-servico";
+            return "redirect:/cadastro-veiculo";
         } else {
             re.addFlashAttribute("msg", "login ou senha incorretas!");
             return "redirect:/login/motorista";
         }
     }
+
+    @GetMapping("/cadastro-veiculo")
+    public String cadastroVeiculo(){
+        return "/veiculo_html/cadastro_veiculo";
+    }
+
 
     @GetMapping("/esqueci-senha")
     public String esqueciSenha(){
