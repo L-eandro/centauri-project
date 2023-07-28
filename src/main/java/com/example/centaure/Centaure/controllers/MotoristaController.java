@@ -43,6 +43,18 @@ public class MotoristaController {
         return "/veiculo_html/cadastro_veiculo";
     }
 
+    @GetMapping("/edit-veiculo")
+    public String editVeiculo(){
+        return "/veiculo_html/editar_veiculo";
+    }
+
+
+    @GetMapping("/listar-veiculo")
+    public String listarVeiculo(){
+        return "/veiculo_html/listar_veiculo";
+    }
+
+
 
     @GetMapping("/esqueci-senha")
     public String esqueciSenha(){
