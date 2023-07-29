@@ -1,3 +1,4 @@
+
 async function buscarEnderecoPorCep(cep) {
     const apiUrl = `https://viacep.com.br/ws/${cep}/json/`;
     const response = await fetch(apiUrl);
@@ -87,7 +88,3 @@ Serviço: ${servico}`;
 // Adicionar o evento de submit ao formulário
 const formulario = document.getElementById("solicitacao-form");
 formulario.addEventListener("submit", enviarFormulario);
-
-
-
-  
