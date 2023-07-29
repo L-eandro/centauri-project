@@ -1,190 +1,90 @@
-function ocultar_servico() {
 
-    var servico = document.getElementById("servico").value;
-    var kg = document.getElementById("kg");
-    var litro = document.getElementById("litro");
-    var lugar = document.getElementById("lugar");
-    var teste = document.getElementById("teste");
+async function buscarEnderecoPorCep(cep) {
+    const apiUrl = `https://viacep.com.br/ws/${cep}/json/`;
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    return data;
+}
 
-    if (servico === "frete") {
-      litro.style.display = "block";
-      kg.style.display = "none";
-      lugar.style.display = "none";
-      teste.style.display = "none";
+// Função para preencher o endereço de partida
+function preencherEnderecoPartida(data) {
+    const logradouroInput = document.getElementById("logradouro");
+    const bairroInput = document.getElementById("bairro");
+    const cidadeInput = document.getElementById("cidade");
+    const complementoInput = document.getElementById("complemento");
 
-    }
+    logradouroInput.value = data.logradouro;
+    bairroInput.value = data.bairro;
+    cidadeInput.value = data.localidade;
+    complementoInput.focus();
+}
 
-    else if (servico === "mudanca") {
-        kg.style.display = "block";
-        litro.style.display = "none";
-        lugar.style.display = "none";
-        teste.style.display = "none";
-      }
-      
-      else if (servico === "viagem") {
-        lugar.style.display = "block";
-        litro.style.display = "none";
-        kg.style.display = "none";
-        teste.style.display = "none";
-      }
-      
-      else {
-        lugar.style.display = "none";
-        litro.style.display = "none";
-        kg.style.display = "none";
-        teste.style.display = "block";
-      }   
+// Função para preencher o endereço de chegada
+function preencherEnderecoChegada(data) {
+    const logradouroInput = document.getElementById("logradouro-chegada");
+    const bairroInput = document.getElementById("bairro-chegada");
+    const cidadeInput = document.getElementById("cidade-chegada");
+    const complementoInput = document.getElementById("complemento-chegada");
 
-  };
+    logradouroInput.value = data.logradouro;
+    bairroInput.value = data.bairro;
+    cidadeInput.value = data.localidade;
+    complementoInput.focus();
+}
 
+// Função que será chamada quando o formulário for enviado
+function enviarFormulario(event) {
+    event.preventDefault();
 
+    // Pegar os valores do formulário
+    const dataServico = document.getElementById("data-servico").value;
+    const horario = document.getElementById("horario").value;
+    const valor = document.getElementById("valor").value;
+    const cepPartida = document.getElementById("cep").value;
+    const cepChegada = document.getElementById("cep-chegada").value;
+    const nomeMotorista = document.getElementById("nome").value;
+    const veiculo = document.getElementById("veiculo").value;
+    const servico = document.getElementById("servico").value;
 
-  function buscarCepPartida() {
+    // Buscar os endereços por CEP automaticamente
+    Promise.all([buscarEnderecoPorCep(cepPartida), buscarEnderecoPorCep(cepChegada)])
+        .then(([dataPartida, dataChegada]) => {
+            preencherEnderecoPartida(dataPartida);
+            preencherEnderecoChegada(dataChegada);
 
-    const cepInput = document.querySelector("#cep");
-    const logradouroInput = document.querySelector("#logradouro");
-    const bairroInput = document.querySelector("#bairro");
-    const cidadeInput = document.querySelector("#cidade");
-    const complementoInput = document.querySelector("#complemento");
-    
-    //validação basica do cep
-    cepInput.addEventListener("keypress", (e) => {
-     
-        const onlyNumber = /[0-9]/;
-        //transformando e pegando oque foi digitado para string
-        const key = String.fromCharCode(e.keyCode);
-    
-        //permitir apenas numeros
-        if(!onlyNumber.test(key)){
-            //so cai nesse if se o usuario digitar algo que não seja numerico
-            e.preventDefault();
-            return;
-        }
-    });
-    
-    cepInput.addEventListener("keyup" , (e) => {
-        //pegando valor do input cep
-        const inputValue = e.target.value;
-    
-        //verificar se tem a quantidade necessaria de digitos
-        if(inputValue.length == 8){
-            getEndereco(inputValue);
-        }
-    });
-    
-        //obtendo endereço do cliente da API
-        const getEndereco = async (cep) =>{
-    
-        cepInput.blur();
-        const apiUrl = `https://viacep.com.br/ws/${cep}/json/`
-        const response = await fetch(apiUrl);
-        const data = await response.json();   
-    
-        //mandando a função para habilitar os campos para editar
-        toggleDisabled();
-    
-        //passados valores da api para as variaveis
-        logradouroInput.value = data.logradouro
-        cidadeInput.value = data.localidade
-        bairroInput.value = data.bairro
-        complementoInput.focus();
-    };
-    
-    //função para habilitar os campos novamente para que o usuario consiga editar
-    const toggleDisabled = () => {
-    
-        //verificando se realmente tem algum imput com a opção desabilitada
-        if(logradouroInput.hasAttribute("disabled")){
-          logradouroInput.removeAttribute("disabled");
-            complementoInput.removeAttribute("disabled");
-            cidadeInput.removeAttribute("disabled");
-            bairroInput.removeAttribute("disabled");
-            
-    
-     }else {
-            //se precisar adicionar desable novamente
-          logradouroInput.setAttribute("desabled","desabled");
-        complementoInput.setAttribute("desabled","desabled");
-        cidadeInput.setAttribute("desabled","desabled");
-        bairroInput.setAttribute("desabled","desabled");
-                
-    }};
-    }
+            // Construir a mensagem para o WhatsApp com os parâmetros
+            const mensagem = `Data do Serviço: ${dataServico}
+Horário: ${horario}
+Valor: ${valor}
+Endereço de Partida:
+CEP: ${cepPartida}
+Logradouro: ${dataPartida.logradouro}
+Bairro: ${dataPartida.bairro}
+Cidade: ${dataPartida.localidade}
+Complemento/Referência: ${dataPartida.complemento || ""}
+Endereço de Chegada:
+CEP: ${cepChegada}
+Logradouro: ${dataChegada.logradouro}
+Bairro: ${dataChegada.bairro}
+Cidade: ${dataChegada.localidade}
+Complemento/Referência: ${dataChegada.complemento || ""}
+Informações do Motorista/Veículo:
+Nome Motorista: ${nomeMotorista}
+Veículo: ${veiculo}
+Serviço: ${servico}`;
 
+            // Codificar a mensagem para usar no link do WhatsApp
+            const encodedMessage = encodeURIComponent(mensagem);
+            const whatsappURL = `https://wa.me/5581989029165/?text=${encodedMessage}`;
 
-    function buscarCepChegada(){
+            // Redirecionar para o link do WhatsApp
+            window.open(whatsappURL, "_blank");
+        })
+        .catch(error => {
+            console.error("Erro ao buscar o endereço:", error);
+        });
+}
 
-    const cepInput = document.querySelector("#cep-chegada");
-    const logradouroInput = document.querySelector("#logradouro-chegada");
-    const bairroInput = document.querySelector("#bairro-chegada");
-    const cidadeInput = document.querySelector("#cidade-chegada");
-    const complementoInput = document.querySelector("#complemento-chegada");
- 
-    
-    
-    //validação basica do cep
-    cepInput.addEventListener("keypress", (e) => {
-     
-        const onlyNumber = /[0-9]/;
-        //transformando e pegando oque foi digitado para string
-        const key = String.fromCharCode(e.keyCode);
-    
-        //permitir apenas numeros
-        if(!onlyNumber.test(key)){
-            //so cai nesse if se o usuario digitar algo que não seja numerico
-            e.preventDefault();
-            return;
-        }
-    });
-    
-    cepInput.addEventListener("keyup" , (e) => {
-        //pegando valor do input cep
-        const inputValue = e.target.value;
-    
-        //verificar se tem a quantidade necessaria de digitos
-        if(inputValue.length == 8){
-            getEndereco(inputValue);
-        }
-    });
-    
-        //obtendo endereço do cliente da API
-        const getEndereco = async (cep) =>{
-    
-        cepInput.blur();
-        const apiUrl = `https://viacep.com.br/ws/${cep}/json/`
-        const response = await fetch(apiUrl);
-        const data = await response.json();   
-    
-        //mandando a função para habilitar os campos para editar
-        toggleDisabled();
-    
-        //passados valores da api para as variaveis
-        logradouroInput.value = data.logradouro
-        cidadeInput.value = data.localidade
-        bairroInput.value = data.bairro
-        complementoInput.focus();
-    };
-    
-    //função para habilitar os campos novamente para que o usuario consiga editar
-    const toggleDisabled = () => {
-    
-        //verificando se realmente tem algum imput com a opção desabilitada
-        if(logradouroInput.hasAttribute("disabled")){
-          logradouroInput.removeAttribute("disabled");
-            complementoInput.removeAttribute("disabled");
-            cidadeInput.removeAttribute("disabled");
-            bairroInput.removeAttribute("disabled");       
-    
-     }else {
-            //se precisar adicionar desable novamente
-          logradouroInput.setAttribute("desabled","desabled");
-        complementoInput.setAttribute("desabled","desabled");
-        cidadeInput.setAttribute("desabled","desabled");
-        bairroInput.setAttribute("desabled","desabled");         
-    }};
-  }
-   
-
-
-
-  
+// Adicionar o evento de submit ao formulário
+const formulario = document.getElementById("solicitacao-form");
+formulario.addEventListener("submit", enviarFormulario);
