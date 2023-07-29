@@ -59,8 +59,11 @@ public class Veiculo {
     @Column
     private String observacoes;
 
+    
     @ManyToOne
     private Motorista motorista;
+
+  
 
 
 }

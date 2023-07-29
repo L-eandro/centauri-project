@@ -49,7 +49,7 @@
         </div>
 
         <div class="form">
-            <form action="#">
+            <form action="/cadastro/veiculo" method="post" th:object="${veiculo}">
                 <div class="form-header">
                     <div class="title">
                         <h1>Cadastro Veiculo</h1>
@@ -61,7 +61,11 @@
 
                     <div class="input-box">
                         <label for="" class="nome-select">Selecione o Veiculo</label>
-                        <select name="veiculo" id="veiculo" onchange="ocultar_servico()">
+                        <select th:field="*{veiculo}" required="required"></select>
+                        <option th:each="ve : ${veiculoo}" th:value="${ve}" th:text="${ve}"></option>
+                        </select>
+
+                       <!-- <select name="veiculo" id="veiculo" onchange="ocultar_servico()">
                             <option value=""></option>
                             <option id="carro" value="carro" >Carro</option>
                             <option id="kombi" value="kombi" >Kombi</option>
@@ -70,6 +74,8 @@
                             <option id="caminhonete" value="caminhonete">Caminhonete</option>
                             <option id="caminhao" value="caminhao" >Caminhão</option>
                         </select>  
+                         -->
+
                     </div>
 
                     <div class="input-box">
@@ -155,7 +161,8 @@
                 </div>
 
                 <div class="continue-button">
-                    <button><a th:href="@{/listar-veiculo}">Salvar</a> </button>
+                    <button type="submit"><a th:href="@{/listar-veiculo}">Salvar</a> </button>
+                    
                 </div>
             </form>
         </div>

@@ -8,6 +8,7 @@ import com.example.centaure.Centaure.models.Veiculo;
 import com.example.centaure.Centaure.repositores.VeiculoRepositores;
 
 import extencao.UserInvalid;
+import extencao.VeiculoInvalid;
 
 
 @Service
@@ -23,7 +24,7 @@ public class VeiculoService {
 
      public void salvando(Veiculo veiculo) throws VeiculoInvalid {
         if (veiculo.getDocumento().trim().isEmpty() || veiculo.getAnoFabricacao().trim().isEmpty() || veiculo.getCapacidade().trim().isEmpty() || veiculo.getCor().trim().isEmpty() || veiculo.getNomeModelo().trim().isEmpty() || veiculo.getPlaca().trim().isEmpty()) {
-            throw new UserInvalid("Os campos obrigatórios não podem estar vazio.");
+            throw new VeiculoInvalid("Os campos obrigatórios não podem estar vazio.");
         }
 
     }
