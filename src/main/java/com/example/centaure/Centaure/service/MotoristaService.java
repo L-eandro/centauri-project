@@ -18,14 +18,20 @@ public class MotoristaService {
     @Autowired
     private MotoristaRepositores motoristaRepositores;
 
-    public Motorista login(String email, String senha) {
-
-        Motorista motorista = motoristaRepositores.findByEmailAndSenha(email, senha);
-        if(motorista != null && motorista.getSenha().equals(senha)){
-            return motorista;
+    public Motorista findByEmailAndPassword(String email, String password){
+        Optional<Motorista> user = motoristaRepositores.findByemail(email);
+        if(user.isPresent()){
+            if (BCrypt.checkpw(password, user.get().getSenha())) {
+                return user.get();
+            } else {
+                return null;
+            }
+        } else {
+            return null;
         }
-        return null;
     }
+
+
 
 
 

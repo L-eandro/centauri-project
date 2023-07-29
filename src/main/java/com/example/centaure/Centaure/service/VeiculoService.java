@@ -23,7 +23,9 @@ public class VeiculoService {
     }
 
      public void salvando(Veiculo veiculo) throws VeiculoInvalid {
-        if (veiculo.getDocumento().trim().isEmpty() || veiculo.getAnoFabricacao().trim().isEmpty() || veiculo.getCapacidade().trim().isEmpty() || veiculo.getCor().trim().isEmpty() || veiculo.getNomeModelo().trim().isEmpty() || veiculo.getPlaca().trim().isEmpty()) {
+        if (veiculo.getDocumento().trim().isEmpty() || veiculo.getAnoFabricacao().trim().isEmpty()
+                || veiculo.getCapacidade().trim().isEmpty() || veiculo.getCor().trim().isEmpty()
+                || veiculo.getNomeModelo().trim().isEmpty() || veiculo.getPlaca().trim().isEmpty()) {
             throw new VeiculoInvalid("Os campos obrigatórios não podem estar vazio.");
         }
 

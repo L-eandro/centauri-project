@@ -27,32 +27,20 @@ public class MotoristaController {
     }
 
     @PostMapping("/login/motorista")
-    public String login(@RequestParam String email, @RequestParam String senha, HttpSession session, RedirectAttributes re){
-        Motorista motorista = motoristaService.login(email,senha);
-        if(motorista != null){
-            session.setAttribute("logado", motorista);
+    public String login( Motorista motorista,HttpSession session, Model model, String email, String senha){
+         motorista = motoristaService.findByEmailAndPassword(email,senha);
+
+        if (motorista != null) {
+            session.setAttribute("logged", motorista);
             return "redirect:/listar/veiculo";
         } else {
-            re.addFlashAttribute("msg", "login ou senha incorretas!");
+            model.addAttribute("message", "E-mail ou senha errado");
+            model.addAttribute("style", "p-3 mb-2 bg-danger text-white");
+            model.addAttribute("icon", "fa-solid fa-check");
             return "redirect:/login/motorista";
         }
     }
 
-    @GetMapping("/cadastro/veiculo")
-    public String cadastroVeiculo(){
-        return "/veiculo_html/cadastro_veiculo";
-    }
-
-    @GetMapping("/editar/veiculo")
-    public String editVeiculo(){
-        return "/veiculo_html/editar_veiculo";
-    }
-
-
-    @GetMapping("/listar/veiculo")
-    public String listarVeiculo(){
-        return "/veiculo_html/listar_veiculo";
-    }
 
 
 
@@ -61,10 +49,7 @@ public class MotoristaController {
         return "/motorista_html/esqueceu_senha_motorista";
     }
 
-    @GetMapping("/escolher/servico")
-    public String escolherServico(){
-        return "/servico_html/escolher_servico";
-    }
+
 
 
 
@@ -83,6 +68,7 @@ public class MotoristaController {
     public String criar(Motorista motorista, RedirectAttributes ra){
         try {
             motoristaService.salvar(motorista);
+            motorista.setSenha(motoristaService.criptografarSenha(motorista));
             motoristaService.criar(motorista);
             ra.addFlashAttribute("msgSucess", "Conta criada com sucesso!");
             return "redirect:/cadastro/motorista";

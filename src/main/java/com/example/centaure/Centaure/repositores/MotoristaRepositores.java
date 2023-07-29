@@ -5,11 +5,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
+import java.util.Optional;
 
 @Component
 public interface MotoristaRepositores extends JpaRepository<Motorista, Integer> {
 
-    public Motorista findByEmailAndSenha(String email, String senha);
+    public Optional<Motorista> findByemail(String email);
 
 
     boolean existsByCnh(String cnh);
