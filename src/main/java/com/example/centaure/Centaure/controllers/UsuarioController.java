@@ -31,8 +31,9 @@ public class UsuarioController {
             session.setAttribute("logado", usuario);
             return "redirect:/escolher/servico";
         } else {
-            model.addAttribute("menssage","Email invalido ou senha");
-            return "/login/usuario";
+            model.addAttribute("message", "E-mail ou senha incorretos");
+            model.addAttribute("style", "margin-left: 120px; color: red;");
+            return "redirect:/login/usuario";
         }
 
     }
