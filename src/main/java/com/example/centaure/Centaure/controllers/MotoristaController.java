@@ -35,10 +35,9 @@ public class MotoristaController {
             session.setAttribute("logged", motorista);
             return "redirect:/listar/veiculo";
         } else {
-            model.addAttribute("message", "E-mail ou senha errado");
-            model.addAttribute("style", "p-3 mb-2 bg-danger text-red");
-            model.addAttribute("icon", "fa-solid fa-check");
-            return "redirect:/login/motorista";
+            model.addAttribute("message", "E-mail ou senha incorretos");
+            model.addAttribute("style", "margin-left: 120px; color: red;");
+            return "/motorista_html/login_motorista";
         }
     }
     //--------------
@@ -57,10 +56,13 @@ public class MotoristaController {
             motorista.setSenha(motoristaService.criptografarSenha(motorista));
             motoristaService.criar(motorista);
             ra.addFlashAttribute("msgSucess", "Conta criada com sucesso!");
+            ra.addFlashAttribute("style","margin-left: 120px; color: green;");
             return "redirect:/cadastro/motorista";
 
         } catch (MotoristaInvalid e ){
-            ra.addFlashAttribute("msgError", e.getMessage() );}
+            ra.addFlashAttribute("msgError", e.getMessage() );
+            ra.addFlashAttribute("style","margin-left: 150px; color: red;");
+        }
         return "redirect:/cadastro/motorista";
     }
 
@@ -79,6 +81,11 @@ public class MotoristaController {
     @GetMapping("/esqueci/senha")
     public String esqueciSenha(){
         return "/motorista_html/esqueceu_senha_motorista";
+    }
+
+    @GetMapping("/acesso-negado")
+    public String acessoNegado(){
+        return "acesso_negado";
     }
 
 
