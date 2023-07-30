@@ -29,16 +29,12 @@ public class UsuarioController {
         usuario = usuarioServive.findByEmailAndSenha(email, senha);
         if (usuario !=null){
             session.setAttribute("logado", usuario);
-            return "redirect:/servico";
+            return "redirect:/escolher/servico";
         } else {
-            model.addAttribute("menssage","Email invalido");
+            model.addAttribute("menssage","Email invalido ou senha");
             return "/login/usuario";
         }
 
-    }
-    @GetMapping("/servico")
-    String servico(){
-        return "/servico_html/escolher_servico";
     }
     @GetMapping("usuario/sair")
     public String sair(HttpSession session){
@@ -52,10 +48,11 @@ public class UsuarioController {
     }
 
     @PostMapping("/cadastro/usuario")
-    public String criar( Usuario usuario,RedirectAttributes ra  )  {
+    public String criar( Usuario usuario,RedirectAttributes ra, Model model)  {
         try {
-            usuarioServive.salvando(usuario);
-            usuarioServive.criar(usuario);
+            usuario.setSenha(usuarioServive.encryptSenha(usuario));
+            this.usuarioServive.salvando(usuario);
+           this.usuarioServive.criar(usuario);
             return "redirect:/login/usuario";
         }
         catch (UserInvalid e) {

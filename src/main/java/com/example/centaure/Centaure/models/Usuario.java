@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.boot.model.internal.PersistentAttributeFilter;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 
 @Entity
 @AllArgsConstructor
@@ -30,6 +33,10 @@ public class Usuario {
 
     @Column(nullable = false)
     private String numero;
+
+    @Column(nullable = false)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date dataNascimento;
 
 
     public Integer getId() {

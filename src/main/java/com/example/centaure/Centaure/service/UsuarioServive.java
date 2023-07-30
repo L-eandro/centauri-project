@@ -19,7 +19,7 @@ public class UsuarioServive {
     private UsuarioRepositores usuarioRepositores;
 
     public static final int complexidadeSenha = 10;
-    public String cryptSenha(Usuario usuario){
+    public String encryptSenha(Usuario usuario  ){
         return BCrypt.hashpw(usuario.getSenha(),BCrypt.gensalt(complexidadeSenha));
     }
 
@@ -45,9 +45,14 @@ public class UsuarioServive {
                 || usuario.getCpf().trim().isEmpty() || usuario.getNumero().trim().isEmpty()) {
             throw new UserInvalid("Os campos obrigatórios não podem estar vazio.");
         }
-        if (this.usuarioRepositores.existsByEmail(usuario.getEmail())
-                || usuarioRepositores.existsByCpf(usuario.getCpf()) || usuarioRepositores.existsByNumero(usuario.getNumero())){
-            throw new UserInvalid("Já existe um Usuário com esse atributo");
+        if(this.usuarioRepositores.existsByCpf(usuario.getCpf())){
+            throw new UserInvalid("CPF já cadastrado");
+        }
+        if (this.usuarioRepositores.existsByEmail(usuario.getEmail())){
+            throw new UserInvalid("Email já cadastrado");
+        }
+        if(this.usuarioRepositores.existsByNumero(usuario.getNumero())){
+            throw new UserInvalid("Número já cadastrado");
         }
     }
     public List<Usuario> listar(Usuario usuario) {
