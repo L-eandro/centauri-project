@@ -21,6 +21,7 @@ public class MotoristaController {
     @Autowired
     private MotoristaService motoristaService;
 
+    // Referente ao login
     @GetMapping("/login/motorista")
     public String Login(){
         return "motorista_html/login_motorista";
@@ -35,29 +36,14 @@ public class MotoristaController {
             return "redirect:/listar/veiculo";
         } else {
             model.addAttribute("message", "E-mail ou senha errado");
-            model.addAttribute("style", "p-3 mb-2 bg-danger text-white");
+            model.addAttribute("style", "p-3 mb-2 bg-danger text-red");
             model.addAttribute("icon", "fa-solid fa-check");
             return "redirect:/login/motorista";
         }
     }
+    //--------------
 
-
-
-
-    @GetMapping("/esqueci/senha")
-    public String esqueciSenha(){
-        return "/motorista_html/esqueceu_senha_motorista";
-    }
-
-
-
-
-
-
-    @GetMapping("/")
-    public String Index(){
-        return "index";
-    }
+    // Referente ao cadastro
 
     @GetMapping("/cadastro/motorista")
     public String cadastroMotorista() {
@@ -75,8 +61,26 @@ public class MotoristaController {
 
         } catch (MotoristaInvalid e ){
             ra.addFlashAttribute("msgError", e.getMessage() );}
-            return "redirect:/cadastro/motorista";
+        return "redirect:/cadastro/motorista";
     }
+
+    //--------------
+
+    @GetMapping("/motorista/sair")
+    public String sair(HttpSession session){
+        session.invalidate();
+        return "redirect:/";
+    }
+    @GetMapping("/")
+    public String Index(){
+        return "index";
+    }
+
+    @GetMapping("/esqueci/senha")
+    public String esqueciSenha(){
+        return "/motorista_html/esqueceu_senha_motorista";
+    }
+
 
 
     @GetMapping("/motorista/listar")

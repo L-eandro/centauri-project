@@ -18,11 +18,27 @@ public class MotoristaService {
     @Autowired
     private MotoristaRepositores motoristaRepositores;
 
-    public Motorista findByEmailAndPassword(String email, String password){
-        Optional<Motorista> user = motoristaRepositores.findByemail(email);
-        if(user.isPresent()){
-            if (BCrypt.checkpw(password, user.get().getSenha())) {
-                return user.get();
+
+    //salvar usuario
+    public Motorista criar(Motorista motorista){
+        return motoristaRepositores.save(motorista);
+    }
+
+    private static final int complexidadeSenha = 10;
+
+    // Criptografar senha
+    public String criptografarSenha(Motorista motorista){
+        return BCrypt.hashpw(motorista.getSenha(), BCrypt.gensalt(complexidadeSenha));
+    }
+    //----------
+
+    // Referente ao login
+    // Checa se a senha criptografada no banco coincide com a degitada pelo usuário
+    public Motorista findByEmailAndPassword(String email, String senha){
+        Optional<Motorista> motorista = motoristaRepositores.findByemail(email);
+        if(motorista.isPresent()){
+            if (BCrypt.checkpw(senha, motorista.get().getSenha())) {
+                return motorista.get();
             } else {
                 return null;
             }
@@ -30,24 +46,10 @@ public class MotoristaService {
             return null;
         }
     }
+    //----------
 
-
-
-
-
-
-    private static final int complexidadeSenha = 10;
-
-    //salvar usuario
-    public Motorista criar(Motorista motorista){
-        return motoristaRepositores.save(motorista);
-    }
-
-    public String criptografarSenha(Motorista motorista){
-        return BCrypt.hashpw(motorista.getSenha(), BCrypt.gensalt(complexidadeSenha));
-    }
-
-
+    // Referente ao cadastro
+    // Verifica se os inputs solicitados estão vazios
     public void salvar(Motorista motorista) throws MotoristaInvalid {
         if (motorista.getNome().trim().isEmpty() || motorista.getCnh().trim().isEmpty()
                 || motorista.getCelular().trim().isEmpty() || motorista.getEmail().trim().isEmpty() ||
@@ -55,16 +57,14 @@ public class MotoristaService {
             throw new MotoristaInvalid("Os campos obrigatórios não podem estar vazio.");
         }
 
-
+        // Verifica se existe dados ja cadastrados no bd
         if (this.motoristaRepositores.existsByCnh(motorista.getCnh())) {
             throw new MotoristaInvalid("CNH já cadastrada!");
         } else if(this.motoristaRepositores.existsByEmail(motorista.getEmail())){
             throw  new MotoristaInvalid("Email já cadastrado!");
         }
     }
-
-
-
+    //----------
 
     public List<Motorista> listar(Motorista motorista){
         return motoristaRepositores.findAll();
