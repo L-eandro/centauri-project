@@ -74,6 +74,7 @@ Veículo: ${veiculo}
 Serviço: ${servico}`;
 
             // Codificar a mensagem para usar no link do WhatsApp
+            const numeroTelefone = '5581988742454';
             const encodedMessage = encodeURIComponent(mensagem);
             const whatsappURL = `https://wa.me/5581989029165/?text=${encodedMessage}`;
 
