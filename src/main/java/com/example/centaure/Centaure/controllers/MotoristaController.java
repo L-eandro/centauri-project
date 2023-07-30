@@ -21,6 +21,7 @@ public class MotoristaController {
     @Autowired
     private MotoristaService motoristaService;
 
+
     // Referente ao login
     @GetMapping("/login/motorista")
     public String Login(){
@@ -55,6 +56,7 @@ public class MotoristaController {
             motoristaService.salvar(motorista);
             motorista.setSenha(motoristaService.criptografarSenha(motorista));
             motoristaService.criar(motorista);
+            motoristaService.emailSender(motorista);
             ra.addFlashAttribute("msgSucess", "Conta criada com sucesso!");
             ra.addFlashAttribute("style","margin-left: 120px; color: green;");
             return "redirect:/cadastro/motorista";

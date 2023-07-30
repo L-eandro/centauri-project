@@ -6,6 +6,9 @@ import com.example.centaure.Centaure.repositores.MotoristaRepositores;
 import extencao.MotoristaInvalid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailException;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +20,12 @@ public class MotoristaService {
 
     @Autowired
     private MotoristaRepositores motoristaRepositores;
+
+    @Autowired
+    private EmailService emailService;
+
+    @Autowired
+    private JavaMailSender emailSender;
 
 
     //salvar usuario
@@ -32,8 +41,31 @@ public class MotoristaService {
     }
     //----------
 
+    public void emailSender(Motorista motorista){
+
+        try {
+            SimpleMailMessage message = new SimpleMailMessage();
+            message.setFrom("centauri.start@gmail.com");
+            message.setTo(motorista.getEmail());
+            message.setSubject("Confirmação de cadastro Centauri!");
+            message.setText("Olá, " + motorista.getNome() + "."
+                            + "\nSeu cadastro foi realizado com sucesso!"
+                            + "\nSeja bem-vindo a centauri!"
+                            + "\n\nEquipe Centauri.");
+
+                emailSender.send(message);
+        } catch (MailException e){
+            e.printStackTrace();
+        }
+
+    }
+
+
+
+
+
     // Referente ao login
-    // Checa se a senha criptografada no banco coincide com a degitada pelo usuário
+    // busca um motorista pelo email fornecido e, se um motorista com esse email e a senha fornecida é correta
     public Motorista findByEmailAndPassword(String email, String senha){
         Optional<Motorista> motorista = motoristaRepositores.findByemail(email);
         if(motorista.isPresent()){
