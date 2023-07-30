@@ -20,13 +20,13 @@
     </div>
     <div class="nav-list">
 <ul>
-    <li class="nav-item"><a th:href="usuario/editar/{id}" class="nav-link">Editar Dados</a></li>
-    <li class="nav-item"><a th:href="usuario/solicitacoes" class="nav-link">Minhas Solicitações</a></li>
+    <li class="nav-item"><a th:href="@{/usuario/editar}" class="nav-link">Editar Dados</a></li>
+    <li class="nav-item"><a th:href="@{/usuario/editar}" class="nav-link">Minhas Solicitações</a></li>
     <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
 </ul>
     </div>
     <div class="login-button">
-        <button><a  th:href="usuario/sair">Sair</a></button>  
+        <button><a  th:href="@{/}">Sair</a></button>  
         
     </div>
 </header>
@@ -34,57 +34,65 @@
 
 <section >
 
-  <div class="container" style="width: 60%; padding-bottom: 30px;">
-  <br>
-    <h3 style="width:100%">Lista dos Motorista Disponiveis para serviço de Fretes</h3>
-  <br>
+   <div class="container" style="width: 60%; padding-bottom: 30px;">
+         <br>
+        <h3 style="width:100%; transform: translate(4%, 20%);">Lista dos Motorista Disponiveis para serviço de Fretes</h3>
+        <br>
   
-   <div class="card mb-3" style="max-width: 840px; padding:0.62rem;box-shadow: 1px 1px 10px #403aaaef;"th:each="#:${#}">
-    <div class="row g-0" >
+    <div class="card mb-3" style="max-width: 840px; padding:0.62rem;box-shadow: 1px 1px 10px #403aaaef">                    <!--th:each="#:$ {#}"-->
+
+       <div class="row g-0" >
       <div class="col-md-4">
         <img th:src="@{/img/servico_img/mudanca_servico.JPG}" style=" width: 400px; height: 200px;  box-shadow: 1px 1px 5px #403aaaef; " class="img-fluid rounded-start"   alt="...">
-      </div> 
-      <div class="col-md-8" >
-        <div class="card">
-          <div class="label-card" >
-            <div class="group" >
+       </div> 
+        <div class="col-md-8" >
+       <div class="card">
+
+        <div class="label-card" >
+
+          <div class="group" >
           <label for="" style="font-size: 0.83rem;">Nome do motorista</label>
-          <h5 class="card-title"><span th:text="$ {#.#}">jose silva</span></h5>
-            </div>
+          <h5 class="card-title"><span >jose silva</span></h5>
+          </div>
 
-            <div class="group">
+          <div class="group">
           <label for="" style="font-size: 0.83rem;">Nome/Modelo veiculo</label>
-          <h5 class="card-title"><span th:text="$ {#.#}">Hilux 4x4</span></h5>
+          <h5 class="card-title"><span >Hilux 4x4</span></h5>
+         </div>
         </div>
-      </div>
 
-      <div class="label-card">
+       <div class="label-card">
         <div class="group">
           <label for="" style="font-size: 0.83rem;">Carga Maxima Litros</label>
-          <h5 class="card-title"><span th:text="$ {#.#}">1000Litros</span></h5>
+          <h5 class="card-title"><span >1000Litros</span></h5>
         </div>
 
         <div class="group">
           <label for="" style="font-size: 0.83rem;">Ano Veiculo</label>
-          <h5 class="card-title"><span th:text="$ {#.#}">2022</span></h5>
+          <h5 class="card-title"><span >2022</span></h5>
         </div>
-      </div>
-      <div class="group">
-          <label for="" style="font-size: 0.83rem;">obeservações adicionais</label>
-          <h6 class="card-text"><span th:utext="${#strings.abbreviate (#.#, 100)} ">estou disponiveil para realizar fretes, meu veiculo possui ar-codicionado e tv
-          </div>
-            
-          </span></h6>   
-        </div>
-      </div>
+       </div>
+
+       <div class="group">
+          <label for="" style="font-size: 0.83rem;">obeservações adicionais motorista</label>
+          <h6 class="card-text"><span >estou disponiveil para realizar fretes, meu veiculo possui ar-codicionado e tv </span></h6>  
+       </div> 
+
+       </div>
+       </div>
+       </div>
+
+       <div class="btn-cadastrar">
+       <button id="btn-cadastrar" type="submit"><a  th:href="@{/FormSolicitacao/usuario}">Gostei desse Motorista</a> </button>
+       </div>
+       
     </div>
-    <div class="btn-cadastrar">
-      <button id="btn-cadastrar" type="submit"><a href="#">Gostei desse Motorista</a> </button>
+
+    
+
+
+
    </div>
-
-  </div>
-
-  
 </section>
 
 

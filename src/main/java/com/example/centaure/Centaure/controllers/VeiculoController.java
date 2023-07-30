@@ -16,7 +16,7 @@ public class VeiculoController {
     }
 
     @GetMapping("/editar/veiculo")
-    public String editVeiculo(){
+    public String editarVeiculo(){
         return "/veiculo_html/editar_veiculo";
     }
 
@@ -25,4 +25,32 @@ public class VeiculoController {
     public String listarVeiculo(){
         return "/veiculo_html/listar_veiculo";
     }
+
+
+    @GetMapping("/FormSolicitacao/usuario")
+    public String formSolicitacao(){
+        return "servico_html/form_solicitacao_servico";
+    }
+
+
+       @GetMapping("/listarFrete/servico")
+    public String listarFrete(){
+        return "servico_html/listando_servico_frete";
+    }
+
+
+       @GetMapping("/listarMudanca/servico")
+    public String listarMudanca(){
+        return "servico_html/listando_servico_mudanca";
+    }
+
+       @GetMapping("/listarViagem/servico")
+    public String listarViagem(){
+        return "servico_html/listando_servico_viagem";
+    }
+
+
+
+
+
 }

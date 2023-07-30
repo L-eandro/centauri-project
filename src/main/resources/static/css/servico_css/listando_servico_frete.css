@@ -20,7 +20,7 @@ header{
 .nav-bar {
     display: flex;
     justify-content: space-between;
-    padding: 1.5rem 6rem;
+    padding: 1rem 6rem;
 }
 
 /*mechendo na logo*/

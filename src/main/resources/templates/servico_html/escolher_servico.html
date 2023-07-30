@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{css/servico_css/escolher_servico.css}">
+    <link rel="stylesheet" th:href="@{/css/servico_css/escolher_servico.css}">
     <title>Escolher Serviço</title>
   </head>
   <body>
@@ -17,13 +17,13 @@
       </div>
       <div class="nav-list">
   <ul>
-      <li class="nav-item"><a th:href="usuario/editar/{id}" class="nav-link">Editar Dados</a></li>
-      <li class="nav-item"><a th:href="usuario/solicitacoes" class="nav-link">Minhas Solicitações</a></li>
+      <li class="nav-item"><a th:href="@{/usuario/editar}" class="nav-link">Editar Dados</a></li>
+      <li class="nav-item"><a th:href="@{/usuario/editar}" class="nav-link">Minhas Solicitações</a></li>
       <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
   </ul>
       </div>
       <div class="login-button">
-          <button><a  th:href="usuario/sair">Sair</a></button>  
+          <button><a  th:href="@{/usuario/sair}">Sair</a></button>  
           
       </div>
   </header>
@@ -34,7 +34,7 @@
       <!-- Card 1 -->
       <div class="card card-1">
         <div class="card-header">
-          <img th:src="@{/img/servico_img/viagem_servico.jpg}" class="card-img"/>
+          <img th:src= "@{/img/servico_img/viagem_servico.jpg}" class="card-img"/>
         </div>
         <!-- card-body -->
         <div class="card-body">
@@ -55,7 +55,7 @@
       </div>
         <!-- card-body -->
         <div class="card-footer">
-          <a th:href="@{/listar_viagem}">Buscar</a>
+          <a th:href="@{/}">Buscar</a>
         </div>
       </div>
       <!-- Card 1 -->
@@ -82,7 +82,7 @@
       </div>
         <!-- card-body -->
         <div class="card-footer">
-          <a th:href="@{/listar_mudanca}">Buscar</a>
+          <a th:href="@{/}">Buscar</a>
         </div>
       </div>
       <!-- Card 2 -->
@@ -109,7 +109,7 @@
       </div>
         <!-- card-body -->
         <div class="card-footer">
-          <a th:href="@{/listar_frete}">Buscar</a>
+          <a th:href="@{/listarFrete/servico}">Buscar</a>
         </div>
       </div>
       <!-- Card 3 -->
