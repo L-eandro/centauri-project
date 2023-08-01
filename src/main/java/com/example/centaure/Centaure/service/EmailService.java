@@ -11,10 +11,10 @@ public class EmailService {
     @Autowired
     JavaMailSender javaMailSender;
 
+    // Método para enviar e-mails
     public String sendEmail(String destinatario, String titulo, String mensagem){
 
         try {
-
             SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
             simpleMailMessage.setFrom("centauri.start@gmail.com");
             simpleMailMessage.setTo(destinatario);
