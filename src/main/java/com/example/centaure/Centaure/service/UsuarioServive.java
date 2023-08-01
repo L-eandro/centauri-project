@@ -19,10 +19,13 @@ public class UsuarioServive {
     private UsuarioRepositores usuarioRepositores;
 
     public static final int complexidadeSenha = 10;
+
+    // Método para criptografar a senha do usuário utilizando a classe BCrypt.
     public String encryptSenha(Usuario usuario  ){
         return BCrypt.hashpw(usuario.getSenha(),BCrypt.gensalt(complexidadeSenha));
     }
 
+    // Método para buscar um usuário pelo email e senha informados.
     public Usuario findByEmailAndSenha(String email, String senha){
         Optional<Usuario> usuario = usuarioRepositores.findByEmail(email);
         if (usuario.isPresent()){
@@ -35,11 +38,14 @@ public class UsuarioServive {
             return null;
         }
     }
+
+    // Método para criar um novo usuário.
     public Usuario criar(Usuario usuario) {
         return usuarioRepositores.save(usuario);
 
     }
 
+    // Método para validar e salvar um usuário, lançando exceções personalizadas em caso de campos obrigatórios vazios ou duplicação de informações.
     public void salvando(Usuario usuario) throws UserInvalid {
         if (usuario.getEmail().trim().isEmpty() || usuario.getNome().trim().isEmpty()
                 || usuario.getCpf().trim().isEmpty() || usuario.getNumero().trim().isEmpty()) {
@@ -55,15 +61,18 @@ public class UsuarioServive {
             throw new UserInvalid("Número já cadastrado");
         }
     }
+
+    // Método para listar todos os usuários cadastrados.
     public List<Usuario> listar(Usuario usuario) {
         return usuarioRepositores.findAll();
     }
 
+    // Método para editar um usuário pelo ID.
     public Optional<Usuario> editar(Integer id) {
         return usuarioRepositores.findById(id);
     }
 
-
+    // Método para deletar um usuário pelo ID.
     public String deletar(Integer id) {
         usuarioRepositores.deleteById(id);
         return "";
