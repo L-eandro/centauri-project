@@ -16,5 +16,4 @@ public interface MotoristaRepositores extends JpaRepository<Motorista, Integer> 
     boolean existsByCnh(String cnh);
     boolean existsByEmail(String email);
 
-
 }
