@@ -41,7 +41,6 @@ function ocultar_servicoo() {
 
   function buscarCepPartida() {
 
-    const enderecoForm = document.querySelector("#enderecoForm");
     const cepInput = document.querySelector("#cep");
     const logradouroInput = document.querySelector("#logradouro");
     const bairroInput = document.querySelector("#bairro");
@@ -76,7 +75,10 @@ function ocultar_servicoo() {
         if(inputValue.length == 8){
             getEndereco(inputValue);
         }
+
     });
+
+       
     
         //obtendo endereço do cliente da API
         const getEndereco = async (cep) =>{
@@ -112,6 +114,8 @@ function ocultar_servicoo() {
         complementoInput.focus();
       }
     };
+
+    
     
     //função para habilitar os campos novamente para que o usuario consiga editar
     const toggleDisabled = () => {
@@ -139,16 +143,16 @@ function ocultar_servicoo() {
 
     function buscarCepChegada(){
 
-    const cepInput = document.querySelector("#cep2");
-    const logradouroInput = document.querySelector("#logradouro2");
-    const bairroInput = document.querySelector("#bairro2");
-    const cidadeInput = document.querySelector("#cidade2");
-    const complementoInput = document.querySelector("#complemento2");
+    const cep2Input = document.querySelector("#cep2");
+    const logradouro2Input = document.querySelector("#logradouro2");
+    const bairro2Input = document.querySelector("#bairro2");
+    const cidade2Input = document.querySelector("#cidade2");
+    const complemento2Input = document.querySelector("#complemento2");
  
     
       //validação basica do cep para ser digitado so numeros
     //quando precionar a tecla vai ser ativado a função
-    cepInput.addEventListener("keypress", (e) => {
+    cep2Input.addEventListener("keypress", (e) => {
      
       // limitando apenas numero de 0 a 9 digitados
          const onlyNumber = /[0-9]/;
@@ -166,7 +170,7 @@ function ocultar_servicoo() {
      
  
      //pegando os valores quando termina de digitar o 8 digito
-     cepInput.addEventListener("keyup" , (e) => {
+     cep2Input.addEventListener("keyup" , (e) => {
          //pegando valor do input cep
          const inputValue = e.target.value;
      
@@ -179,8 +183,8 @@ function ocultar_servicoo() {
          //obtendo endereço do cliente da API
          const getEndereco = async (cep) =>{
      
-         //removendo o foco do campo cep, 
-         cepInput.blur();
+         //removendo o foco do campo cep, para o usuario não ficar digitando enquanto buscar o cep
+         cep2Input.blur();
  
          //Url da api do cep, passando para variavel apiUrl
          const apiUrl = `https://viacep.com.br/ws/${cep}/json/`
@@ -205,10 +209,10 @@ function ocultar_servicoo() {
          //mandando a função para habilitar os campos para editar
          toggleDisabled();
          //passados valores da api para as variaveis
-         logradouroInput.value = data.logradouro
-         cidadeInput.value = data.localidade
-         bairroInput.value = data.bairro
-         complementoInput.focus();
+         logradouro2Input.value = data.logradouro
+         cidade2Input.value = data.localidade
+         bairro2Input.value = data.bairro
+         complemento2Input.focus();
        }
      };
      
@@ -216,18 +220,18 @@ function ocultar_servicoo() {
      const toggleDisabled = () => {
      
          //verificando se realmente tem algum imput com a opção desabilitada
-         if(logradouroInput.hasAttribute("disabled")){
-             logradouroInput.removeAttribute("disabled");
-             complementoInput.removeAttribute("disabled");
-             cidadeInput.removeAttribute("disabled");
-             bairroInput.removeAttribute("disabled");      
+         if(logradouro2Input.hasAttribute("disabled")){
+             logradouro2Input.removeAttribute("disabled");
+             complemento2Input.removeAttribute("disabled");
+             cidade2Input.removeAttribute("disabled");
+             bairro2Input.removeAttribute("disabled");      
      
       }else {
              //se precisar adicionar desable novamente
-         logradouroInput.setAttribute("desabled","desabled");
-         complementoInput.setAttribute("desabled","desabled");
-         cidadeInput.setAttribute("desabled","desabled");
-         bairroInput.setAttribute("desabled","desabled");           
+         logradouro2Input.setAttribute("desabled","desabled");
+         complemento2Input.setAttribute("desabled","desabled");
+         cidade2Input.setAttribute("desabled","desabled");
+         bairro2Input.setAttribute("desabled","desabled");           
      }};
     
   }

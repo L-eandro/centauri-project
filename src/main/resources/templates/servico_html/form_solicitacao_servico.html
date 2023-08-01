@@ -11,9 +11,8 @@
 </head>
 <body>
 
-    <script src="/principal/js/servico_js/calcular_distancia.js"></script>
-    <script src="/principal/js/servico_js/form_solicitacao_servico.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMROG67dMisX221hCQHTg-BOqFwCz3ASM&libraries=geometry&callback=initMap" async defer></script>
+    
+  
 
     <header>
         <nav class="nav-bar">
@@ -32,20 +31,21 @@
     </header>
 
     <div class="box">
-        <form action="">
+        <form  id="solicitacao-form">
             <fieldset>
                 <legend><b>Envio de Solicitação Para Motorista</b></legend>
                 <br>
                        
                 <label ><b>Data do Serviço:</b></label>
                 <input type="date" name="data-servico" id="data-servico" required>
+                <div id="mensagemErroData"></div>
                 <br><br>
 
-                <label for="horario"><b>Horario:</b></label>
+                <label for="horario"><b>Horario de Partida:</b></label>
                 <input type="time" name="horario" id="horario" required>
                 <br><br><br>
                 <div class="inputBox">
-                    <input type="number" name="valor" id="valor" class="inputUser" required >
+                    <input type="number" name="valor" id="valor" class="inputUser"  required>
                     <label for="valor" class="labelInput">Oferte um Valor $</label>
                 </div>
                 <br><br>
@@ -55,80 +55,77 @@
                 <label for="endereco-partida"><b>Endereço de Partida</b></label>
                 <br><br><br>
 
-            <form id="endereco-form">
-
                 <div class="inputBox">
-                    <input type="text" name="cep" id="cep" class="inputUser" required onkeyup="buscarCepPartida()" maxlength="8">
+                    <input type="text" name="cep" id="cep" class="inputUser"  onkeyup="buscarCepPartida()" maxlength="8"required>
                     <label for="cep" class="labelInput">Cep</label>
                     <div id="mensagemErro"></div>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="logradouro" name="logradouro" id="logradouro" class="inputUser" required disabled>
+                    <input type="logradouro" name="logradouro" id="logradouro" class="inputUser"  disabled required>
                     <label for="logradouro" class="labelInput">Logradouro</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="bairro" name="bairro" id="bairro" class="inputUser" required disabled>
+                    <input type="bairro" name="bairro" id="bairro" class="inputUser"  disabled required>
                     <label for="bairro" class="labelInput">Bairro</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="cidade" id="cidade" class="inputUser" required disabled>
+                    <input type="text" name="cidade" id="cidade" class="inputUser"  disabled required> 
                     <label for="cidade" class="labelInput">Cidade</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="complemento" id="complemento" class="inputUser" required disabled>
-                    <label for="complemento" class="labelInput">Complemento / Referencia</label>
+                    <input type="text" name="complemento" id="complemento" class="inputUser"  disabled >
+                    <label for="complemento" class="labelInput">Numero/Complemento/Referência</label>
                 </div>
                 <br><br>
-            </form>
+            
                 <div class="input-group">
                     <label ><b>Endereço de Chegada</b></label>
                 </div>
-                <br>
-                <br>
+                <br><br>
+
                 <div class="inputBox">
-                    <input type="text" name="cep2" id="cep2" class="inputUser" required onkeyup="buscarCepChegada();calcularDistancia()" maxlength="8">
+                    <input type="text" name="cep2" id="cep2" class="inputUser"  onkeyup="buscarCepChegada();calcularDistancia()" maxlength="8" required>
                     <label for="cep2" class="labelInput">Cep</label>
                     <div id="mensagemErro2"></div>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="logradouro2" id="logradouro2" class="inputUser" required disabled>
+                    <input type="text" name="logradouro2" id="logradouro2" class="inputUser"  disabled required>
                     <label for="logradouro2" class="labelInput">Logradouro</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="bairro" name="bairro2" id="bairro2" class="inputUser" required disabled>
+                    <input type="bairro" name="bairro2" id="bairro2" class="inputUser"  disabled required>
                     <label for="bairro2" class="labelInput">Bairro</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="cidade2" id="cidade2" class="inputUser" required disabled>
+                    <input type="text" name="cidade2" id="cidade2" class="inputUser"  disabled required>
                     <label for="cidade2" class="labelInput">Cidade</label >
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="complemento2" id="complemento2" class="inputUser" required disabled>
-                    <label for="complemento2" class="labelDesabilitado">Complemento / Referencia</label>
+                    <input type="text" name="complemento2" id="complemento2" class="inputUser"  disabled >
+                    <label for="complemento2" class="labelDesabilitado">Numero/Complemento/Referência</label>
                 </div>
                 <br><br>
+
                 <div class="inputBox">
-                    <input type="text" name="resultado" id="resultado" class="inputUser" required  readonly disabled>
+                    <input type="text" name="resultado" id="resultado" class="inputUser"   readonly disabled required>
                     <label for="" class="labelDesabilitado">Distancia Total:</label>
-                  </div>
-            
-        
+                </div>
                 <br><br>
                 
 
@@ -137,64 +134,54 @@
                 </div>
                 <br><br><br>
 
+
                 <div class="inputBox">
-                    <input type="text" name="nome" id="nome" class="inputUser" required disabled>
+                    <input type="text" name="nome" id="nome" class="inputUser"  required>
                     <label for="nome" class="labelDesabilitado">Nome Motorista</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="veiculo" id="veiculo" class="inputUser" required disabled>
+                    <input type="text" name="veiculo" id="veiculo" class="inputUser"  required>
                     <label for="veiculo" class="labelDesabilitado">Veiculo</label>
+                </div>
+                <br><br>
+
+                <div class="inputBox">
+                    <input type="text" name="nomeModelo" id="nomeModelo" class="inputUser"  required>
+                    <label for="nomeModelo" class="labelDesabilitado">Nome / Modelo</label>
                 </div>
                 <br><br>
                 
 
                 <div class="inputBox">
-                    <input type="text" name="servico" id="servico" class="inputUser" required disabled >
+                    <input type="text" name="servico" id="servico" class="inputUser"  required >
                     <label for="servico" class="labelDesabilitado">Servico</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="capacidade" id="capacidade" class="inputUser" required onblur="ocultar_servico()" disabled>
+                    <input type="text" name="capacidade" id="capacidade" class="inputUser"  onblur="ocultar_servico()" required >
                     <label for="capacidade" class="labelDesabilitado">Capacidade</label>
                 </div>
                 <br><br>
 
-             
+        
             
-                <div class="inputBox"> 
-                    <div id="lugar" style="display: none;" onblur="ocultar_servico()">
-                    <input type="text" name="lugar" id="lugar" class="inputUser" required disabled >
-                    <label for="lugar" class="labelDesabilitado">Max Lugares</label>
-                    </div>
-                </div>
-
-                
-                <div class="inputBox">
-                    <div id="kg" style="display: none;" onblur="ocultar_servico()">
-                    <input type="text" name="kg" id="kg" class="inputUser" required disabled>
-                    <label for="kg" class="labelDesabilitado" >Max KG</label>
-                    </div>
-                </div>
-
-                
-                <div class="inputBox" >
-                    <div id="litro" style="display: none;" onblur="ocultar_servico()" >
-                    <input type="text" name="litro" id="litro" class="inputUser" required disabled>
-                    <label for="litro" class="labelDesabilitado" >Max Litros</label>
-                    </div>
-                </div>
-                <br><br>
                
 
-            <button type="submit" name="submit" id="submit"> Enviar</button>
+            <button type="submit" name="submit" id="submit">Enviar</button></a>
             </fieldset>
             
         </form>
         
     </div>
+
+    <script src="/principal/js/servico_js/envio_whatsapp.js"></script>
+    <script src="/principal/js/servico_js/calcular_distancia.js"></script>
+    <script src="/principal/js/servico_js/form_solicitacao_servico.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMROG67dMisX221hCQHTg-BOqFwCz3ASM&libraries=geometry&callback=initMap" async defer></script>
+    
    
 </body>
 </html>

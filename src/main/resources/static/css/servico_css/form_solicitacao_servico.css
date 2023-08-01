@@ -221,3 +221,10 @@ legend{
     font-size: 15px;
     color: rgba(197, 171, 171, 0.856);
 }
+
+
+#mensagemErroData{
+    background-image: linear-gradient(to right,rgb(172, 0, 0), rgb(160, 36, 52));
+    font-size: 15px;
+    color: rgba(197, 171, 171, 0.856);
+}

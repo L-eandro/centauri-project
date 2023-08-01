@@ -76,7 +76,7 @@ Serviço: ${servico}`;
             // Codificar a mensagem para usar no link do WhatsApp
             const numeroTelefone = '5581988742454';
             const encodedMessage = encodeURIComponent(mensagem);
-            const whatsappURL = `https://wa.me/5581989029165/?text=${encodedMessage}`;
+            const whatsappURL = `https://wa.me/${numeroTelefone}/?text=${encodedMessage}`;
 
             // Redirecionar para o link do WhatsApp
             window.open(whatsappURL, "_blank");
@@ -89,3 +89,6 @@ Serviço: ${servico}`;
 // Adicionar o evento de submit ao formulário
 const formulario = document.getElementById("solicitacao-form");
 formulario.addEventListener("submit", enviarFormulario);
+
+
+
