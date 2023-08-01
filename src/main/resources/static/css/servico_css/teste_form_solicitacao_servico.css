@@ -1,17 +1,11 @@
-
-* {
-    padding: 0;
-    margin: 0;
+/* Definição da fonte e plano de fundo da página */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, rgba(122, 138, 255, 0.845), rgba(206, 208, 255, 0.827));
    
 }
 
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(to right, rgba(144, 157, 252, 0.678), rgba(206, 208, 255, 0.827));
-    position: flex;
-}
 
-/*parte de cima da tela*/
 header{
     background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
   
@@ -91,56 +85,60 @@ header{
       transition: all 0.3s;
       font-size: 1.1rem; 
   }
-  
 
 
-.box{
+
+/* Estilo do contêiner principal */
+.box {
     color: white;
-    position: absolute;
+    position: absolute; /* Define a posição absoluta em relação ao ancestral que possui position: relative */
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-15%);
-    background: linear-gradient(to right, rgba(0, 21, 104, 0.9), rgba(58, 73, 185, 0.952));
-    padding: 50px;
+    transform: translate(-50%, -10%); /* Centraliza o elemento horizontalmente e o posiciona 20% acima do centro vertical */
+    background-color: rgba(0, 0, 0, 0.6);
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
+    padding: 60px;
     border-radius: 30px;
-    width: 30%;
-    margin-bottom: 20px;
-    
-    
+    width: 30%; /* Define a largura do elemento */
 }
 
-fieldset{
+/* Efeito de sombra e transição no hover do contêiner */
+.box:hover {
+    box-shadow: 1px 1px 10px #0091ff;
+    transition: all 0.8s; /* Define uma transição suave para todas as mudanças de estilo */
+    transform: translate(-50%, -20%); /* Aparentemente duplicado, mas não tem efeito porque a regra anterior já define o mesmo valor */
+    padding: 62px; /* Aumenta um pouco o preenchimento no hover */
+}
+
+/* Estilo do fieldset */
+fieldset {
     border: 3px solid dodgerblue;
-    margin-bottom: 8px;
-    border-radius: 10px;
-    
 }
 
+/* Efeito de sombra e transição no hover do fieldset */
 fieldset:hover {
     box-shadow: 1px 1px 10px #ffffff;
-    transition: all 0.8s;  
-   
+    transition: all 0.8s; /* Define uma transição suave para todas as mudanças de estilo */
 }
 
-fieldset:not(:hover) {
-    transition: all 0.8s;  
-}
-
-
-
-legend{
+/* Estilo da legenda do fieldset */
+legend {
     border: 1px solid rgb(0, 123, 245);
     padding: 10px;
     text-align: center;
     background-color: rgb(0, 96, 192);
     border-radius: 8px;
 }
-.inputBox{
+
+/* Estilo do contêiner dos campos de entrada */
+.inputBox {
     position: relative;
     display: flex;
     flex-direction: column;
 }
-.inputUser{
+
+/* Estilo dos campos de entrada */
+.inputUser {
     background: none;
     border: none;
     border-bottom: 1px solid white;
@@ -149,37 +147,28 @@ legend{
     font-size: 11.9px;
     width: 100%;
     letter-spacing: 2px;
-    
 }
-.labelInput{
+
+/* Estilo das etiquetas associadas aos campos de entrada */
+.labelInput {
     color: rgba(195, 195, 195, 0.806);
     position: absolute;
-    top: 0px;
+    top: 0px; /* Posiciona a etiqueta no topo do campo de entrada */
     left: 2px;
     pointer-events: none;
-    transition: .5s;
-    
-    
+    transition: .5s; /* Define uma transição suave para as mudanças de estilo */
 }
 
+/* Quando o campo de entrada está em foco ou é válido, a etiqueta se move para cima e muda de cor */
 .inputUser:focus ~ .labelInput,
-.inputUser:valid ~ .labelInput{
-    top: -20px;
-    font-size: 12px;
-    color: dodgerblue;
+.inputUser:valid ~ .labelInput {
+    top: -20px; /* Move a etiqueta para cima */
+    font-size: 10px; /* Reduz o tamanho da fonte da etiqueta */
+    color: dodgerblue; /* Muda a cor da etiqueta */
 }
 
-.labelDesabilitado{
-    color: dodgerblue;
-    position: absolute;
-    top: -20px;
-    font-size: 12px;
-    
-
-}
-
-
-#data-servico{
+/* Estilo específico para o campo de data-servico */
+#data-servico {
     border: none;
     padding: 10px;
     border-radius: 10px;
@@ -187,7 +176,8 @@ legend{
     font-size: 15px;
 }
 
-#horario{
+/* Estilo específico para o campo de horario */
+#horario {
     border: none;
     padding: 8px;
     border-radius: 10px;
@@ -195,9 +185,9 @@ legend{
     font-size: 15px;
 }
 
-
-#submit{
-    background-image: linear-gradient(to right,rgb(0, 92, 197), rgb(90, 20, 220));
+/* Estilo do botão submit */
+#submit {
+    background-image: linear-gradient(to right, rgb(0, 92, 197), rgb(90, 20, 220));
     width: 100%;
     border: none;
     padding: 15px;
@@ -206,18 +196,8 @@ legend{
     cursor: pointer;
     border-radius: 10px;
 }
-#submit:hover{
-    background-image: linear-gradient(to right,rgb(0, 80, 172), rgb(80, 19, 195));
-}
 
-#mensagemErro{
-    background-image: linear-gradient(to right,rgb(172, 0, 0), rgb(160, 36, 52));
-    font-size: 15px;
-    color: rgba(197, 171, 171, 0.856);
-}
-
-#mensagemErro2{
-    background-image: linear-gradient(to right,rgb(172, 0, 0), rgb(160, 36, 52));
-    font-size: 15px;
-    color: rgba(197, 171, 171, 0.856);
+/* Efeito de transição no hover do botão submit */
+#submit:hover {
+    background-image: linear-gradient(to right, rgb(0, 80, 172), rgb(80, 19, 195));
 }

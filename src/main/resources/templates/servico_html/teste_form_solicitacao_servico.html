@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/servico_css/form_solicitacao_servico.css}">>
+    <title>Envio de Solicitação para Motorista</title>
+    
+</head>
+<body>
+    <script th:src="@{/js/servico_css/form_solicitacao_servico.js}" defer></script>
+
+    <header>
+        <nav class="nav-bar">
+        <div class="logo">
+       <a th:href="@{/}" class="nav-link"> <h1>Centauri</h1></a>
+        </div>
+        <div class="nav-list">
+    <ul>
+        <li class="nav-item"><a  th:href="@{/motorista/editar/}" class="nav-link">Editar Dados</a></li>
+        <li class="nav-item"><a th:href="@{/motorista/listar/}" class="nav-link">Litar veiculo</a></li>
+        <li class="nav-item"><a th:href="@{/motorista/cadastrar}" class="nav-link">Cadastrar veiculo</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
+    </ul>
+        </div>
+        <div class="login-button">
+            <button><a href="/">Sair</a></button>  
+        </div>
+        </nav>
+    </header>
+
+
+
+    <div class="box">
+        <form action="#" id="solicitacao-form">
+            <fieldset>
+                <legend><b>Envio de Solicitação Para Motorista</b></legend>
+                <br>
+
+                <label><b>Data do Serviço:</b></label>
+                <input type="date" name="data-servico" id="data-servico" required>
+                <br><br>
+
+                <label for="horario"><b>Horario:</b></label>
+                <input type="time" name="horario" id="horario" required>
+                <br><br><br>
+                <div class="inputBox">
+                    <input type="number" name="valor" id="valor" class="inputUser" required>
+                    <label for="valor" class="labelInput">Oferte um Valor $</label>
+                </div>
+                <br><br>
+
+                <div class="input-group">
+                    <label for="endereco-partida"><b>Endereço de Partida</b></label>
+                    <br><br>
+
+                    <div class="inputBox">
+                        <input type="text" name="cep" id="cep" class="inputUser" required onkeyup="buscarEnderecoPartida()">
+                        <label for="cep" class="labelInput">Cep</label>
+                    </div>
+                    <br><br>
+
+                    <div class="inputBox">
+                        <input type="text" name="logradouro" id="logradouro" class="inputUser" required disabled>
+                        <label for="logradouro" class="labelInput">Logradouro</label>
+                    </div>
+                    <br><br>
+
+                    <div class="inputBox">
+                        <input type="text" name="bairro" id="bairro" class="inputUser" required disabled>
+                        <label for="bairro" class="labelInput">Bairro</label>
+                    </div>
+                    <br><br>
+
+                    <div class="inputBox">
+                        <input type="text" name="cidade" id="cidade" class="inputUser" required disabled>
+                        <label for="cidade" class="labelInput">Cidade</label>
+                    </div>
+                    <br><br>
+
+                    <div class="inputBox">
+                        <input type="text" name="complemento" id="complemento" class="inputUser" required disabled>
+                        <label for="complemento" class="labelInput">Complemento / Referência</label>
+                    </div>
+                    <br><br><br>
+                </div>
+
+                <div class="input-group">
+                    <label><b>Endereço de Chegada</b></label>
+                    <br><br>
+                    <div class="inputBox">
+                        <input type="text" name="cep-chegada" id="cep-chegada" class="inputUser" required onkeyup="buscarEnderecoChegada()">
+                        <label for="cep-chegada" class="labelInput">Cep</label>
+                    </div>
+                    <br><br>
+
+                    <div class="inputBox">
+                        <input type="text" name="logradouro-chegada" id="logradouro-chegada" class="inputUser" required disabled>
+                        <label for="logradouro-chegada" class="labelInput">Logradouro</label>
+                    </div>
+                    <br><br>
+
+                    <div class="inputBox">
+                        <input type="text" name="bairro-chegada" id="bairro-chegada" class="inputUser" required disabled>
+                        <label for="bairro-chegada" class="labelInput">Bairro</label>
+                    </div>
+                    <br><br>
+
+                    <div class="inputBox">
+                        <input type="text" name="cidade-chegada" id="cidade-chegada" class="inputUser" required disabled>
+                        <label for="cidade-chegada" class="labelInput">Cidade</label>
+                    </div>
+                    <br><br>
+
+                    <div class="inputBox">
+                        <input type="text" name="complemento-chegada" id="complemento-chegada" class="inputUser" required disabled>
+                        <label for="complemento-chegada" class="labelInput">Complemento / Referencia</label>
+                    </div>
+                    <br><br><br>
+                </div>
+
+                <div class="input-group">
+                    <label><b>Informações do Motorista / Veiculo</b></label>
+                    <br><br>
+
+                    <div class="inputBox">
+                        <input type="text" name="nome" id="nome" class="inputUser" required disabled>
+                        <label for="nome" class="labelInput">Nome Motorista</label>
+                    </div>
+                    <br><br>
+
+                    <div class="inputBox">
+                        <input type="text" name="veiculo" id="veiculo" class="inputUser" required disabled>
+                        <label for="veiculo" class="labelInput">Veiculo</label>
+                    </div>
+                    <br><br>
+
+                    <div class="inputBox">
+                        <input type="text" name="servico" id="servico" class="inputUser" required onblur="ocultarServico()">
+                        <label for="servico" class="labelInput">Servico</label>
+                    </div>
+                    <br><br>
+
+                    <div class="inputBox">
+                        <div id="lugar" style="display: none;" onblur="ocultarServico()">
+                            <input type="text" name="lugar" id="lugar" class="inputUser" required disabled>
+                            <label for="lugar" class="labelInput">Max Lugares</label>
+                        </div>
+                    </div>
+
+                    <div class="inputBox">
+                        <div id="kg" style="display: none;" onblur="ocultarServico()">
+                            <input type="text" name="kg" id="kg" class="inputUser" required disabled>
+                            <label for="kg" class="labelInput">Max KG</label>
+                        </div>
+                    </div>
+
+                    <div class="inputBox">
+                        <div id="litro" style="display: none;" onblur="ocultarServico()">
+                            <input type="text" name="litro" id="litro" class="inputUser" required disabled>
+                            <label for="litro" class="labelInput">Max Litros</label>
+                        </div>
+                    </div>
+                    <br><br>
+                </div>
+
+                <button type="submit" name="submit" id="submit">Enviar</button>
+            </fieldset>
+        </form>
+    </div>
+
+    
+</body>
+</html>
