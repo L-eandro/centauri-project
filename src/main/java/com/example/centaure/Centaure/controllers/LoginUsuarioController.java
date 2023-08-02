@@ -8,10 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class LoginUsuario {
+public class LoginUsuarioController {
     @Autowired
     private UsuarioServive usuarioServive;
 
@@ -42,5 +41,11 @@ public class LoginUsuario {
             return "/usuario_html/login_usuario";
         }
         // Página de sair (logout) do usuário
+    }
+    @GetMapping("usuario/sair")
+    public String sair(HttpSession session){
+        // Invalida a sessão do usuário e redireciona para a página inicial
+        session.invalidate();
+        return "redirect:/";
     }
 }

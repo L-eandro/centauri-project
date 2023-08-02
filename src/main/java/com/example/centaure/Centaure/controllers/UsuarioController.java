@@ -20,12 +20,6 @@ public class UsuarioController {
     @Autowired
     private UsuarioServive usuarioServive;
 
-    @GetMapping("usuario/sair")
-    public String sair(HttpSession session){
-        // Invalida a sessão do usuário e redireciona para a página inicial
-        session.invalidate();
-        return "redirect:/";
-    }
 
     // Página de cadastro de usuário
     @GetMapping("/cadastro/usuario")
