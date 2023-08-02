@@ -8,8 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class SevicoController {
 
+
     // Página para escolher o tipo de serviço
-    @GetMapping("/escolher/servico")
+
+    @GetMapping("/usuario/escolher/servico")
+
 
     public String escolherServico(Model model, Usuario usuario){
         // Adiciona o objeto "usuario" ao modelo para ser utilizado na página

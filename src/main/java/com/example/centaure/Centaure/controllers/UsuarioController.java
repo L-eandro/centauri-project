@@ -20,31 +20,6 @@ public class UsuarioController {
     @Autowired
     private UsuarioServive usuarioServive;
 
-    // Processa o login do usuário
-    @GetMapping("/login/usuario")
-    public String login(){
-        return "usuario_html/login_usuario";
-    }
-
-    // Processa o login do usuário
-    @PostMapping("/login/usuario")
-    public String login(Usuario usuario, HttpSession session, Model model, @RequestParam String email, @RequestParam String senha){
-        // Verifica se o usuário existe no banco de dados com o email e senha fornecidos
-        usuario = usuarioServive.findByEmailAndSenha(email, senha);
-        if (usuario !=null){
-            // Se o usuário existe, armazena-o na sessão e redireciona para a página de escolha de serviço
-            session.setAttribute("logado", usuario);
-            return "redirect:/escolher/servico";
-        } else {
-            // Se o usuário não existe, exibe uma mensagem de erro e redireciona de volta para a página de login
-            model.addAttribute("message", "E-mail ou senha incorretos");
-            model.addAttribute("style", "margin-left: 120px; color: red;");
-            return "redirect:/login/usuario";
-        }
-
-    }
-
-    // Página de sair (logout) do usuário
     @GetMapping("usuario/sair")
     public String sair(HttpSession session){
         // Invalida a sessão do usuário e redireciona para a página inicial
