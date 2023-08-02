@@ -18,7 +18,7 @@
         </div>
 
           <div class="form">
-            <form id="endereco-form">
+            <form action="/esqueci/senha" method="post" id="endereco-form">
                 <div class="form-header">
                     <div class="title">
                         <h1>Confirme email</h1>
@@ -33,8 +33,10 @@
                 </div>
 
                 <div class="btn-cadastrar">
-                    <button id="btn-cadastrar" type="submit"><a href="#">Enviar</a> </button>
+                    <button id="btn-cadastrar" type="submit"><a>Enviar</a> </button>
                 </div>
+
+                <div th:text="${msgErroAdd}" th:style="${style}" > </div>
                
                 <a th:href="@{/login/motorista}" class="esqueceu-senha">Lembrou da senha?</a>
 

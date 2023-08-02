@@ -20,7 +20,7 @@
 
     <div class="form">
 
-            <form id="endereco-form">
+            <form action="/redefinir/senha" method="post" id="endereco-form">
                 <div class="form-header">
                     <div class="title">
                         <h1>Refedina sua senha</h1>
@@ -33,17 +33,17 @@
                    
                     <div class="input-box">
                         <label for="codigo">Codigo</label>
-                        <input id="codigo" type="text" name="codigo" class="linha-nova_senha" placeholder="Codigo recebido no email" required data-input>
+                        <input id="codigo" type="text" name="codVerificar" class="linha-nova_senha" placeholder="Codigo recebido no email" required data-input>
                     </div>
 
                     <div class="input-box">
                         <label for="password">Nova senha</label>
-                        <input id="password" type="password" name="password" class="linha-nova_senha" placeholder="Informe a nova senha" required data-input>
+                        <input id="password" type="password" name="senha" class="linha-nova_senha" placeholder="Informe a nova senha" required data-input>
                     </div>
 
                     <div class="input-box">
-                        <label for="password">Confirme a Nova senha</label>
-                        <input id="password" type="password" name="password" class="linha-nova_senha" placeholder="Confirme a nova senha" required data-input>
+                        <label for="confirmPassword">Confirme a Nova senha</label>
+                        <input id="confirmPassword" type="password" name="passwordValid" class="linha-nova_senha" placeholder="Confirme a nova senha" required data-input>
                     </div>
 
                     <div class="input-exibir-senha">
@@ -54,8 +54,10 @@
                 </div>
 
                 <div class="btn-cadastrar">
-                    <button id="btn-cadastrar" type="submit"><a href="#">Salvar</a> </button>
+                    <button id="btn-cadastrar" type="submit"><a>Salvar</a> </button>
                 </div>
+
+                <div th:text="${msgErro2}"  > </div>
                
                 
 
