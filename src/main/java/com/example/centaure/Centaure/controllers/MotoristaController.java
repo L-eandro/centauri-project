@@ -4,7 +4,9 @@ import com.example.centaure.Centaure.models.Motorista;
 import com.example.centaure.Centaure.models.Usuario;
 import com.example.centaure.Centaure.service.MotoristaService;
 import extencao.MotoristaInvalid;
+import extencao.MotoristaNonexistentExcepition;
 import jakarta.servlet.http.HttpSession;
+import org.apache.catalina.authenticator.SavedRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -84,6 +86,51 @@ public class MotoristaController {
     public String esqueciSenha(){
         return "/motorista_html/esqueceu_senha_motorista";
     }
+
+    @PostMapping("/esqueci/senha")
+    public  String esqueciSenha2(String email, RedirectAttributes ra){
+
+        try {
+            motoristaService.pedidoAlterarSenha(email);
+            return "/motorista_html/redefinindo_senha_motorista";
+
+        } catch (MotoristaNonexistentExcepition me){
+            ra.addFlashAttribute("msgErroAdd", me.getMessage());
+            ra.addFlashAttribute("style","margin-left: 140px; color: red;");
+        }
+            return "redirect:/esqueci/senha";
+
+    }
+
+    @GetMapping("/redefinir/senha")
+    public String redefinirSenha(){
+        return "/motorista_html/redefinindo_senha_motorista";
+    }
+
+    @PostMapping("/redefinir/senha")
+    public String redefinirSenha2(Motorista motorista, String passwordValid, Model model, RedirectAttributes ra){
+
+        try {
+
+            motoristaService.validPassword(motorista, passwordValid);
+
+            Motorista u = motoristaService.searchByCod(motorista.getCodVerificar());
+
+            motoristaService.validCod(u, motorista);
+
+            motoristaService.alterPassword(u, motorista.getSenha());
+
+
+            return "redirect:/login/motorista";
+
+        } catch (MotoristaInvalid e) {
+            ra.addFlashAttribute("msgErro2");
+            ra.addFlashAttribute("style","margin-left: 140px; color: red;");
+        }
+            return "redirect:/redefinir/senha";
+    }
+
+
 
     @GetMapping("/acesso-negado")
     public String acessoNegado(){

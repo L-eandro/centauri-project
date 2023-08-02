@@ -37,7 +37,9 @@ public class Motorista {
     @Column(nullable = false)
     private String senha;
 
-    
+
+    private String codVerificar;
+
     @OneToMany(mappedBy = "motorista")
     List<Veiculo> veiculos;
 
