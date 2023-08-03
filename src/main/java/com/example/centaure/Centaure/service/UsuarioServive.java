@@ -77,5 +77,8 @@ public class UsuarioServive {
         usuarioRepositores.deleteById(id);
         return "";
     }
+   public Optional<Usuario> findByEmail(String email){
+        return usuarioRepositores.findByEmail(email);
+   }
 
 }
