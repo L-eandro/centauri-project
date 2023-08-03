@@ -118,7 +118,7 @@ public class MotoristaController {
 
             motoristaService.alterPassword(u, motorista.getSenha());
 
-            ra.addFlashAttribute("msgSenhaAlterada","Senha alterada co sucesso");
+            ra.addFlashAttribute("msgSenhaAlterada","Senha alterada com sucesso");
             ra.addFlashAttribute("style","margin-left: 50px; color: green;");
 
             return "redirect:/redefinir/senha";
