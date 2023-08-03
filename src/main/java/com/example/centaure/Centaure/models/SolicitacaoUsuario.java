@@ -34,6 +34,7 @@ public class SolicitacaoUsuario {
     private String cidade2;
     private String complemento2;
 
+    //atributos motorista e veiculos
     
 
 
