@@ -10,15 +10,15 @@
 </head>
 
 <body>
-    <script th:src="@{/js/motorista_js/redefinindo_senha_motorista.js}" defer></script>
+    <script th:src= "@{/js/motorista_js/redefinindo_senha_motorista.js}" defer></script>
     
     <div class="container">
-        <div class="form-image">
-            
+
+            <div class="form-image">
             <img  th:src="@{/img/motorista_img/redefinindo_senha_motorista.svg}" alt="alterar a senha">
             </div>
 
-    <div class="form">
+        <div class="form">
 
             <form action="/redefinir/senha" method="post" id="endereco-form">
                 <div class="form-header">
@@ -49,23 +49,30 @@
                     <div class="input-exibir-senha">
                         <label for="confirmPassword">Exibir Senha</label>
                         <input type="checkbox" id="confirmPassword" name="confirmPassword" onchange="exibirPassword()">
-                        </div>
+                    </div>
 
-                </div>
+                 </div>
 
-                <div class="btn-cadastrar">
+                 
+                 <div class="btn-cadastrar">
                     <button id="btn-cadastrar" type="submit"><a>Salvar</a> </button>
-                </div>
+                    <div class="link-a">
+                        
+                        <a th:href="@{/esqueci/senha}">Esqueceu codigo ?</a>
+                        <a th:href="@{/login/motorista}">Ir para Login</a>
+                    </div>
+                    
+                 </div>
 
-                <div th:text="${msgErro2}"  > </div>
-                <div th:text="${msgSenhaAlterada}"  th:style="${style}"> </div>
+                  <div th:text="${msgErro2}"  > </div>
+                  <div th:text="${msgSenhaAlterada}"  th:style="${style}"> </div>
                
                 
-
+                </div>
                 
-            </form>
-        </div>
-    </div>
+                 </form>
+            </div>
+</div>
 </body>
 
 </html>

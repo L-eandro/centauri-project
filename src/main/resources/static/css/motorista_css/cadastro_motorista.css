@@ -92,6 +92,11 @@ body {
     
 }
 
+.input-exibir-senha{
+    font-size: 0.8rem;
+    transform: translate(260%,-50%);
+}
+
 .input-group {
     display: flex;
     flex-wrap: wrap;

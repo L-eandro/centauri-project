@@ -1,43 +1,5 @@
-function ocultar_servicoo() {
 
-    var servico = document.getElementById("servico").value;
-    var kg = document.getElementById("kg");
-    var litro = document.getElementById("litro");
-    var lugar = document.getElementById("lugar");
-    var teste = document.getElementById("teste");
-
-    if (servico === "frete") {
-      litro.style.display = "block";
-      kg.style.display = "none";
-      lugar.style.display = "none";
-      teste.style.display = "none";
-
-    }
-
-    else if (servico === "mudanca") {
-        kg.style.display = "block";
-        litro.style.display = "none";
-        lugar.style.display = "none";
-        teste.style.display = "none";
-      }
-      
-      else if (servico === "viagem") {
-        lugar.style.display = "block";
-        litro.style.display = "none";
-        kg.style.display = "none";
-        teste.style.display = "none";
-      }
-      
-      else {
-        lugar.style.display = "none";
-        litro.style.display = "none";
-        kg.style.display = "none";
-        teste.style.display = "block";
-      }   
-
-  };
-
-
+    
 
   function buscarCepPartida() {
 
@@ -114,26 +76,6 @@ function ocultar_servicoo() {
         complementoInput.focus();
       }
     };
-
-    
-    
-    //função para habilitar os campos novamente para que o usuario consiga editar
-    const toggleDisabled = () => {
-    
-        //verificando se realmente tem algum imput com a opção desabilitada
-        if(logradouroInput.hasAttribute("disabled")){
-            logradouroInput.removeAttribute("disabled");
-            complementoInput.removeAttribute("disabled");
-            cidadeInput.removeAttribute("disabled");
-            bairroInput.removeAttribute("disabled");      
-    
-     }else {
-            //se precisar adicionar desable novamente
-        logradouroInput.setAttribute("desabled","desabled");
-        complementoInput.setAttribute("desabled","desabled");
-        cidadeInput.setAttribute("desabled","desabled");
-        bairroInput.setAttribute("desabled","desabled");           
-    }};
     }
 
 

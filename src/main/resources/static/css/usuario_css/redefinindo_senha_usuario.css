@@ -67,6 +67,16 @@ body {
     
 }
 
+
+.btn-cadastrar .link-a{
+    grid-template-columns: repeat(2, auto); /* Cria duas colunas de largura automática */
+    grid-gap: 20%; 
+    display: grid;
+    
+}
+
+
+
 /*configura tamanho e posição dos inputs*/
 .input-group {
    /* display: flex;

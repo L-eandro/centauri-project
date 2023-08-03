@@ -37,7 +37,7 @@
                 <div class="input-group">
                     <div class="input-box">
                         <label for="nome">Nome Sobrenome</label>
-                        <input id="nome" type="text" name="nome" placeholder="Digite seu Nome e ultimo Sobrenome" required="required">
+                        <input id="nome" type="text" name="nome" placeholder="Nome e ultimo Sobrenome" required="required">
                     </div>
 
                     <div class="input-box">
@@ -66,10 +66,14 @@
                     <div class="input-box">
                         <label for="password">Senha</label>
                         <input id="password" type="password" name="senha" placeholder="Digite sua senha" required="required">
+                        
                     </div>
 
                     
-                   
+                    <div class="input-exibir-senha">
+                        <label for="confirmPassword">Exibir Senha</label>
+                        <input type="checkbox" id="confirmPassword" name="confirmPassword" onchange="exibirPassword()">
+                    </div>
 
                 </div>
                 <div class="input-box">

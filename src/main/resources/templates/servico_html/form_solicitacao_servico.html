@@ -7,12 +7,10 @@
     <link rel="stylesheet" th:href="@{/css/servico_css/form_solicitacao_servico.css}">
     <link rel="stylesheet" href="/principal/css/servico_css/form_solicitacao_servico.css">
     <title>Envio de Solicitação para Motorista</title>
-    <script th:src="@{/js/servico_css/form_solicitacao_servico.js}" defer></script>
+   
 </head>
 <body>
 
-    
-  
 
     <header>
         <nav class="nav-bar">
@@ -56,32 +54,32 @@
                 <br><br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="cep" id="cep" class="inputUser"  onkeyup="buscarCepPartida()" maxlength="8"required>
+                    <input type="text" name="cep" id="cep" class="inputUser"  onkeyup="buscarCepPartida()" maxlength="8">
                     <label for="cep" class="labelInput">Cep</label>
                     <div id="mensagemErro"></div>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="logradouro" name="logradouro" id="logradouro" class="inputUser"  disabled required>
+                    <input type="logradouro" name="logradouro" id="logradouro" class="inputUser"  required>
                     <label for="logradouro" class="labelInput">Logradouro</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="bairro" name="bairro" id="bairro" class="inputUser"  disabled required>
+                    <input type="bairro" name="bairro" id="bairro" class="inputUser"   required>
                     <label for="bairro" class="labelInput">Bairro</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="cidade" id="cidade" class="inputUser"  disabled required> 
+                    <input type="text" name="cidade" id="cidade" class="inputUser"   required> 
                     <label for="cidade" class="labelInput">Cidade</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="complemento" id="complemento" class="inputUser"  disabled >
+                    <input type="text" name="complemento" id="complemento" class="inputUser"  >
                     <label for="complemento" class="labelInput">Numero/Complemento/Referência</label>
                 </div>
                 <br><br>
@@ -92,32 +90,32 @@
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="cep2" id="cep2" class="inputUser"  onkeyup="buscarCepChegada();calcularDistancia()" maxlength="8" required>
+                    <input type="text" name="cep2" id="cep2" class="inputUser"  onkeyup="buscarCepChegada();calcularDistancia()" maxlength="8" >
                     <label for="cep2" class="labelInput">Cep</label>
                     <div id="mensagemErro2"></div>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="logradouro2" id="logradouro2" class="inputUser"  disabled required>
+                    <input type="text" name="logradouro2" id="logradouro2" class="inputUser"   required>
                     <label for="logradouro2" class="labelInput">Logradouro</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="bairro" name="bairro2" id="bairro2" class="inputUser"  disabled required>
+                    <input type="bairro" name="bairro2" id="bairro2" class="inputUser"   required>
                     <label for="bairro2" class="labelInput">Bairro</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="cidade2" id="cidade2" class="inputUser"  disabled required>
+                    <input type="text" name="cidade2" id="cidade2" class="inputUser"   required>
                     <label for="cidade2" class="labelInput">Cidade</label >
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="complemento2" id="complemento2" class="inputUser"  disabled >
+                    <input type="text" name="complemento2" id="complemento2" class="inputUser"   >
                     <label for="complemento2" class="labelDesabilitado">Numero/Complemento/Referência</label>
                 </div>
                 <br><br>
@@ -136,32 +134,32 @@
 
 
                 <div class="inputBox">
-                    <input type="text" name="nome" id="nome" class="inputUser"  required>
+                    <input type="text" name="nome" id="nome" class="inputUser"  required disabled>
                     <label for="nome" class="labelDesabilitado">Nome Motorista</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="veiculo" id="veiculo" class="inputUser"  required>
+                    <input type="text" name="veiculo" id="veiculo" class="inputUser"  required disabled>
                     <label for="veiculo" class="labelDesabilitado">Veiculo</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="nomeModelo" id="nomeModelo" class="inputUser"  required>
+                    <input type="text" name="nomeModelo" id="nomeModelo" class="inputUser"  required disabled>
                     <label for="nomeModelo" class="labelDesabilitado">Nome / Modelo</label>
                 </div>
                 <br><br>
                 
 
                 <div class="inputBox">
-                    <input type="text" name="servico" id="servico" class="inputUser"  required >
+                    <input type="text" name="servico" id="servico" class="inputUser"  required disabled>
                     <label for="servico" class="labelDesabilitado">Servico</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="capacidade" id="capacidade" class="inputUser"  onblur="ocultar_servico()" required >
+                    <input type="text" name="capacidade" id="capacidade" class="inputUser"  required disabled>
                     <label for="capacidade" class="labelDesabilitado">Capacidade</label>
                 </div>
                 <br><br>
@@ -177,10 +175,17 @@
         
     </div>
 
+    <script th:src="@{/js/servico_css/form_solicitacao_servico.js}" defer></script>
+    <script th:src="@{/js/servico_js/envio_whatsapp.js}" defer></script>
+    <script th:src="@{/js/servico_js/calcular_distancia.js}" defer></script>
+    <script th:src="@{https://maps.googleapis.com/maps/api/js?key=AIzaSyAMROG67dMisX221hCQHTg-BOqFwCz3ASM&libraries=geometry&callback=initMap}" async defer></script>
+
+    <!--
     <script src="/principal/js/servico_js/envio_whatsapp.js"></script>
     <script src="/principal/js/servico_js/calcular_distancia.js"></script>
     <script src="/principal/js/servico_js/form_solicitacao_servico.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMROG67dMisX221hCQHTg-BOqFwCz3ASM&libraries=geometry&callback=initMap" async defer></script>
+    -->
     
    
 </body>

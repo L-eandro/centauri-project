@@ -9,7 +9,10 @@
 </head>
 
 <body>
-<script></script>
+
+    <script th:src="@{/js/usuario_js/cadastro_usuario.js}" defer></script>
+
+
 <div class="container">
     <div class="form-image">
 
@@ -30,8 +33,8 @@
 
             <div class="input-group">
                 <div class="input-box">
-                    <label for="nome">Nome</label>
-                    <input id="nome" type="text" name="nome" placeholder="Digite seu nome completo" required="required">
+                    <label for="nome">Nome Sobrenome</label>
+                    <input id="nome" type="text" name="nome" placeholder="Nome e ultimo Sobrenome" required="required">
                 </div>
 
                 <div class="input-box">
@@ -45,6 +48,11 @@
                     <input id="numero" type="text" name="numero" placeholder="(xx) xxxx-xxxx" required="required">
                 </div>
 
+                <div class="input-box">
+                    <label for="dataNascimento" class="nome-data">Data Nascimento</label>
+                    <input id="dataNascimento" type="date" name="dataNascimento" class="linha-data" required="required">
+                </div>
+
 
                 <div class="input-box">
                     <label for="email">E-mail</label>
@@ -53,16 +61,18 @@
 
 
                 <div class="input-box">
-                    <label for="senha">Senha</label>
-                    <input id="senha" type="password" name="senha" placeholder="Digite sua senha" required="required">
+                    <label for="password">Senha</label>
+                    <input id="password" type="password" name="senha" placeholder="Digite sua senha" required="required">
+                    
+                </div>
+
+                <div class="input-exibir-senha">
+                    <label for="confirmPassword">Exibir Senha</label>
+                    <input type="checkbox" id="confirmPassword" name="confirmPassword" onchange="exibirPassword()">
                 </div>
 
 
-                <div class="input-box">
-                    <label for="dataNascimento" class="nome-data">Data Nascimento</label>
-                    <input id="dataNascimento" type="date" name="dataNascimento" class="linha-data" required="required">
-                </div>
-
+                
             </div>
             <div class="input-box">
                 <div class="gender-inputs">
@@ -89,13 +99,16 @@
                     </div>
                 </div>
                 <div class="continue-button" >
-                    <button type="submit"><a>Continuar</a></button>
+                    <button type="submit"><a>Cadastrar</a></button>
                     <div th:text="${msgError}" style="color:red"> </div>
                 </div>
 
         </form>
     </div>
 </div>
+
+
+
 </body>
 
 </html>

@@ -54,6 +54,11 @@ body {
     padding: 0.5rem 5rem;
 }
 
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    
+}
 
 /*traço de baixo do nome redefina senha*/
 .form-header h1::after {
@@ -66,6 +71,7 @@ body {
     position: absolute;
     
 }
+
 
 /*configura tamanho e posição dos inputs*/
 .input-group {
@@ -113,13 +119,20 @@ body {
     color: #554df5e1;
 }
 
+.btn-cadastrar .link-a{
+    grid-template-columns: repeat(2, auto); /* Cria duas colunas de largura automática */
+    grid-gap: 20%; 
+    display: grid;
+    
+}
+
+
 /*botao salvar*/
 .btn-cadastrar button {
     width: 100%;
-    margin-top: 2.5rem;
     border: none;
-    background-color: #202e64;
-    padding: 0.62rem;
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
+    padding: 0.50rem;
     border-radius: 5px;
     cursor: pointer;
 }
