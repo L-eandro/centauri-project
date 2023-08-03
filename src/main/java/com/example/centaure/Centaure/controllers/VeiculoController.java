@@ -27,11 +27,7 @@ public class VeiculoController {
         return "/veiculo_html/listar_veiculo";
     }
 
-    // Página de formulário de solicitação de serviço
-    @GetMapping("/FormSolicitacao/usuario")
-    public String formSolicitacao(){
-        return "servico_html/form_solicitacao_servico";
-    }
+  
 
     // Página de listagem de serviços de frete
     @GetMapping("/listarFrete/servico")

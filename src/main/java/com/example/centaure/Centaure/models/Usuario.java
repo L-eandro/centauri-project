@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -48,4 +49,9 @@ public class Usuario {
     public void setId(Integer id) {
         this.id = id;
     }
+
+
+     @OneToMany(mappedBy = "usuario")
+    List<SolicitacaoUsuario> solicitacaoUsuarios;
+
 }

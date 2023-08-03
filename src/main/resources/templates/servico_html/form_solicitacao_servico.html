@@ -32,7 +32,7 @@
     </header>
 
     <div class="box">
-        <form  id="solicitacao-form">
+        <form action="/solicitacao/usuario"  id="solicitacao-form"  method="post" th:object="${solicitacaoUsuario}">
             <fieldset>
                 <legend><b>Envio de Solicitação Para Motorista</b></legend>
                 <br>
@@ -167,11 +167,9 @@
                 </div>
                 <br><br>
 
-        
-            
-               
-
             <button type="submit" name="submit" id="submit">Enviar</button></a>
+            <div th:text="${msgError}" th:style="${style}"> </div>
+            <div th:text="${msgSucess}" th:style="${style}"> </div>
             </fieldset>
             
         </form>
@@ -181,7 +179,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMROG67dMisX221hCQHTg-BOqFwCz3ASM&libraries=geometry&callback=initMap" async defer></script>
     <script th:src="@{/js/servico_js/buscar_cep_partida.js}" defer></script>
     <script th:src="@{/js/servico_js/buscar_cep_chegada.js}" defer></script>
-    <script th:src="@{/js/servico_js/envio_whatsapp.js}" defer></script>
+    <script th:src="@{/js/servico_js/envio_whatsapp.}" defer></script>
     <script th:src="@{/js/servico_js/calcular_distancia.js}" defer></script>
 
 <!--

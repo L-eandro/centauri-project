@@ -1,7 +1,6 @@
 package com.example.centaure.Centaure.models;
 
 
-
 import jakarta.persistence.*;
 
 import lombok.Data;
@@ -14,29 +13,29 @@ public class SolicitacaoUsuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(nullable = false)
     private String data;
 
+    @Column(nullable = false)
     private String hora;
 
+    @Column
     private Double valor;
 
+    @Column(nullable = false)
     private String resultado;
 
-    private String cep;
-    private String logradouro;
-    private String bairro;
-    private String cidade;
-    private String complemento;
+    @Column
+    private EnderecoPartida enderecoPartida;
 
-    private String cep2;
-    private String logradouro2;
-    private String bairro2;
-    private String cidade2;
-    private String complemento2;
+    @Column
+    private EnderecoChegada enderecoChegada;
 
-    //atributos motorista e veiculos
     
+    @ManyToOne
+    private Usuario usuario;
 
+  
 
 
 

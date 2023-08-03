@@ -47,6 +47,11 @@ public class Motorista {
     @OneToMany(mappedBy = "motorista")
     List<Veiculo> veiculos;
 
+
+     
+
+
+
   
 
 }
