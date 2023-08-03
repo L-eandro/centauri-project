@@ -1,4 +1,5 @@
 function exibirPassword() {
+  
     var passwordInput = document.getElementById("password");
     if (passwordInput.type === "password") {
       passwordInput.type = "text";

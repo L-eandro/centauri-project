@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="pt-BR"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
@@ -11,6 +11,8 @@
 </head>
 <body>
 
+    
+  
 
     <header>
         <nav class="nav-bar">
@@ -20,6 +22,7 @@
         <div class="nav-list">
     <ul>
         <li class="nav-item"><a href="#" class="nav-link">Editar Dados</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Minhas Solicitações</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
     </ul>
         </div>
@@ -35,7 +38,7 @@
                 <br>
                        
                 <label ><b>Data do Serviço:</b></label>
-                <input type="date" name="data-servico" id="data-servico" required>
+                <input type="date" name="data" id="data-servico" required>
                 <div id="mensagemErroData"></div>
                 <br><br>
 
@@ -54,32 +57,32 @@
                 <br><br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="cep" id="cep" class="inputUser"  onkeyup="buscarCepPartida()" maxlength="8">
+                    <input type="text" name="cep" id="cep" class="inputUser"  onkeyup="buscarCepPartida()" >
                     <label for="cep" class="labelInput">Cep</label>
                     <div id="mensagemErro"></div>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="logradouro" name="logradouro" id="logradouro" class="inputUser"  required>
+                    <input type="logradouro" name="logradouro" id="logradouro" class="inputUser"  disabled required>
                     <label for="logradouro" class="labelInput">Logradouro</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="bairro" name="bairro" id="bairro" class="inputUser"   required>
+                    <input type="bairro" name="bairro" id="bairro" class="inputUser"  disabled required>
                     <label for="bairro" class="labelInput">Bairro</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="cidade" id="cidade" class="inputUser"   required> 
+                    <input type="text" name="cidade" id="cidade" class="inputUser"  disabled required> 
                     <label for="cidade" class="labelInput">Cidade</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="complemento" id="complemento" class="inputUser"  >
+                    <input type="text" name="complemento" id="complemento" class="inputUser"  disabled >
                     <label for="complemento" class="labelInput">Numero/Complemento/Referência</label>
                 </div>
                 <br><br>
@@ -90,32 +93,32 @@
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="cep2" id="cep2" class="inputUser"  onkeyup="buscarCepChegada();calcularDistancia()" maxlength="8" >
+                    <input type="text" name="cep2" id="cep2" class="inputUser"  onkeyup="buscarCepChegada();calcularDistancia()" maxlength="8" required>
                     <label for="cep2" class="labelInput">Cep</label>
                     <div id="mensagemErro2"></div>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="logradouro2" id="logradouro2" class="inputUser"   required>
+                    <input type="text" name="logradouro2" id="logradouro2" class="inputUser"  disabled required>
                     <label for="logradouro2" class="labelInput">Logradouro</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="bairro" name="bairro2" id="bairro2" class="inputUser"   required>
+                    <input type="bairro" name="bairro2" id="bairro2" class="inputUser"  disabled required>
                     <label for="bairro2" class="labelInput">Bairro</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="cidade2" id="cidade2" class="inputUser"   required>
+                    <input type="text" name="cidade2" id="cidade2" class="inputUser"  disabled required>
                     <label for="cidade2" class="labelInput">Cidade</label >
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="complemento2" id="complemento2" class="inputUser"   >
+                    <input type="text" name="complemento2" id="complemento2" class="inputUser"  disabled >
                     <label for="complemento2" class="labelDesabilitado">Numero/Complemento/Referência</label>
                 </div>
                 <br><br>
@@ -134,32 +137,32 @@
 
 
                 <div class="inputBox">
-                    <input type="text" name="nome" id="nome" class="inputUser"  required disabled>
+                    <input type="text" name="nome" id="nome" class="inputUser"  required>
                     <label for="nome" class="labelDesabilitado">Nome Motorista</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="veiculo" id="veiculo" class="inputUser"  required disabled>
+                    <input type="text" name="veiculo" id="veiculo" class="inputUser"  required>
                     <label for="veiculo" class="labelDesabilitado">Veiculo</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="nomeModelo" id="nomeModelo" class="inputUser"  required disabled>
+                    <input type="text" name="nomeModelo" id="nomeModelo" class="inputUser"  required>
                     <label for="nomeModelo" class="labelDesabilitado">Nome / Modelo</label>
                 </div>
                 <br><br>
                 
 
                 <div class="inputBox">
-                    <input type="text" name="servico" id="servico" class="inputUser"  required disabled>
+                    <input type="text" name="servico" id="servico" class="inputUser"  required >
                     <label for="servico" class="labelDesabilitado">Servico</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="capacidade" id="capacidade" class="inputUser"  required disabled>
+                    <input type="text" name="capacidade" id="capacidade" class="inputUser" required >
                     <label for="capacidade" class="labelDesabilitado">Capacidade</label>
                 </div>
                 <br><br>
@@ -175,17 +178,17 @@
         
     </div>
 
-    <script th:src="@{/js/servico_css/form_solicitacao_servico.js}" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMROG67dMisX221hCQHTg-BOqFwCz3ASM&libraries=geometry&callback=initMap" async defer></script>
+    <script th:src="@{/js/servico_js/buscar_cep_partida.js}" defer></script>
+    <script th:src="@{/js/servico_js/buscar_cep_chegada.js}" defer></script>
     <script th:src="@{/js/servico_js/envio_whatsapp.js}" defer></script>
     <script th:src="@{/js/servico_js/calcular_distancia.js}" defer></script>
-    <script th:src="@{https://maps.googleapis.com/maps/api/js?key=AIzaSyAMROG67dMisX221hCQHTg-BOqFwCz3ASM&libraries=geometry&callback=initMap}" async defer></script>
 
-    <!--
+<!--
     <script src="/principal/js/servico_js/envio_whatsapp.js"></script>
     <script src="/principal/js/servico_js/calcular_distancia.js"></script>
     <script src="/principal/js/servico_js/form_solicitacao_servico.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMROG67dMisX221hCQHTg-BOqFwCz3ASM&libraries=geometry&callback=initMap" async defer></script>
-    -->
+   -->
     
    
 </body>

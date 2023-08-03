@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<script th:src="@{/js/usuario_js/login.js}" defer></script>
+<script th:src="@{/js/usuario_js/login_usuario.js}" defer></script>
 
 <div class="container">
     <div class="form-image">
@@ -44,12 +44,12 @@
 
                 <div class="input-box">
                     <label for="password">Senha</label>
-                    <input id="senha" type="password" name="senha" class="linha-senha" placeholder="Digite a Senha" required data-input>
+                    <input id="password" type="password" name="senha" class="linha-senha" placeholder="Digite a Senha" required="required">
                 </div>
 
                 <div class="input-exibir-senha">
-                    <label for="password">Exibir Senha</label>
-                    <input type="checkbox" id="password" onchange="exibirPassword()">
+                    <label for="confirmPassword">Exibir Senha</label>
+                    <input type="checkbox" id="confirmPassword" name="confirmPassword" onchange="exibirPassword()">
                 </div>
 
             </div>
