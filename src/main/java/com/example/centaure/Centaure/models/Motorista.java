@@ -1,5 +1,6 @@
 package com.example.centaure.Centaure.models;
 
+import com.example.centaure.Centaure.enums.Sexo;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -36,6 +37,9 @@ public class Motorista {
 
     @Column(nullable = false)
     private String senha;
+
+    @Enumerated(EnumType.STRING)
+    private Sexo sexo;
 
 
     private String codVerificar;

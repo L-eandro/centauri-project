@@ -1,19 +1,17 @@
 package com.example.centaure.Centaure.controllers;
 
+
 import com.example.centaure.Centaure.models.Motorista;
-import com.example.centaure.Centaure.models.Usuario;
 import com.example.centaure.Centaure.service.MotoristaService;
 import extencao.MotoristaInvalid;
 import extencao.MotoristaNonexistentExcepition;
 import jakarta.servlet.http.HttpSession;
-import org.apache.catalina.authenticator.SavedRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.Optional;
@@ -120,8 +118,10 @@ public class MotoristaController {
 
             motoristaService.alterPassword(u, motorista.getSenha());
 
+            ra.addFlashAttribute("msgSenhaAlterada","Senha alterada co sucesso");
+            ra.addFlashAttribute("style","margin-left: 50px; color: green;");
 
-            return "redirect:/login/motorista";
+            return "redirect:/redefinir/senha";
 
         } catch (MotoristaInvalid e) {
             ra.addFlashAttribute("msgErro2");
