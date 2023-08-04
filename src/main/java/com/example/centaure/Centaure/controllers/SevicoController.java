@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class SevicoController {
 
-/* 
+
     // Página para escolher o tipo de serviço
     @GetMapping("/usuario/escolher/servico")
     public String escolherServico(Model model, Usuario usuario){
@@ -16,7 +16,6 @@ public class SevicoController {
         model.addAttribute("usuario", usuario);
         return "servico_html/escolher_servico";
     }
-    */
 
 
     //metodo para mostrar os motorista disponieis no site de acordo com oque o usuairo escolher na escolher_servico.

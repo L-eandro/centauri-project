@@ -3,9 +3,13 @@ package com.example.centaure.Centaure.models;
 
 import jakarta.persistence.*;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class SolicitacaoUsuario {
 
@@ -23,7 +27,7 @@ public class SolicitacaoUsuario {
     private Double valor;
 
     @Column(nullable = false)
-    private String resultado;
+    private String result;
 
     @Column
     private EnderecoPartida enderecoPartida;
@@ -34,9 +38,5 @@ public class SolicitacaoUsuario {
     
     @ManyToOne
     private Usuario usuario;
-
-  
-
-
 
 }

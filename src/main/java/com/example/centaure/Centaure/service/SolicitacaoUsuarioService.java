@@ -28,7 +28,7 @@ public class SolicitacaoUsuarioService {
      // Verifica se os inputs solicitados estão vazios
     public void salvar(SolicitacaoUsuario solicitacaoUsuario) throws SolicitacaoUsuarioInvalid {
         if (solicitacaoUsuario.getData().trim().isEmpty() || solicitacaoUsuario.getHora().trim().isEmpty()
-                || solicitacaoUsuario.getResultado().trim().isEmpty()
+                || solicitacaoUsuario.getResult().trim().isEmpty()
                 ){
             throw new SolicitacaoUsuarioInvalid("Os campos obrigatórios não podem estar vazio.");
             //VALOR E COMPLEMENTOS NÃO É OBRIGATORIO

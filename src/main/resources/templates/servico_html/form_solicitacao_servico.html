@@ -32,7 +32,7 @@
     </header>
 
     <div class="box">
-        <form action="/solicitacao/usuario"  id="solicitacao-form"  method="post" th:object="${solicitacaoUsuario}">
+        <form action="/usuario/solicitacao"  id="solicitacao-form"  method="post" th:object="${solicitacaoUsuario}">
             <fieldset>
                 <legend><b>Envio de Solicitação Para Motorista</b></legend>
                 <br>
@@ -42,8 +42,8 @@
                 <div id="mensagemErroData"></div>
                 <br><br>
 
-                <label for="horario"><b>Horario de Partida:</b></label>
-                <input type="time" name="horario" id="horario" required>
+                <label for="hora"><b>Horario de Partida:</b></label>
+                <input type="text" name="hora" id="hora" required>
                 <br><br><br>
                 <div class="inputBox">
                     <input type="number" name="valor" id="valor" class="inputUser"  required>
@@ -53,7 +53,7 @@
                 
 
                 <div class="input-group">
-                <label for="endereco-partida"><b>Endereço de Partida</b></label>
+                <label for=""><b>Endereço de Partida</b></label>
                 <br><br><br>
 
                 <div class="inputBox">
@@ -124,8 +124,8 @@
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="resultado" id="resultado" class="inputUser"   readonly disabled required>
-                    <label for="" class="labelDesabilitado">Distancia Total:</label>
+                    <label for="result" class="labelDesabilitado">Distancia Total:</label>
+                    <input type="text" name="result" id="result" class="inputUser" required>
                 </div>
                 <br><br>
                 

@@ -19,33 +19,33 @@ public class SolicitacaoUsuarioController {
 
 
 
-     @GetMapping("/solicitacao/usuario")
+     @GetMapping("/usuario/solicitacao")
     public String solicitaca() {
         return "servico_html/form_solicitacao_servico";
     }
 
-    @PostMapping("/solicitacao/usuario")
+    @PostMapping("/usuario/solicitacao")
     public String criar(SolicitacaoUsuario solicitacaoUsuario, RedirectAttributes ra ,  Model model){
         try {
             this.solicitacaoUsuarioService.salvar(solicitacaoUsuario);
             this.solicitacaoUsuarioService.criar(solicitacaoUsuario);
-            return "redirect:/solicitacao/usuario";
+            return "redirect:/usuario/solicitacao";
 
         } catch (SolicitacaoUsuarioInvalid e ){
             ra.addFlashAttribute("msgError", e.getMessage() );
             ra.addFlashAttribute("style","margin-left: 150px; color: red;");
         }
-        return "redirect:/solicitacao/usuario";
+        return "redirect:/usuario/solicitacao";
     }
 
 
-     @GetMapping("/solicitacao/usuario/listar")
+     @GetMapping("/usuario/solicitacao/listar")
     public String listar(Model model, SolicitacaoUsuario solicitacaoUsuario ){
         model.addAttribute("solicitacaoUsuario", this.solicitacaoUsuarioService.listar(solicitacaoUsuario));
         return "usuario_html/listar_solicitacoes_usuario";
     }
 
-    @GetMapping("/solicitacao/usuario/deletar/{id}")
+    @GetMapping("/usuario/solicitacao/deletar/{id}")
     public String deletar(@PathVariable Integer id){
         solicitacaoUsuarioService.deletar(id);
         return "redirect:/solicitacao/usuario/listar";
