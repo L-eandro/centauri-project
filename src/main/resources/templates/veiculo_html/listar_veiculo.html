@@ -26,14 +26,14 @@
         <div class="nav-list">
     <ul>
         <li class="nav-item"><a  th:href="@{/motorista/editar/{id}}" class="nav-link">Editar Dados</a></li>
-        <li class="nav-item"><a  th:href="@{/listar/veiculo}" class="nav-link">Listar Veiculos</a></li>
-        <li class="nav-item"><a  th:href="@{/cadastro/veiculo}" class="nav-link">Cadastrar Veiculos</a></li>
+        <li class="nav-item"><a  th:href="@{/motorista/listar/veiculo}" class="nav-link">Listar Veiculos</a></li>
+        <li class="nav-item"><a  th:href="@{/motorista/cadastro/veiculo}" class="nav-link">Cadastrar Veiculos</a></li>
         <li class="nav-item"><a  href="#" class="nav-link">Sobre</a></li>
         
     </ul>
         </div>
         <div class="login-button">
-            <button><a th:href="@{/}">Sair</a></button>  
+            <button><a th:href="@{/motorista/sair}">Sair</a></button>
         </div>
         
     </header>
@@ -61,10 +61,10 @@
                 <td>Hilux</td>
                 <td>frete</td>
                <td>
-                <a th:href="@{/editar/veiculo/{id}}" 
+                <a th:href="@{/motorista/editar/veiculo/{id}}"
                 class="btn btn-primary" role="button" style=" background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));">Editar</a>
 
-                <a th:href="@{/listar/veiculo/{id}}"
+                <a th:href="@{/motorista/listar/veiculo/{id}}"
                  class="btn btn-primary" role="button" style=" background: linear-gradient(to right, rgba(100, 2, 0, 0.9), rgb(255, 0, 0));">Exluir</a>
             </td>
               </tr>
