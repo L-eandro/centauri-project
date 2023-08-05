@@ -29,10 +29,10 @@ public class SolicitacaoUsuario {
     @Column(nullable = false)
     private String result;
 
-    @Column
+    @Embedded
     private EnderecoPartida enderecoPartida;
 
-    @Column
+    @Embedded
     private EnderecoChegada enderecoChegada;
 
     

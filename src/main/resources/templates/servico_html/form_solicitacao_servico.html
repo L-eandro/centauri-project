@@ -14,21 +14,23 @@
     
   
 
+    
     <header>
         <nav class="nav-bar">
-        <div class="logo">
-       <a href="/" class="nav-link"> <h1>Centauri</h1></a>
-        </div>
-        <div class="nav-list">
-    <ul>
-        <li class="nav-item"><a href="#" class="nav-link">Editar Dados</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Minhas Solicitações</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
-    </ul>
-        </div>
-        <div class="login-button">
-            <button><a href="/">Sair</a></button>  
-        </div>
+            <div class="logo">
+                <a  th:href="@{/usuario/escolher/servico}" class="nav-link"><h1>Centauri</h1></a>
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a  th:href="@{/usuario/editar/{id}}" class="nav-link">Editar Dados</a></li>
+                    <li class="nav-item"><a  th:href="@{/usuario/solicitacao/listar}" class="nav-link">Minhas Solicitações</a></li>
+                    <li class="nav-item"><a  th:href="@{/usuario/escolher/servico}" class="nav-link">Escolher Servicos</a></li>
+                </ul>
+            </div>
+            <div class="login-button">
+                <button><a th:href="@{usuario/sair}">Sair</a></button>
+            </div>
+        </nav>
     </header>
 
     <div class="box">
@@ -42,9 +44,15 @@
                 <div id="mensagemErroData"></div>
                 <br><br>
 
-                <label for="hora"><b>Horario de Partida:</b></label>
-                <input type="text" name="hora" id="hora" required>
+
+                <div class="inputBox">
+                
+                <input type="text" name="hora" id="hora" class="inputUser" required>
+                <label for="hora" class="labelInput">Horario de Partida:</label>
+                 </div>
                 <br><br><br>
+
+
                 <div class="inputBox">
                     <input type="number" name="valor" id="valor" class="inputUser"  required>
                     <label for="valor" class="labelInput">Oferte um Valor $</label>
@@ -57,32 +65,32 @@
                 <br><br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="cep" id="cep" class="inputUser"  onkeyup="buscarCepPartida()" >
-                    <label for="cep" class="labelInput">Cep</label>
+                    <input type="text" name="enderecoPartida.cep" id="cep" class="inputUser"  onkeyup="buscarCepPartida()" >
+                    <label for="cep" class="labelInput" required>Cep</label>
                     <div id="mensagemErro"></div>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="logradouro" name="logradouro" id="logradouro" class="inputUser"  disabled required>
+                    <input type="logradouro" name="enderecoPartida.logradouro" id="logradouro" class="inputUser"  disabled required>
                     <label for="logradouro" class="labelInput">Logradouro</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="bairro" name="bairro" id="bairro" class="inputUser"  disabled required>
+                    <input type="bairro" name="enderecoPartida.bairro" id="bairro" class="inputUser"  disabled required>
                     <label for="bairro" class="labelInput">Bairro</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="cidade" id="cidade" class="inputUser"  disabled required> 
+                    <input type="text" name="enderecoPartida.cidade" id="cidade" class="inputUser"  disabled required> 
                     <label for="cidade" class="labelInput">Cidade</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="complemento" id="complemento" class="inputUser"  disabled >
+                    <input type="text" name="enderecoPartida.complemento" id="complemento" class="inputUser"  disabled required>
                     <label for="complemento" class="labelInput">Numero/Complemento/Referência</label>
                 </div>
                 <br><br>
@@ -93,39 +101,39 @@
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="cep2" id="cep2" class="inputUser"  onkeyup="buscarCepChegada();calcularDistancia()" maxlength="8" required>
+                    <input type="text" name="enderecoChegada.cep2" id="cep2" class="inputUser"  onkeyup="buscarCepChegada();calcularDistancia()" maxlength="8" required>
                     <label for="cep2" class="labelInput">Cep</label>
                     <div id="mensagemErro2"></div>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="logradouro2" id="logradouro2" class="inputUser"  disabled required>
+                    <input type="text" name="enderecoChegada.logradouro2" id="logradouro2" class="inputUser"  disabled required>
                     <label for="logradouro2" class="labelInput">Logradouro</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="bairro" name="bairro2" id="bairro2" class="inputUser"  disabled required>
+                    <input type="bairro" name="enderecoChegada.bairro2" id="bairro2" class="inputUser"  disabled required>
                     <label for="bairro2" class="labelInput">Bairro</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="cidade2" id="cidade2" class="inputUser"  disabled required>
+                    <input type="text" name="enderecoChegada.cidade2" id="cidade2" class="inputUser"  disabled required>
                     <label for="cidade2" class="labelInput">Cidade</label >
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="complemento2" id="complemento2" class="inputUser"  disabled >
+                    <input type="text" name="enderecoChegada.complemento2" id="complemento2" class="inputUser"  disabled required >
                     <label for="complemento2" class="labelDesabilitado">Numero/Complemento/Referência</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
                     <label for="result" class="labelDesabilitado">Distancia Total:</label>
-                    <input type="text" name="result" id="result" class="inputUser" required>
+                    <input type="text" name="result" id="resultado" class="inputUser" required>
                 </div>
                 <br><br>
                 

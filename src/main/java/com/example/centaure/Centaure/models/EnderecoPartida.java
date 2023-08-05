@@ -2,6 +2,9 @@ package com.example.centaure.Centaure.models;
 
 import jakarta.persistence.Embeddable;
 
+import lombok.Data;
+
+@Data
 @Embeddable
 public class EnderecoPartida {
 

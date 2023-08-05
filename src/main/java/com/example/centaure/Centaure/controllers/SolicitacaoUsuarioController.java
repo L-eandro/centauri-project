@@ -29,13 +29,14 @@ public class SolicitacaoUsuarioController {
         try {
             this.solicitacaoUsuarioService.salvar(solicitacaoUsuario);
             this.solicitacaoUsuarioService.criar(solicitacaoUsuario);
-            return "redirect:/usuario/solicitacao";
+            return "redirect:/usuario/solicitacao/listar";
 
         } catch (SolicitacaoUsuarioInvalid e ){
             ra.addFlashAttribute("msgError", e.getMessage() );
             ra.addFlashAttribute("style","margin-left: 150px; color: red;");
+            return "redirect:/usuario/solicitacao";
         }
-        return "redirect:/usuario/solicitacao";
+        
     }
 
 

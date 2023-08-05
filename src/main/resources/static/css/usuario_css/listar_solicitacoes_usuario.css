@@ -92,16 +92,19 @@ header{
 /*tela inteira*/
 body {
       background: #d9ebf5fb; 
+      
 }
 
 /*quadrado do meio*/
 .container {
      
-    max-width: auto;
-    max-height: auto; 
+    
     box-shadow: 5px 5px 10px #202e64;;
     border-radius: 10px;
-    transform: translate(0%,20%);
+    transform: translate(0%,10%);
+ 
+  margin-bottom: 50px; /* Espaço de 10 pixels na borda inferior */
+  
 
 }
 
