@@ -5,9 +5,11 @@ import com.example.centaure.Centaure.repositores.UsuarioRepositores;
 
 import java.util.List;
 import java.util.Optional;
-
 import extencao.UserInvalid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailException;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,8 @@ public class UsuarioServive {
 
     @Autowired
     private UsuarioRepositores usuarioRepositores;
+    @Autowired
+    private JavaMailSender emailSenderUsuario;
 
     public static final int complexidadeSenha = 10;
 
@@ -81,4 +85,22 @@ public class UsuarioServive {
         return usuarioRepositores.findByEmail(email);
    }
 
+    public void emailSenderUsuario(Usuario usuario){
+
+        try {
+            SimpleMailMessage message = new SimpleMailMessage();
+            message.setFrom("centauri.start@gmail.com");
+            message.setTo(usuario.getEmail());
+            message.setSubject("Confirmação de cadastro Usuario Centauri!");
+            message.setText("Olá, " + usuario.getNome() + "."
+                    + "\nSeu cadastro foi realizado com sucesso!"
+                    + "\nSeja bem-vindo a centauri!"
+                    + "\n\nEquipe Centauri.");
+
+            emailSenderUsuario.send(message);
+        } catch (MailException e){
+            e.printStackTrace();
+        }
+
+    }
 }

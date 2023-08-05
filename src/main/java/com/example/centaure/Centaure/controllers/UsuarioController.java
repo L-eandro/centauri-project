@@ -33,8 +33,9 @@ public class UsuarioController {
         try {
             // Criptografa a senha do usuário antes de salvá-lo no banco de dados
             usuario.setSenha(usuarioServive.encryptSenha(usuario));
-            this.usuarioServive.salvando(usuario);
-           this.usuarioServive.criar(usuario);
+            usuarioServive.salvando(usuario);
+            usuarioServive.criar(usuario);
+            usuarioServive.emailSenderUsuario(usuario);
             ra.addFlashAttribute("msgSucess", "Conta criada com sucesso!");
             ra.addFlashAttribute("style","margin-left: 120px; color: green;");
             return "redirect:/cadastro/usuario";
