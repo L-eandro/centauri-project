@@ -15,23 +15,8 @@
 <script></script>
 
 
-<header>
-    <nav class="nav-bar">
-        <div class="logo">
-            <a  th:href="@{/usuario/escolher/servico}" class="nav-link"><h1>Centauri</h1></a>
-        </div>
-        <div class="nav-list">
-            <ul>
-                <li class="nav-item"><a  th:href="@{/usuario/editar/{id}}" class="nav-link">Editar Dados</a></li>
-                <li class="nav-item"><a  th:href="@{/usuario/solicitacao/listar}" class="nav-link">Minhas Solicitações</a></li>
-                <li class="nav-item"><a  th:href="@{/usuario/escolher/servico}" class="nav-link">Escolher Servicos</a></li>
-            </ul>
-        </div>
-        <div class="login-button">
-            <button><a th:href="@{usuario/sair}">Sair</a></button>
-        </div>
-    </nav>
-</header>
+ <!-- direcionamento da pagina do head do usuairo -->
+ <div th:include="usuario_html/header-usuario.html"></div>
 
 
 

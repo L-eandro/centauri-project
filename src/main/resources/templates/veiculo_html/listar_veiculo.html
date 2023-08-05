@@ -12,31 +12,9 @@
 
 <body>
 
-    <script th:src="@{js/veiculo_js/listar_veiculo.js}" defer></script>
 
-
-
-    <header>
-        <nav class="nav-bar">
-
-        <div class="logo">
-          <a th:href="@{/}" class="nav-link"><h1>Centauri</h1></a>
-        </div>
-
-        <div class="nav-list">
-    <ul>
-        <li class="nav-item"><a  th:href="@{/motorista/editar/{id}}" class="nav-link">Editar Dados</a></li>
-        <li class="nav-item"><a  th:href="@{/motorista/listar/veiculo}" class="nav-link">Listar Veiculos</a></li>
-        <li class="nav-item"><a  th:href="@{/motorista/cadastro/veiculo}" class="nav-link">Cadastrar Veiculos</a></li>
-        <li class="nav-item"><a  href="#" class="nav-link">Sobre</a></li>
-        
-    </ul>
-        </div>
-        <div class="login-button">
-            <button><a th:href="@{/motorista/sair}">Sair</a></button>
-        </div>
-        
-    </header>
+  <!-- direcionamento da pagina do head do motorista -->
+<div th:include="motorista_html/header-motorista.html"></div>
 
 
     <div class="container">
@@ -51,6 +29,8 @@
                 <th scope="col">Documento Veiculo</th>
                 <th scope="col">Nome-Modelo</th>
                 <th scope="col">Servico</th>
+                <th scope="col">Confi</th>
+                <th scope="col">Confi</th>
               </tr>
             </thead>
             <tbody>
@@ -73,4 +53,5 @@
 
     </div>
     </body>
+    <script th:src="@{js/veiculo_js/listar_veiculo.js}" defer></script>
 </html>

@@ -11,36 +11,19 @@
 </head>
 <body>
 
-    
+    <!-- direcionamento da pagina do head do usuairo -->
+    <div th:include="usuario_html/header-usuario.html"></div>
   
 
-    
-    <header>
-        <nav class="nav-bar">
-            <div class="logo">
-                <a  th:href="@{/usuario/escolher/servico}" class="nav-link"><h1>Centauri</h1></a>
-            </div>
-            <div class="nav-list">
-                <ul>
-                    <li class="nav-item"><a  th:href="@{/usuario/editar/{id}}" class="nav-link">Editar Dados</a></li>
-                    <li class="nav-item"><a  th:href="@{/usuario/solicitacao/listar}" class="nav-link">Minhas Solicitações</a></li>
-                    <li class="nav-item"><a  th:href="@{/usuario/escolher/servico}" class="nav-link">Escolher Servicos</a></li>
-                </ul>
-            </div>
-            <div class="login-button">
-                <button><a th:href="@{usuario/sair}">Sair</a></button>
-            </div>
-        </nav>
-    </header>
-
+   
     <div class="box">
-        <form action="/usuario/solicitacao"  id="solicitacao-form"  method="post" th:object="${solicitacaoUsuario}">
+        <form action="/usuario/solicitacao"  id="solicitacao-form"  method="post" th:object="${solicitacaoUsuario}" onsubmit="return enviarFormularioWhatsApp()">
             <fieldset>
                 <legend><b>Envio de Solicitação Para Motorista</b></legend>
                 <br>
                        
                 <label ><b>Data do Serviço:</b></label>
-                <input type="date" name="data" id="data-servico" required>
+                <input type="date" name="data" id="data" required>
                 <div id="mensagemErroData"></div>
                 <br><br>
 
@@ -184,10 +167,19 @@
         
     </div>
 
+
+        
+
+     
+
+    
+
+    
+
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMROG67dMisX221hCQHTg-BOqFwCz3ASM&libraries=geometry&callback=initMap" async defer></script>
     <script th:src="@{/js/servico_js/buscar_cep_partida.js}" defer></script>
     <script th:src="@{/js/servico_js/buscar_cep_chegada.js}" defer></script>
-    <script th:src="@{/js/servico_js/envio_whatsapp.}" defer></script>
+    <script th:src="@{/js/servico_js/envio_whatsapp.js}" defer></script>
     <script th:src="@{/js/servico_js/calcular_distancia.js}" defer></script>
 
 <!--

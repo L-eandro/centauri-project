@@ -1,9 +1,9 @@
 
-     
+      
      function enviarFormularioWhatsApp() {
 
-    const dataServico = document.getElementById("data-servico").value;
-    const horario = document.getElementById("horario").value;
+    const dataServico = document.getElementById("data").value;
+    const horario = document.getElementById("hora").value;
     const valor = document.getElementById("valor").value;
 
 //------------------------------------------------------------------------------
@@ -65,9 +65,6 @@
   `;
   
         
-      
-        /*const ddi = '55';
-        const numeroTelefone = `${ddi}81912345678`;*/
 
         const numeroTelefone = '5581986192476';
         const encodedMessage = encodeURIComponent(mensagem);
@@ -76,14 +73,19 @@
         // Redirecionar para o link do WhatsApp
         window.open(whatsappURL, "_blank");
       }
-  
+
+/*
+ 
       // Adicionar o evento de submit ao formulário
       const formularioWhatsApp = document.getElementById("solicitacao-form");
       formularioWhatsApp.addEventListener("submit", function (event) {
         event.preventDefault();
         enviarFormularioWhatsApp();
-      });
+        
+      }
+      );*/
 
 
+    
 
 

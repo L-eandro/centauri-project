@@ -1,0 +1,123 @@
+
+
+
+
+<!-- header.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meu Header Motorista</title>
+  <style>
+   
+   
+header{
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
+  
+  }
+  
+  /*posicionar os elementos*/
+  .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      padding: 1.5rem 6rem;
+  }
+  
+  /*mechendo na logo*/
+  .logo{
+      display: flex;
+      align-items: center;
+  }
+  
+  /*cor na logo*/
+  .logo h1{
+      color: rgb(232, 232, 231);
+  }
+  
+  /*constumizando o links do menu*/
+  /*deixando centralizado*/
+  .nav-list{
+      display: flex;
+      align-items: center;
+  }
+  
+  /*colocando certo um do lado do outro*/
+  .nav-list ul{
+      display: flex;
+      justify-content: center;
+      list-style: none;
+  }
+  
+  /*colocando espaço entre itens*/
+  .nav-item{
+      margin: 0 15px;
+  }
+  
+  /*editando fonte*/
+  .nav-link{
+      text-decoration: none;
+      font-size: 1.15rem;
+      color: rgb(232, 232, 231);
+      transition: all 0.5s;   
+      font-weight: 400;
+      
+  }
+  .nav-link:hover{
+      color: rgb(255, 255, 255);
+      font-size: 1.36rem;
+   
+  }
+
+
+
+  
+  
+  /*Constumizando botao*/
+  .login-button button{
+      border: none;
+      background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
+      padding: 10px 15px;
+      transition: all 0.5s;
+      border-radius: 5px;    
+  }
+  /* mudando a cor quando passar o mouse por cima*/
+  .login-button button:hover{
+      background:  #332cb8a8; 
+      transform: scale3d(1.1, 1.1, 1);
+      transition: all 0.3s;
+  }
+  
+  .login-button button a{
+      text-decoration: none;
+      color: rgb(232, 231, 231);
+      font-weight: 400;
+      transition: all 0.3s;
+      font-size: 1.1rem; 
+  }
+
+
+
+  </style>
+</head>
+<body>
+   
+    <header>
+        <nav class="nav-bar">
+        <div class="logo">
+            <a th:href="@{/motorista/listar/veiculo}" class="nav-link"> <h1>Centauri</h1></a>
+        </div>
+        <div class="nav-list">
+    <ul>
+        <li class="nav-item"> <a th:href="@{/motorista/editar}" class="nav-link">Editar Dados</a></li>
+        <li class="nav-item"> <a th:href="@{/motorista/listar/veiculo}" class="nav-link">Litar veiculo</a></li>
+        <li class="nav-item"> <a th:href="@{/motorista/cadastrar/veiculo}" class="nav-link">Cadastrar veiculo</a></li>
+        
+    </ul>
+        </div>
+        <div class="login-button">
+            <button><a href="/">Sair</a></button>  
+        </div>
+        </nav>
+    </header>
+    
+</body>
+</html>

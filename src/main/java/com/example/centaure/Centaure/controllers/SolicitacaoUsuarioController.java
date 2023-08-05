@@ -49,7 +49,7 @@ public class SolicitacaoUsuarioController {
     @GetMapping("/usuario/solicitacao/deletar/{id}")
     public String deletar(@PathVariable Integer id){
         solicitacaoUsuarioService.deletar(id);
-        return "redirect:/solicitacao/usuario/listar";
+        return "redirect:/usuario/solicitacao/listar";
     }
 
 
