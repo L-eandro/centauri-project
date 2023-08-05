@@ -100,7 +100,8 @@
                 </div>
                 <div class="continue-button" >
                     <button type="submit"><a>Cadastrar</a></button>
-                    <div th:text="${msgError}" style="color:red"> </div>
+                    <div th:text="${msgError}" th:style="${style}"> </div>
+                    <div th:text="${msgSucess}" th:style="${style}"> </div>
                 </div>
 
         </form>

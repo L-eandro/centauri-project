@@ -35,7 +35,9 @@ public class UsuarioController {
             usuario.setSenha(usuarioServive.encryptSenha(usuario));
             this.usuarioServive.salvando(usuario);
            this.usuarioServive.criar(usuario);
-            return "redirect:/login/usuario";
+            ra.addFlashAttribute("msgSucess", "Conta criada com sucesso!");
+            ra.addFlashAttribute("style","margin-left: 120px; color: green;");
+            return "redirect:/cadastro/usuario";
         }
         catch (UserInvalid e) {
             // Se ocorrer algum erro de validação, exibe a mensagem de erro e redireciona de volta para a página de cadastro
