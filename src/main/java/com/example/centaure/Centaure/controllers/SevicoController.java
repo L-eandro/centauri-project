@@ -1,5 +1,6 @@
 package com.example.centaure.Centaure.controllers;
 
+import com.example.centaure.Centaure.models.Motorista;
 import com.example.centaure.Centaure.models.Usuario;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +18,12 @@ public class SevicoController {
         return "servico_html/escolher_servico";
     }
 
+     // Página de listagem de veículos
+    @GetMapping("motorista/header")
+    public String principal(Model model,Motorista motorista){
+        model.addAttribute("motorista", motorista);
+        return "/motorista_html/header-motorista";
+    }
 
     //metodo para mostrar os motorista disponieis no site de acordo com oque o usuairo escolher na escolher_servico.
 

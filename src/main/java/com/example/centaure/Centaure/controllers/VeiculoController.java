@@ -1,12 +1,20 @@
 package com.example.centaure.Centaure.controllers;
 
-import com.example.centaure.Centaure.models.Motorista;
-import com.example.centaure.Centaure.service.MotoristaService;
+
+import com.example.centaure.Centaure.service.VeiculoService;
+
+
+import extencao.VeiculoInvalid;
+
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.centaure.Centaure.models.Veiculo;
 
@@ -14,28 +22,65 @@ import com.example.centaure.Centaure.models.Veiculo;
 public class VeiculoController {
 
     @Autowired
-    private MotoristaService motoristaService;
+    private VeiculoService veiculoService;
+    
+    
 
     // Página de cadastro de veículo
-    @GetMapping("/motorista/cadastro/veiculo")
-    public String cadastroVeiculo(){
+    @GetMapping("/veiculo/cadastrar")
+    public String cadastrarVeiculo(){
         return "/veiculo_html/cadastro_veiculo";
     }
 
-    // Página de edição de veículo
-    @GetMapping("/motorista/editar/veiculo")
-    public String editarVeiculo(Motorista motorista, Model model) {
-        return "/veiculo_html/editar_veiculo";
+
+@PostMapping("/veiculo/cadastrar")
+    public String criar(Veiculo veiculo, RedirectAttributes ra ,  Model model){
+        try {
+            this.veiculoService.salvar(veiculo);
+            this.veiculoService.criar(veiculo);
+            return "redirect:/veiculo/listar";
+
+        } catch (VeiculoInvalid e ){
+            ra.addFlashAttribute("msgError", e.getMessage() );
+            ra.addFlashAttribute("style","margin-left: 150px; color: red;");
+            return "redirect:/veiculo/cadastrar";
+        }
+        
     }
 
-    // Página de listagem de veículos
-    @GetMapping("/motorista/listar/veiculo")
-    public String listarVeiculo(Motorista motorista, Model model){
-        model.addAttribute("motorista", this.motoristaService.listar(motorista));
-        return "/veiculo_html/listar_veiculo";
+
+     @GetMapping("/veiculo/listar")
+    public String listar(Model model, Veiculo veiculo ){
+        model.addAttribute("veiculo", this.veiculoService.listar(veiculo));
+        return "veiculo_html/listar_veiculo";
     }
+
+    @GetMapping("/veiculo/deletar/{id}")
+    public String deletar(@PathVariable Integer id){
+        veiculoService.deletar(id);
+        return "redirect:/veiculo/listar";
+    }
+
+       @GetMapping("/veiculo/editar/{id}")
+    public String editar(@PathVariable Integer id, Model model){
+        // Obtém o usuário pelo ID fornecido e o adiciona ao modelo para ser exibido na página de edição
+        Optional<Veiculo> veiculo = this.veiculoService.editar(id);
+        model.addAttribute("veiculo", this.veiculoService.editar(id));
+        return "veiculo_html/editar_veiculo";
+    }
+
+
+
+   
+
+
 
   
+
+
+
+
+
 
     // Página de listagem de serviços de frete
     @GetMapping("/listarFrete/servico")

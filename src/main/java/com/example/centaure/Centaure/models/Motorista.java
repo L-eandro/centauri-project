@@ -44,6 +44,7 @@ public class Motorista {
 
     private String codVerificar;
 
+    
     @OneToMany(mappedBy = "motorista")
     List<Veiculo> veiculos;
 

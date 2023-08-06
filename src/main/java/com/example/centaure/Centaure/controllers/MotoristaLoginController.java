@@ -26,6 +26,9 @@ public class MotoristaLoginController {
         return "motorista_html/login_motorista";
     }
 
+
+    
+
     @PostMapping("/login/motorista")
     public String login(Motorista motorista, HttpSession session, Model model, String email, String senha){
         motorista = motoristaService.findByEmailAndPassword(email,senha);
@@ -33,7 +36,7 @@ public class MotoristaLoginController {
         if (motorista != null) {
             session.setAttribute("logged", motorista);
             session.setAttribute("motorista", 1);
-            return "redirect:/motorista/listar/veiculo";
+            return "redirect:/motorista/header";
         } else {
             model.addAttribute("message", "E-mail ou senha incorretos");
             model.addAttribute("style", "margin-left: 120px; color: red;");

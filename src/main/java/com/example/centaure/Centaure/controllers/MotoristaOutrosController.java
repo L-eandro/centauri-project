@@ -33,7 +33,7 @@ public class MotoristaOutrosController {
     @GetMapping("/motorista/deletar/{id}")
     public String deletar(@PathVariable Integer id){
         motoristaService.deletar(id);
-        return "redirect:/motorista/listar/veiculo";
+        return "redirect:/motorista/listar";
     }
 
 }

@@ -28,7 +28,7 @@
         </div>
 
         <div class="form">
-            <form action="/cadastro/veiculo" method="post" th:object="${veiculo}">
+            <form action="/cadastrar/veiculo" method="post" th:object="${veiculo}">
                 <div class="form-header">
                     <div class="title">
                         <h1>Cadastro Veiculo</h1>
@@ -40,18 +40,16 @@
 
                     <div class="input-box">
                         <label for="" class="nome-select">Selecione o Veiculo</label>
-<!--                        <select th:field="*{veiculo}" required="required"></select>-->
-<!--                        <option th:each="ve : ${veiculoo}" th:value="${ve}" th:text="${ve}"></option>-->
-<!--                        </select>-->
 
-                        <select name="veiculo" id="veiculo" onchange="ocultar_servico()">
+
+                        <select name="" id="veiculo" onchange="ocultar_servico()">
                             <option value=""></option>
-                            <option id="carro" value="carro" >Carro</option>
-                            <option id="kombi" value="kombi" >Kombi</option>
-                            <option id="van" value="van" >Van</option>
-                            <option id="onibus" value="onibus" >Onibus</option>
-                            <option id="caminhonete" value="caminhonete">Caminhonete</option>
-                            <option id="caminhao" value="caminhao" >Caminhão</option>
+                            <option id="carro" value="carro" name="carro" >Carro</option>
+                            <option id="kombi" value="kombi" name="kombi">Kombi</option>
+                            <option id="van" value="van" name="van">Van</option>
+                            <option id="onibus" value="onibus" name="onibus">Onibus</option>
+                            <option id="caminhonete" value="caminhonete" name="caminhonete">Caminhonete</option>
+                            <option id="caminhao" value="caminhao" name="caminhao">Caminhão</option>
                         </select>  
 
 
@@ -61,9 +59,9 @@
                         <label id="servico" for="" class="nome-select">Servico Selecionado</label>
                         <select name="servico" id="servico" onchange="ocultar_servico()" disabled>
                             <option id="" value=""></option>
-                            <option id="frete" value="frete" disabled>Frete</option>
-                            <option id="mudanca" value="mudanca" disabled>Mudança</option>
-                            <option id="viagem" value="viagem" disabled>Viagem</option>
+                            <option id="frete" value="frete" name="frete" disabled>Frete</option>
+                            <option id="mudanca" value="mudanca" name="mudanca" disabled>Mudança</option>
+                            <option id="viagem" value="viagem" name="viagem" disabled>Viagem</option>
                            
                         </select>  
                     </div>
@@ -97,33 +95,12 @@
 
                     <div class="input-box">
 
-                        <label id="teste"  onchange="ocultar_servico()" >
+                        
                             <div class="input-box" >
-                                <label for="" >Capacidade</label>
-                                <input id="teste" type="number" name="teste" disabled> 
+                               <label for="" >Capacidade Maxima</label>
+                                <input id="max_kg" type="text" name="capacidade" class="linha-max_kg" placeholder="lugares ou carga max" required data-input > 
                             </div>
-                         </label>
-
-                        <label id="kg" style="display: none;" onchange="ocultar_servico()">
-                            <div class="input-box" >
-  ///                              <label for="" >Capacidade Maxima em KG </label>
-                                <input id="max_kg" type="number" name="capacidade" class="linha-max_kg" placeholder=" Capacidade Maxima em KG" required data-input minlength="1000"> 
-                            </div>
-                         </label>
-        
-                         <label id="litro" style="display: none;" onchange="ocultar_servico()">
-                            <div class="input-box">
-                                <label for="">Capacidade Maxima em Litros </label>
-                                <input id="max_litros" type="number" name="capacidade" class="linha-max_litros" placeholder="Capacidade Maxima em Litros " required data-input > 
-                            </div>
-                        </label>
-        
-                        <label id="lugar" style="display: none;" onchange="ocultar_servico()">
-                            <div class="input-box">
-                                <label for="">Quantidades Maxima de lugares</label>
-                                <input id="max_lugar" type="number" name="capacidade" class="linha-max_lugar" placeholder="Capacidade Maxima de acentos " required data-input> 
-                            </div>
-                        </label>
+                           
 
                     </div>
 
@@ -140,7 +117,7 @@
                 </div>
 
                 <div class="continue-button">
-                    <button type="submit"><a th:href="@{/motorista/listar/veiculo}">Salvar</a> </button>
+                    <button type="submit"><a>Cadastrar</a></button>
                     
                 </div>
             </form>

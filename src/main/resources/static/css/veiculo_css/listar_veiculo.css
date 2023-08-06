@@ -14,7 +14,7 @@ body {
 /*quadrado do meio*/
 .container {
     position: absolute;
-    top: 20%;
+    top: 25%;
     left: 10%;
     max-width: auto;
     max-height: auto; 

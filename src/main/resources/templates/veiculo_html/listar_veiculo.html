@@ -23,29 +23,30 @@
 
         <table class="table table-striped">
             <thead>
-              <tr>
-                <th scope="col">#</th>
+              <tr>  
+
                 <th scope="col">Imagem</th>
                 <th scope="col">Documento Veiculo</th>
+                <th scope="col">Placa</th>
                 <th scope="col">Nome-Modelo</th>
-                <th scope="col">Servico</th>
-                <th scope="col">Confi</th>
-                <th scope="col">Confi</th>
+                <th scope="col">Capacidade</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row">1</th>
-                <td><img th:src="@{/img/veiculo_img/cadastro_veiculo02.jpg}" alt="imagem cadastro veiculo"><td>
-                <td>12345678910</td>
-                <td>Hilux</td>
-                <td>frete</td>
+                <tr th:each="veiculo : ${veiculo}">
+                  <td>foto do veiculo aq</td>
+                  <td th:text="${veiculo.documento}"> </td>
+                  <td th:text="${veiculo.placa}"> </td>
+                  <td th:text="${veiculo.nomeModelo}"> </td>
+                  <td th:text="${veiculo.capacidade}"> </td>
                <td>
-                <a th:href="@{/motorista/editar/veiculo/{id}}"
+                <a th:href="|/veiculo/editar/${veiculo.id}"
                 class="btn btn-primary" role="button" style=" background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));">Editar</a>
 
-                <a th:href="@{/motorista/listar/veiculo/{id}}"
-                 class="btn btn-primary" role="button" style=" background: linear-gradient(to right, rgba(100, 2, 0, 0.9), rgb(255, 0, 0));">Exluir</a>
+                <a 
+                 class="btn btn-primary" role="button" style=" background: linear-gradient(to right, rgba(100, 2, 0, 0.9), rgb(255, 0, 0));"  
+                 th:href="|/veiculo/deletar/${veiculo.id}">Exluir</a>
             </td>
               </tr>
              

@@ -25,7 +25,8 @@
         </div>
 
         <div class="form">
-            <form action="#">
+            <form action="#" th:action="@{/cadastrar/veiculo}" th:object="${veiculo}" method="post">
+                <input type="hidden" th:field="*{id}" id="id" name="id">
                 <div class="form-header">
                     <div class="title">
                         <h1>Editar Veiculo</h1>
@@ -63,58 +64,41 @@
 
                     <div class="input-box">
                         <label for="">Numero do documento do veiculo</label>
-                        <input id="numero_veiculo" type="text" name="documento" class="linha-numero_veiculo" placeholder="" required data-input disabled>  
+                        <input id="numero_veiculo" type="text" name="documento" th:field="*{documento}" class="linha-numero_veiculo" placeholder="" required data-input disabled>  
                     </div>
 
                     <div class="input-box">
                         <label for="">Placa veiculo</label>
-                        <input id="placa_veiculo" type="text" name="placa" class="linha-placa_veiculo" placeholder="Informe a placa do Veiculo" required data-input>  
+                        <input id="placa_veiculo" type="text" name="placa"  th:field="*{placa}" class="linha-placa_veiculo" placeholder="Informe a placa do Veiculo" required data-input>  
                     </div>
 
                     <div class="input-box">
                         <label for="">Nome/Modelo</label>
-                        <input id="nome-modelo" type="text" name="nomeModelo" class="linha-nome-modelo" placeholder="Informe nome/modelo do veiculo" required data-input>
+                        <input id="nome-modelo" type="text" name="nomeModelo"  th:field="*{nomeModelo}" class="linha-nome-modelo" placeholder="Informe nome/modelo do veiculo" required data-input>
                     </div>
 
                     <div class="input-box">
                         <label for="">Ano Fabricação</label>
-                        <input id="ano_fabricacao" type="year" name="anoFabricacao" class="linha-ano_fabricacao" placeholder="Informe o Ano Fabricação" required data-input>  
+                        <input id="ano_fabricacao" type="year" name="anoFabricacao"  th:field="*{anoFabricacao}"class="linha-ano_fabricacao" placeholder="Informe o Ano Fabricação" required data-input>  
                     </div>
 
                     <div class="input-box">
                         <label for="">Cor Veiculo</label>
-                        <input id="cor_veiculo" type="text" name="cor" class="linha-cor_veiculo" placeholder="Informe a do Cor Veiculo" required data-input>
+                        <input id="cor_veiculo" type="text" name="cor" class="linha-cor_veiculo"  th:field="*{cor}"placeholder="Informe a do Cor Veiculo" required data-input>
                     </div>
 
                     <div class="input-box">
 
-                        <label id="testee"  onchange="ocultar_servico()" >
-                            <div class="input-box" >
-                                <label for="" >Capacidade </label>
-                                <input id="teste" type="number" name="teste" disabled> 
-                            </div>
-                         </label>
+                        
 
-                        <label id="kg" style="display: none;" onchange="ocultar_servico()">
+                       
                             <div class="input-box" >
-                                <label for="" >Capacidade Maxima em KG </label>
-                                <input id="max_kg" type="number" name="capacidade" class="linha-max_kg" placeholder=" Capacidade Maxima em KG" required data-input minlength="1000"> 
+                                <label for="" >Capacidade Maxima</label>
+                                <input id="max_kg" type="number" name="capacidade" class="linha-max_kg"  th:field="*{capacidade}" placeholder=" Capacidade Maxima em KG" required data-input > 
                             </div>
-                         </label>
+                        
         
-                         <label id="litro" style="display: none;" onchange="ocultar_servico()">
-                            <div class="input-box">
-                                <label for="">Capacidade Maxima em Litros </label>
-                                <input id="max_litros" type="number" name="capacidade" class="linha-max_litros" placeholder="Capacidade Maxima em Litros " required data-input > 
-                            </div>
-                        </label>
-        
-                        <label id="lugar" style="display: none;" onchange="ocultar_servico()">
-                            <div class="input-box">
-                                <label for="">Quantidades Maxima de lugares</label>
-                                <input id="max_lugar" type="number" name="capacidade" class="linha-max_lugar" placeholder="Capacidade Maxima de acentos " required data-input> 
-                            </div>
-                        </label>
+                      
 
                     </div>
 
@@ -125,13 +109,13 @@
        
                         <div class="input-box">
                             <label for="">Observações Adicionais</label>
-                            <textarea id="mensagem" name="mensagem" rows="3" cols="65"></textarea>
+                            <textarea id="mensagem" name="observacoes" th:field="*{observacoes}" rows="3" cols="65"></textarea>
                         </div>
 
                 </div>
 
                 <div class="continue-button">
-                    <button><a th:href="@{/motorist/listar/veiculo}">Salvar</a> </button>
+                    <button><a>Salvar</a> </button>
                 </div>
             </form>
         </div>
