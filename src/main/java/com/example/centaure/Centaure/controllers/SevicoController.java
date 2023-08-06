@@ -19,10 +19,10 @@ public class SevicoController {
     }
 
      // Página de listagem de veículos
-    @GetMapping("motorista/header")
+    @GetMapping("/motorista/inicio")
     public String principal(Model model,Motorista motorista){
         model.addAttribute("motorista", motorista);
-        return "/motorista_html/header-motorista";
+        return "/motorista_html/inicio_motorista";
     }
 
     //metodo para mostrar os motorista disponieis no site de acordo com oque o usuairo escolher na escolher_servico.

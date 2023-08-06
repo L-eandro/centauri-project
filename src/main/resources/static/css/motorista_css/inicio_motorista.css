@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Open+Sans:wght@300;400;500;600&display=swap'); 
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+  
+body{
+    background-color: #d9ebf581;
+}
+
+/*parte de cima da tela*/
+header{
+  background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
+
+}
+
+/*posicionar os elementos*/
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 6rem;
+}
+
+/*mechendo na logo*/
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+/*cor na logo*/
+.logo h1{
+    color: rgb(232, 232, 231);
+}
+
+/*constumizando o links do menu*/
+/*deixando centralizado*/
+.nav-list{
+    display: flex;
+    align-items: center;
+}
+
+/*colocando certo um do lado do outro*/
+.nav-list ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+/*colocando espaço entre itens*/
+.nav-item{
+    margin: 0 15px;
+}
+
+/*editando fonte*/
+.nav-link{
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: rgb(232, 232, 231);
+    transition: all 0.5s;   
+    font-weight: 400;
+    
+}
+.nav-link:hover{
+    color: rgb(255, 255, 255);
+    font-size: 1.36rem;
+ 
+}
+
+/*Constumizando botao*/
+.login-button button{
+    border: none;
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
+    padding: 10px 15px;
+    transition: all 0.5s;
+    border-radius: 5px;    
+}
+/* mudando a cor quando passar o mouse por cima*/
+.login-button button:hover{
+    background:  #332cb8a8; 
+    transform: scale3d(1.1, 1.1, 1);
+    transition: all 0.3s;
+}
+
+.login-button button a{
+    text-decoration: none;
+    color: rgb(232, 231, 231);
+    font-weight: 400;
+    transition: all 0.3s;
+    font-size: 1.1rem; 
+}
+
+
+
+
+/*tela depois do nav-bar*/
+  
+.container {
+    display: flex;  
+    margin: 25px;
+    justify-content: center;
+}
+  
+  /* Card */
+  .card {
+    width: 350px;
+    height: 460px;
+    margin: 25px;
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 6px 6px 20px rgb(75, 75, 75);
+    transition: 0.3s;
+  }
+  
+  /* Card Header*/
+  .card-header {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+  }
+  
+  .card-img {
+    min-width: 100%;
+    width: auto;
+    height: 100%;
+  }
+  
+  /* Card Body */
+  .card-body {
+    height: 100px;
+    padding: 15px;
+    text-align: center;
+    font-family: sans-serif;
+  }
+  
+  .card-titulo {
+    font-size: 30px;
+    margin: 3px;
+  }
+  
+  .card-texto {
+    font-size: 12px;
+    width: 250px;
+    margin: 0 auto;
+  }
+  
+  /* Card Footer */
+  .card-footer {
+    margin-top: -20px;  
+  }
+  
+  .card-footer a {
+    color: rgb(231, 231, 232);
+    display: block;
+    padding: 16px;
+    text-decoration: none;
+    font-weight: 400;
+  }
+  
+  /* Cores Cards */
+  .card-1 .card-footer {
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
+  }
+  
+  .card-2 .card-footer {
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
+  }
+  
+  .card-3 .card-footer {
+    background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));
+  }
+  
+  
+  /* Animação Hover mudando de tamanho e cor*/
+  .card:hover {
+    transform: scale3d(1.1, 1.1, 1);
+    box-shadow: 6px 6px 20px #000cb3;
+  }
+  
+
+  

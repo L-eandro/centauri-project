@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{css/motorista_css/inicio_motorista.css}">
+    <link rel="stylesheet" href="/principal/css/motorista_css/inicio_motorista.css">
+    <title>Inicio Motorista</title>
+  </head>
+  <body>
+       
+
+       <!-- direcionamento da pagina do head do motorista -->
+       <div th:include="motorista_html/header-motorista.html"></div>
+
+    <div class="container" >
+      <!-- Card 1 -->
+      <div class="card card-1">
+        <div class="card-header">
+        <img th:src="@{/img/motorista_img/cadastro_automovel.PNG}" class="card-img"/>   
+        </div>
+        <!-- card-body -->
+        <div class="card-body">
+          <h2 class="card-titulo">Cadastra Veiculo</h2>
+          <div class="input-box">
+          <label for="">Click em cadastrar</label>
+          
+          <br>
+          
+        </div>
+      </div>
+        <!-- card-body -->
+        <div class="card-footer">
+          <a th:href="@{/motorista/cadastrar/veiculo}" class="nav-link">Cadastrar</a>
+        </div>
+      </div>
+      <!-- Card 1 -->
+
+
+      <!-- Card 2 -->
+      <div class="card card-2">
+        <div class="card-header">
+         <img th:src="@{/img/motorista_img/ja_cadastrados.JPG}" class="card-img"/> 
+        </div>
+        <!-- card-body -->
+        <div class="card-body">
+          <h2 class="card-titulo">Meus Veiculos</h2>
+          <div class="input-box">
+          <label for="">Click em buscar</label>
+        
+        </div>
+      </div>
+        <!-- card-body -->
+        <div class="card-footer">
+          <a th:href="@{/motorista/listar/veiculo}" class="nav-link">buscar</a>
+        </div>
+      </div>
+      <!-- Card 2 -->
+
+
+      
+      
+     
+    </div>
+  </body>
+</html>

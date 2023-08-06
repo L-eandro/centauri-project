@@ -36,7 +36,7 @@ public class MotoristaLoginController {
         if (motorista != null) {
             session.setAttribute("logged", motorista);
             session.setAttribute("motorista", 1);
-            return "redirect:/motorista/header";
+            return "redirect:/motorista/inicio";
         } else {
             model.addAttribute("message", "E-mail ou senha incorretos");
             model.addAttribute("style", "margin-left: 120px; color: red;");
