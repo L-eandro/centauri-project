@@ -103,18 +103,18 @@ header{
     <header>
         <nav class="nav-bar">
         <div class="logo">
-            <a th:href="@{/motorista/listar/veiculo}" class="nav-link"> <h1>Centauri</h1></a>
+            <a th:href="@{/motorista/inicio}" class="nav-link"> <h1>Centauri</h1></a>
         </div>
         <div class="nav-list">
     <ul>
         <li class="nav-item"> <a th:href="@{/motorista/editar}" class="nav-link">Editar Dados</a></li>
-        <li class="nav-item"> <a th:href="@{/motorista/listar/veiculo}" class="nav-link">Litar veiculo</a></li>
+        <li class="nav-item"> <a th:href="@{/motorista/listar/veiculo}" class="nav-link">Listar veiculo</a></li>
         <li class="nav-item"> <a th:href="@{/motorista/cadastrar/veiculo}" class="nav-link">Cadastrar veiculo</a></li>
         
     </ul>
         </div>
         <div class="login-button">
-            <button><a href="/">Sair</a></button>  
+            <button><a th:href="@{/}">Sair</a></button>  
         </div>
         </nav>
     </header>
