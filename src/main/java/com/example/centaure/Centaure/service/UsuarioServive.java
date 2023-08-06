@@ -5,7 +5,10 @@ import com.example.centaure.Centaure.repositores.UsuarioRepositores;
 
 import java.util.List;
 import java.util.Optional;
+
 import extencao.UserInvalid;
+import extencao.UsuarioNoExistExtencao;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
@@ -21,6 +24,8 @@ public class UsuarioServive {
     private UsuarioRepositores usuarioRepositores;
     @Autowired
     private JavaMailSender emailSenderUsuario;
+    @Autowired
+    private EmailService emailService;
 
     public static final int complexidadeSenha = 10;
 
@@ -71,20 +76,6 @@ public class UsuarioServive {
         return usuarioRepositores.findAll();
     }
 
-    // Método para editar um usuário pelo ID.
-    public Optional<Usuario> editar(Integer id) {
-        return usuarioRepositores.findById(id);
-    }
-
-    // Método para deletar um usuário pelo ID.
-    public String deletar(Integer id) {
-        usuarioRepositores.deleteById(id);
-        return "";
-    }
-   public Optional<Usuario> findByEmail(String email){
-        return usuarioRepositores.findByEmail(email);
-   }
-
     public void emailSenderUsuario(Usuario usuario){
 
         try {
@@ -103,4 +94,59 @@ public class UsuarioServive {
         }
 
     }
+    public void pedidoAlterarSenha(String email) throws UsuarioNoExistExtencao {
+        Usuario usuario = usuarioRepositores.findByEmail2(email);
+
+        if (usuario != null){
+            String verificador = RandomStringUtils.randomAlphanumeric(6);
+            usuario.setCodVerificar(verificador);
+            usuarioRepositores.save(usuario);
+
+            emailService.enviarPedidoAlterarSenha(email, verificador);
+        } else {
+            throw new UsuarioNoExistExtencao("Email não encontrado");
+        }
+    }
+    //----------
+
+    // verificar se a senha do usuário e a senha de confirmação são iguais.
+    public void validPassword(Usuario usuario, String passwordValid) throws UserInvalid {
+
+        if (!usuario.getSenha().equals(passwordValid)) {
+            throw new UserInvalid("As senhas não coincidem");
+        }
+    }
+
+    // verifica se o código é valido
+    public void validCod(Usuario usuario, Usuario usuarioVerificar) throws UserInvalid{
+
+        if (usuario != null) {
+            if (!usuario.getCodVerificar().equals(usuarioVerificar.getCodVerificar())) {
+                throw new UserInvalid("Código inválido");
+            }
+        } else {
+            throw new UserInvalid("Código inválido");
+        }
+    }
+
+    // Altera senha do usuário
+    public void alterPassword(Usuario usuario, String senha){
+        usuario.setCodVerificar(null);
+        usuario.setSenha(BCrypt.hashpw(senha, BCrypt.gensalt(complexidadeSenha)));
+        usuarioRepositores.save(usuario);
+    }
+    public Usuario searchByCod(String cod){
+        return usuarioRepositores.findByCod(cod);
+    }
+    // Método para editar um usuário pelo ID.
+    public Optional<Usuario> editar(Integer id) {
+        return usuarioRepositores.findById(id);
+    }
+
+    // Método para deletar um usuário pelo ID.
+    public String deletar(Integer id) {
+        usuarioRepositores.deleteById(id);
+        return "";
+    }
+
 }

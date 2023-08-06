@@ -1,5 +1,6 @@
 package com.example.centaure.Centaure.models;
 
+import com.example.centaure.Centaure.enums.Sexo;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -39,16 +40,12 @@ public class Usuario {
     private Date dataNascimento;
 
     @Enumerated(EnumType.STRING)
+    private Sexo sexo;
+
+    @Enumerated(EnumType.STRING)
     private UsuarioRoles role;
 
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    private String codVerificar;
 
 
      @OneToMany(mappedBy = "usuario")
