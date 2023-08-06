@@ -28,14 +28,19 @@ public class Veiculo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    /*
+    
     @Enumerated(EnumType.STRING)
-    private VeiculosEnum veiculo;
+    private VeiculosEnum automovel;
 
     @Enumerated(EnumType.STRING)
     private ServicoEnum servico;
-     */
+     /*
+    @Column(nullable = false)
+    private String veiculo;
 
+    @Column(nullable = false)
+    private String servico;
+*/
     @Column(nullable = false, unique = true)
     private String documento;
 
@@ -61,8 +66,6 @@ public class Veiculo {
 */
     @Column
     private String observacoes;
-
-    
     
     @ManyToOne
     private Motorista motorista;

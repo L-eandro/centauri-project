@@ -34,6 +34,7 @@ public class VeiculoService {
         veiculo.getNomeModelo().trim().isEmpty() || veiculo.getCapacidade().trim().isEmpty() ||
         veiculo.getAnoFabricacao().trim().isEmpty() || veiculo.getCor().trim().isEmpty() ||
         veiculo.getObservacoes().trim().isEmpty() 
+        
                 ){
             throw new VeiculoInvalid("Os campos obrigatórios não podem estar vazios.");
             //VALOR E COMPLEMENTOS NÃO É OBRIGATORIO

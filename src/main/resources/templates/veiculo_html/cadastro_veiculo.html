@@ -28,7 +28,7 @@
         </div>
 
         <div class="form">
-            <form action="/cadastrar/veiculo" method="post" th:object="${veiculo}">
+            <form action="/veiculo/cadastrar" method="post">
                 <div class="form-header">
                     <div class="title">
                         <h1>Cadastro Veiculo</h1>
@@ -38,30 +38,34 @@
 
                 <div class="input-group">
 
+                   
+
+
                     <div class="input-box">
-                        <label for="" class="nome-select">Selecione o Veiculo</label>
+                        <label for="veiculo" class="nome-select">Selecione o Veiculo</label>
 
 
-                        <select name="" id="veiculo" onchange="ocultar_servico()">
+                        <select id="veiculo" name="automovel" onchange="ocultar_servico()" >
                             <option value=""></option>
-                            <option id="carro" value="carro" name="carro" >Carro</option>
-                            <option id="kombi" value="kombi" name="kombi">Kombi</option>
-                            <option id="van" value="van" name="van">Van</option>
-                            <option id="onibus" value="onibus" name="onibus">Onibus</option>
-                            <option id="caminhonete" value="caminhonete" name="caminhonete">Caminhonete</option>
-                            <option id="caminhao" value="caminhao" name="caminhao">Caminhão</option>
+                            <option id="carro" value="CARRO" name="carro" >Carro</option>
+                            <option id="kombi" value="KOMBI" name="kombi">Kombi</option>
+                            <option id="van" value="VAN" name="van">Van</option>
+                            <option id="onibus" value="ONIBUS" name="onibus">Onibus</option>
+                            <option id="caminhonete" value="CAMINHONETE" name="caminhonete">Caminhonete</option>
+                            <option id="caminhao" value="CAMINHAO" name="caminhao">Caminhão</option>
                         </select>  
 
 
                     </div>
 
+
                     <div class="input-box">
-                        <label id="servico" for="" class="nome-select">Servico Selecionado</label>
-                        <select name="servico" id="servico" onchange="ocultar_servico()" disabled>
+                        <label for="" class="nome-select">Servico Selecionado</label>
+                        <select id="servico"  name="servico" onchange="ocultar_servico()" >
                             <option id="" value=""></option>
-                            <option id="frete" value="frete" name="frete" disabled>Frete</option>
-                            <option id="mudanca" value="mudanca" name="mudanca" disabled>Mudança</option>
-                            <option id="viagem" value="viagem" name="viagem" disabled>Viagem</option>
+                            <option id="frete" value="FRETE"  name="frete">Frete</option>
+                            <option id="mudanca" value="MUDANCA" name="mudanca" >Mudança</option>
+                            <option id="viagem" value="VIAGEM" name="viagem" >Viagem</option>
                            
                         </select>  
                     </div>

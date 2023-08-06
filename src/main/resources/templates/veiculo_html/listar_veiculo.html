@@ -37,9 +37,10 @@
                 <tr th:each="veiculo : ${veiculo}">
                   <td>foto do veiculo aq</td>
                   <td th:text="${veiculo.documento}"> </td>
-                  <td th:text="${veiculo.placa}"> </td>
+                  <td th:text="${veiculo.automovel}"> </td>
                   <td th:text="${veiculo.nomeModelo}"> </td>
                   <td th:text="${veiculo.capacidade}"> </td>
+                  <td th:text="${veiculo.servico}"> </td>
                <td>
                 <a th:href="|/veiculo/editar/${veiculo.id}"
                 class="btn btn-primary" role="button" style=" background: linear-gradient(to right, rgba(0, 20, 100, 0.9), rgba(0, 17, 147, 0.798));">Editar</a>
