@@ -12,11 +12,9 @@ import extencao.SolicitacaoUsuarioInvalid;
 
 @Controller
 public class SolicitacaoUsuarioController {
-    
 
     @Autowired
     private SolicitacaoUsuarioService solicitacaoUsuarioService;
-
 
 
      @GetMapping("/usuario/solicitacao")
@@ -26,7 +24,8 @@ public class SolicitacaoUsuarioController {
 
     @PostMapping("/usuario/solicitacao")
     public String criar(SolicitacaoUsuario solicitacaoUsuario, RedirectAttributes ra ,  Model model){
-        try {
+
+         try {
             this.solicitacaoUsuarioService.salvar(solicitacaoUsuario);
             this.solicitacaoUsuarioService.criar(solicitacaoUsuario);
             return "redirect:/usuario/solicitacao/listar";
@@ -39,7 +38,6 @@ public class SolicitacaoUsuarioController {
         
     }
 
-
      @GetMapping("/usuario/solicitacao/listar")
     public String listar(Model model, SolicitacaoUsuario solicitacaoUsuario ){
         model.addAttribute("solicitacaoUsuario", this.solicitacaoUsuarioService.listar(solicitacaoUsuario));
@@ -51,6 +49,5 @@ public class SolicitacaoUsuarioController {
         solicitacaoUsuarioService.deletar(id);
         return "redirect:/usuario/solicitacao/listar";
     }
-
 
 }

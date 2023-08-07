@@ -13,8 +13,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 
 public class UsuarioRedefinirSenhaController {
+
     @Autowired
     private UsuarioServive usuarioServive;
+
 
     @GetMapping("/usuario/esqueci/senha")
     public String esqueciSenha(){
@@ -33,7 +35,6 @@ public class UsuarioRedefinirSenhaController {
             ra.addFlashAttribute("style","margin-left: 140px; color: red;");
         }
         return "redirect:/usuario/esqueci/senha";
-
     }
 
     @GetMapping("/usuario/redefinir/senha")
@@ -45,15 +46,10 @@ public class UsuarioRedefinirSenhaController {
     public String redefinirSenha2(Usuario usuario, String validPassword, Model model, RedirectAttributes ra) throws UserInvalid {
 
         try {
-
             usuarioServive.validPassword(usuario, validPassword);
-
             Usuario u = usuarioServive.searchByCod(usuario.getCodVerificar());
-
             usuarioServive.validCod(u, usuario);
-
             usuarioServive.alterPassword(u, usuario.getSenha());
-
             ra.addFlashAttribute("msgSenhaAlterada","Senha alterada com sucesso");
             ra.addFlashAttribute("style","margin-left: 50px; color: green;");
 
@@ -65,4 +61,5 @@ public class UsuarioRedefinirSenhaController {
         }
         return "redirect:/usuario/redefinir/senha";
     }
+
 }

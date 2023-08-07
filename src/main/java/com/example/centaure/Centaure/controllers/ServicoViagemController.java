@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 public class ServicoViagemController {
+
     @GetMapping("/usuario/escolher/servico/viagem")
     public String ServicoViagem(Model model, Usuario usuario) {
         model.addAttribute("usuario", usuario);

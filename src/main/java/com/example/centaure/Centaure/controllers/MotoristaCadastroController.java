@@ -12,11 +12,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class MotoristaCadastroController {
 
+
     @Autowired
     private MotoristaService motoristaService;
 
     // Referente ao cadastro
-
     @GetMapping("/cadastro/motorista")
     public String cadastroMotorista() {
         return "motorista_html/cadastro_motorista";
@@ -24,6 +24,7 @@ public class MotoristaCadastroController {
 
     @PostMapping("/cadastro/motorista")
     public String criar(Motorista motorista, RedirectAttributes ra){
+
         try {
             motoristaService.salvar(motorista);
             motorista.setSenha(motoristaService.criptografarSenha(motorista));
@@ -39,6 +40,5 @@ public class MotoristaCadastroController {
         }
         return "redirect:/cadastro/motorista";
     }
-
     //--------------
 }

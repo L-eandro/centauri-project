@@ -17,6 +17,7 @@ public class MotoristaRedefinirSenhaController {
     @Autowired
     private MotoristaService motoristaService;
 
+
     @GetMapping("/esqueci/senha")
     public String esqueciSenha(){
         return "/motorista_html/esqueceu_senha_motorista";

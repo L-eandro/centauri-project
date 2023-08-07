@@ -14,6 +14,8 @@ public class LoginUsuarioController {
     @Autowired
     private UsuarioServive usuarioServive;
 
+
+    //página de Bloqueio de acesso
     @GetMapping("/acessonegado")
     public String acessoNegado(){
         return "acesso_negado";
@@ -29,6 +31,7 @@ public class LoginUsuarioController {
     public String login(Usuario usuario, HttpSession session, Model model){
         // Verifica se o usuário existe no banco de dados com o email e senha fornecidos
         usuario = this.usuarioServive.findByEmailAndSenha(usuario.getEmail(),usuario.getSenha());
+
         if (usuario !=null){
             session.setAttribute("logado", usuario);
             session.setAttribute("usuario", 1);
@@ -40,8 +43,9 @@ public class LoginUsuarioController {
             model.addAttribute("style", "margin-left: 120px; color: red;");
             return "/usuario_html/login_usuario";
         }
-        // Página de sair (logout) do usuário
     }
+
+    // Página de sair (logout) do usuário
     @GetMapping("usuario/sair")
     public String sair(HttpSession session){
         // Invalida a sessão do usuário e redireciona para a página inicial

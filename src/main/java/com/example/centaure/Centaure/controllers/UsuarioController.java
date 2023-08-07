@@ -30,6 +30,7 @@ public class UsuarioController {
     // Processa o cadastro de um novo usuário
     @PostMapping("/cadastro/usuario")
     public String criar( Usuario usuario,RedirectAttributes ra, Model model)  {
+
         try {
             // Criptografa a senha do usuário antes de salvá-lo no banco de dados
             usuario.setSenha(usuarioServive.encryptSenha(usuario));
@@ -40,6 +41,7 @@ public class UsuarioController {
             ra.addFlashAttribute("style","margin-left: 120px; color: green;");
             return "redirect:/cadastro/usuario";
         }
+
         catch (UserInvalid e) {
             // Se ocorrer algum erro de validação, exibe a mensagem de erro e redireciona de volta para a página de cadastro
             ra.addFlashAttribute("msgError", e.getMessage());
@@ -70,4 +72,5 @@ public class UsuarioController {
         usuarioServive.deletar(id);
         return "redirect:/usuario/listar";
     }
+
 }

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class MotoristaLoginController {
 
+
     @Autowired
     private MotoristaService motoristaService;
 
@@ -20,14 +21,10 @@ public class MotoristaLoginController {
         return "acesso_negado";
     }
 
-
     @GetMapping("/login/motorista")
     public String Login(){
         return "motorista_html/login_motorista";
     }
-
-
-    
 
     @PostMapping("/login/motorista")
     public String login(Motorista motorista, HttpSession session, Model model, String email, String senha){

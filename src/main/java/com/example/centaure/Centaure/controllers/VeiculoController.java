@@ -23,8 +23,7 @@ public class VeiculoController {
 
     @Autowired
     private VeiculoService veiculoService;
-    
-    
+
 
     // Página de cadastro de veículo
     @GetMapping("/veiculo/cadastrar")
@@ -33,8 +32,9 @@ public class VeiculoController {
     }
 
 
-@PostMapping("/veiculo/cadastrar")
+    @PostMapping("/veiculo/cadastrar")
     public String criar(Veiculo veiculo, RedirectAttributes ra ,  Model model){
+
         try {
             this.veiculoService.salvar(veiculo);
             this.veiculoService.criar(veiculo);
@@ -48,20 +48,19 @@ public class VeiculoController {
         
     }
 
-
      @GetMapping("/veiculo/listar")
-    public String listar(Model model, Veiculo veiculo ){
+     public String listar(Model model, Veiculo veiculo ){
         model.addAttribute("veiculo", this.veiculoService.listar(veiculo));
         return "veiculo_html/listar_veiculo";
     }
 
-    @GetMapping("/veiculo/deletar/{id}")
-    public String deletar(@PathVariable Integer id){
+     @GetMapping("/veiculo/deletar/{id}")
+     public String deletar(@PathVariable Integer id){
         veiculoService.deletar(id);
         return "redirect:/veiculo/listar";
     }
 
-       @GetMapping("/veiculo/editar/{id}")
+    @GetMapping("/veiculo/editar/{id}")
     public String editar(@PathVariable Integer id, Model model){
         Optional<Veiculo> veiculo = this.veiculoService.editar(id);
         model.addAttribute("veiculo", veiculo);
