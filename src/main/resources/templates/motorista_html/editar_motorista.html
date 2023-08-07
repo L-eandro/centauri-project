@@ -13,24 +13,8 @@
 <body>
     <script th:src="@{/js/motorista_js/cadastro_motorista.js}" defer></script>
 
-
-    <header>
-        <nav class="nav-bar">
-        <div class="logo">
-       <a th:href="@{/}" class="nav-link"> <h1>Centauri</h1></a>
-        </div>
-        <div class="nav-list">
-    <ul>
-        <li class="nav-item"><a th:href="@{/motorista/listar}" class="nav-link">Litar veiculo</a></li>
-        <li class="nav-item"><a th:href="@{/cadastro/motorista}" class="nav-link">Cadastrar veiculo</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
-    </ul>
-        </div>
-        <div class="login-button">
-            <button><a href="/">Sair</a></button>  
-        </div>
-        </nav>
-    </header>
+  <!-- direcionamento da pagina do head do motorista -->
+  <div th:include="motorista_html/header-motorista.html"></div>
     
     <div class="container">
 

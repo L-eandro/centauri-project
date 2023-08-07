@@ -1,63 +1,19 @@
 function ocultar_servico() {
-    var selectElement = document.getElementById("veiculo");
-    var selectedOption = selectElement.value;
+    const veiculoSelect = document.getElementById("veiculo");
+    const servicoSelect = document.getElementById("servico");
 
-    var mudanca =  document.getElementById("mudanca");
-    var frete =  document.getElementById("frete");
-    var viagem =  document.getElementById("viagem");
-
-    var kg = document.getElementById("kg");
-    var litro = document.getElementById("litro");
-    var lugar = document.getElementById("lugar");
-    var teste = document.getElementById("teste");
-
-    if(selectedOption === "caminhao"){
-        mudanca.selected = true;
-
-        kg.style.display = "block";
-        litro.style.display = "none";
-        lugar.style.display = "none";
-        teste.style.display = "none";
-
-
-    }else if(selectedOption === "caminhonete"){
-        frete.selected = true;
-        
-        kg.style.display = "none";
-        litro.style.display = "block";
-        lugar.style.display = "none";
-        teste.style.display = "none";
-
-    }
-    else if(selectedOption === "carro" || selectedOption === "kombi" || selectedOption === "van" || selectedOption === "onibus")
-    {
-        viagem.selected = true;
-
-        kg.style.display = "none";
-        litro.style.display = "none";
-        lugar.style.display = "block";
-        teste.style.display = "none";
-
-
-    }
-    else if(selectedOption === ""){
-        viagem.selected = false;
-        frete.selected = false;
-        mudanca.selected = false;
-        kg.style.display = "none";
-        litro.style.display = "none";
-        lugar.style.display = "none";
-        teste.style.display = "block";
-        teste.disabled=true;
-
-
-
-    }
-
-
-
-   
     
+    if (veiculoSelect.value === "CARRO" || veiculoSelect.value === "KOMBI" || veiculoSelect.value === "VAN" || veiculoSelect.value === "ONIBUS") {
+        servicoSelect.value = "VIAGEM";
+    } else if (veiculoSelect.value === "CAMINHONETE") {
+        servicoSelect.value = "FRETE";
+    } else if (veiculoSelect.value === "CAMINHAO") {
+        servicoSelect.value = "MUDANCA";
+    } else {
+        // Caso contrário, deselecionar qualquer opção selecionada no segundo select
+        servicoSelect.value = "";
+    }
 
-
-  }
+    // Habilitar ou desabilitar o segundo select com base na escolha do primeiro select
+    servicoSelect.disabled = veiculoSelect.value === "";
+}

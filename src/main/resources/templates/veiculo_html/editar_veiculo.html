@@ -25,8 +25,8 @@
         </div>
 
         <div class="form">
-            <form action="#" th:action="@{/cadastrar/veiculo}" th:object="${veiculo}" method="post">
-                <input type="hidden" th:field="*{id}" id="id" name="id">
+            <form action="#" th:action="@{/veiculo/cadastrar}" th:object="${veiculo}" method="post">
+                <input type="hidden" th:field="*{id}" id="id" name="id" >
                 <div class="form-header">
                     <div class="title">
                         <h1>Editar Veiculo</h1>
@@ -38,24 +38,24 @@
 
                     <div class="input-box">
                         <label for="" class="nome-select">Selecione o Veiculo</label >
-                        <select name="veiculo" id="veiculo" onchange="ocultar_servico()" disabled>
+                        <select name="automovel" id="veiculo" onchange="ocultar_servico()"  th:field="*{automovel}">
                             <option value=""></option>
-                            <option id="carro" value="carro" >Carro</option>
-                            <option id="kombi" value="kombi" >Kombi</option>
-                            <option id="van" value="van" >Van</option>
-                            <option id="onibus" value="onibus" >Onibus</option>
-                            <option id="caminhonete" value="caminhonete">Caminhonete</option>
-                            <option id="caminhao" value="caminhao" >Caminhão</option>
+                            <option id="carro" value="CARRO" name="carro">Carro</option>
+                            <option id="kombi" value="KOMBI" name="kombi" >Kombi</option>
+                            <option id="van" value="VAN" name="van" >Van</option>
+                            <option id="onibus" value="ONIBUS" name="onibus" >Onibus</option>
+                            <option id="caminhonete" value="CAMINHONETE" name="caminhonete">Caminhonete</option>
+                            <option id="caminhao" value="CAMINHAO" name="caminhao">Caminhão</option>
                         </select>  
                     </div>
 
                     <div class="input-box">
                         <label id="servicoo" for="" class="nome-select">Servico Selecionado</label>
-                        <select name="servico" id="servico" onchange="ocultar_servico()" disabled>
+                        <select name="servico" id="servico" onchange="ocultar_servico()" th:field="*{servico}">
                             <option id="" value=""></option>
-                            <option id="frete" value="frete" disabled>Frete</option>
-                            <option id="mudanca" value="mudanca" disabled>Mudança</option>
-                            <option id="viagem" value="viagem" disabled>Viagem</option>
+                            <option id="frete" value="FRETE" name="frete" >Frete</option>
+                            <option id="mudanca" value="MUDANCA" name="mudanca">Mudança</option>
+                            <option id="viagem" value="VIAGEM" name="viagem">Viagem</option>
                            
                         </select>  
                     </div>
@@ -64,7 +64,7 @@
 
                     <div class="input-box">
                         <label for="">Numero do documento do veiculo</label>
-                        <input id="numero_veiculo" type="text" name="documento" th:field="*{documento}" class="linha-numero_veiculo" placeholder="" required data-input disabled>  
+                        <input id="numero_veiculo" type="text" name="documento" th:field="*{documento}" class="linha-numero_veiculo" placeholder="" required data-input >  
                     </div>
 
                     <div class="input-box">
@@ -79,7 +79,7 @@
 
                     <div class="input-box">
                         <label for="">Ano Fabricação</label>
-                        <input id="ano_fabricacao" type="year" name="anoFabricacao"  th:field="*{anoFabricacao}"class="linha-ano_fabricacao" placeholder="Informe o Ano Fabricação" required data-input>  
+                        <input id="ano_fabricacao" type="text" name="anoFabricacao"  th:field="*{anoFabricacao}"class="linha-ano_fabricacao" placeholder="Informe o Ano Fabricação" required data-input>  
                     </div>
 
                     <div class="input-box">
@@ -94,7 +94,7 @@
                        
                             <div class="input-box" >
                                 <label for="" >Capacidade Maxima</label>
-                                <input id="max_kg" type="number" name="capacidade" class="linha-max_kg"  th:field="*{capacidade}" placeholder=" Capacidade Maxima em KG" required data-input > 
+                                <input id="max_kg" type="text" name="capacidade" class="linha-max_kg"  th:field="*{capacidade}" placeholder=" Capacidade Maxima em KG" required data-input > 
                             </div>
                         
         
@@ -103,7 +103,7 @@
                     </div>
 
                     <div class="input-box">
-                        <label for="foto">Upload foto do Veiculo</label>
+                        <label for="foto">Mudar imagem foto do Veiculo</label>
                         <input type="file" id="foto" name="foto" accept="image/*" style="width: 480px;">
                     </div>
        

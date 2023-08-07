@@ -63,9 +63,8 @@ public class VeiculoController {
 
        @GetMapping("/veiculo/editar/{id}")
     public String editar(@PathVariable Integer id, Model model){
-        // Obtém o usuário pelo ID fornecido e o adiciona ao modelo para ser exibido na página de edição
         Optional<Veiculo> veiculo = this.veiculoService.editar(id);
-        model.addAttribute("veiculo", this.veiculoService.editar(id));
+        model.addAttribute("veiculo", veiculo);
         return "veiculo_html/editar_veiculo";
     }
 
