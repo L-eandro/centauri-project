@@ -58,9 +58,8 @@ public class UsuarioController {
     // Página para editar um usuário específico
     @GetMapping("/usuario/editar/{id}")
     public String editar(@PathVariable Integer id, Model model){
-        // Obtém o usuário pelo ID fornecido e o adiciona ao modelo para ser exibido na página de edição
         Optional<Usuario> usuario = this.usuarioServive.editar(id);
-        model.addAttribute("usuario", this.usuarioServive.editar(id));
+        model.addAttribute("usuario", usuario);
         return "usuario_html/editar_usuario";
     }
 

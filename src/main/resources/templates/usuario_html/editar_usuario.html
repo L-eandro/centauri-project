@@ -28,7 +28,7 @@
     </div>
 
     <div class="form">
-        <form action="#" th:action="@{/cadastro/usuario}" th:object="${usuario}" method="post" >
+        <form th:action="@{/cadastro/usuario}" th:object="${usuario}" method="post" >
             <input type="hidden" th:field="*{id}" id="id" name="id">
             <div class="form-header">
                 <div class="title">
@@ -77,22 +77,21 @@
 
                     <div class="gender-group">
                         <div class="gender-input">
-                            <input id="feminino" type="radio" name="sexo">
-                            <label for="feminino">Feminino</label>
+                            <input id="feminino" type="radio" name="sexo" value="FEMININO" required data-input>
+                            <label for="FEMININO">Feminino</label>
                         </div>
 
                         <div class="gender-input">
-                            <input id="masculino" type="radio" name="sexo">
-                            <label for="masculino">Masculino</label>
+                            <input id="masculino" type="radio" name="sexo" value="MASCULINO" required data-input>
+                            <label for="MASCULINO">Masculino</label>
                         </div>
 
                         <div class="gender-input">
-                            <input id="outro" type="radio" name="sexo">
-                            <label for="outro">Outro</label>
+                            <input id="outro" type="radio" name="sexo" value="OUTRO" required data-input>
+                            <label for="OUTRO">Outro</label>
                         </div>
 
                     </div>
-                </div>
 
                 <div class="continue-button">
                     <button type="submit">Salvar</button>

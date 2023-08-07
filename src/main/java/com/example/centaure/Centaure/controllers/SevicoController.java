@@ -18,6 +18,7 @@ public class SevicoController {
         return "servico_html/escolher_servico";
     }
 
+
      // Página de listagem de veículos
     @GetMapping("/motorista/inicio")
     public String principal(Model model,Motorista motorista){
