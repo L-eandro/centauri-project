@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class LoginUsuarioController {
+public class UsuarioLoginController {
     @Autowired
     private UsuarioServive usuarioServive;
 
@@ -33,8 +33,8 @@ public class LoginUsuarioController {
         usuario = this.usuarioServive.findByEmailAndSenha(usuario.getEmail(),usuario.getSenha());
 
         if (usuario !=null){
-            session.setAttribute("logado", usuario);
-            session.setAttribute("usuario", 1);
+            session.setAttribute("logged", usuario);
+            session.setAttribute("usuario", 2);
             // Se o usuário existe, armazena-o na sessão e redireciona para a página de escolha de serviço
             return "redirect:/usuario/escolher/servico";
         } else {
