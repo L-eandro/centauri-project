@@ -1,6 +1,7 @@
 package com.example.centaure.Centaure.controllers;
 
 
+import com.example.centaure.Centaure.service.MotoristaService;
 import com.example.centaure.Centaure.service.VeiculoService;
 
 
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.example.centaure.Centaure.models.Motorista;
 import com.example.centaure.Centaure.models.Veiculo;
 
 @Controller
@@ -23,6 +25,9 @@ public class VeiculoController {
 
     @Autowired
     private VeiculoService veiculoService;
+
+    @Autowired
+    private MotoristaService motoristaService;
 
 
     // Página de cadastro de veículo
@@ -33,11 +38,16 @@ public class VeiculoController {
 
 
     @PostMapping("/veiculo/cadastrar")
-    public String criar(Veiculo veiculo, RedirectAttributes ra ,  Model model){
+    public String criar(Veiculo veiculo, RedirectAttributes ra ,  Model model , String cnh){
+        
 
         try {
+            Motorista motorista = motoristaService.cnh(cnh);
+            veiculo.setMotorista(motorista);
             this.veiculoService.salvar(veiculo);
             this.veiculoService.criar(veiculo);
+            System.out.print(cnh);
+            
             return "redirect:/veiculo/listar";
 
         } catch (VeiculoInvalid e ){
@@ -79,23 +89,5 @@ public class VeiculoController {
 
 
 
-
-    // Página de listagem de serviços de frete
-    @GetMapping("/listarFrete/servico")
-    public String listarFrete(){
-        return "servico_html/listando_servico_frete";
-    }
-
-    // Página de listagem de serviços de mudança
-    @GetMapping("/listarMudanca/servico")
-    public String listarMudanca(){
-        return "servico_html/listando_servico_mudanca";
-    }
-
-    // Página de listagem de serviços de viagem
-    @GetMapping("/listarViagem/servico")
-    public String listarViagem(){
-        return "servico_html/listando_servico_viagem";
-    }
 
 }

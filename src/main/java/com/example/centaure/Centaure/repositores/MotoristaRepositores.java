@@ -24,5 +24,8 @@ public interface MotoristaRepositores extends JpaRepository<Motorista, Integer> 
     @Query("SELECT u From Motorista u WHERE u.codVerificar LIKE :cod")
     Motorista findByCod(@Param("cod") String cod);
 
+    Motorista findByCnh(String cnh);
+    
 
+    
 }

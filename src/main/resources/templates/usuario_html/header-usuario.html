@@ -97,8 +97,9 @@ header{
                 <a  th:href="@{/usuario/escolher/servico}" class="nav-link"><h1>Centauri</h1></a>
             </div>
             <div class="nav-list" >
-                <ul>
+                <ul> <div style="display: none;" >
                     <li th:if="${session.containsKey('logged')}" th:text="${session.logged.id}"></li>
+                </div>
                     <li class="nav-item"><a  th:href="${'/usuario/editar/' + session.logged.id}" class="nav-link">Editar Dados</a></li>
                     <li class="nav-item"><a  th:href="@{/usuario/solicitacao/listar}" class="nav-link">Minhas Solicitações</a></li>
                     <li class="nav-item"><a  th:href="@{/usuario/escolher/servico}" class="nav-link">Escolher Servicos</a></li>

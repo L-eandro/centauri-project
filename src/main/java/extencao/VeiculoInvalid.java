@@ -11,5 +11,7 @@ public class VeiculoInvalid extends Exception{
     public VeiculoInvalid(String msg) {
         super(msg);
     }
+
+    
     
 }

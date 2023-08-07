@@ -56,9 +56,7 @@ public class Veiculo {
     @Column(nullable = false)
     private String anoFabricacao;
 
-    @Column(nullable = false)
-    private String cor;
-
+  
     /* 
     @Lob
     @Column

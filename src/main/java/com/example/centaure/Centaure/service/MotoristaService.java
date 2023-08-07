@@ -6,6 +6,8 @@ import com.example.centaure.Centaure.repositores.MotoristaRepositores;
 import extencao.MotoristaInvalid;
 
 import extencao.MotoristaNonexistentExcepition;
+import extencao.VeiculoInvalid;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
@@ -158,5 +160,19 @@ public class MotoristaService {
     public String deletar(Integer id){
         motoristaRepositores.deleteById(id);
         return "";
+    } 
+
+
+    public Motorista cnh(String cnh ) throws VeiculoInvalid{
+        Motorista motorista = motoristaRepositores.findByCnh(cnh);
+        if (motorista == null){
+             throw new VeiculoInvalid("CNH Invalida");
+            
+        }
+        return motorista;
     }
+
+    
+    
+
 }
