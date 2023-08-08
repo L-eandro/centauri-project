@@ -24,7 +24,7 @@ public class MotoristaRedefinirSenhaController {
     }
 
     @PostMapping("/esqueci/senha")
-    public  String esqueciSenha2(String email, RedirectAttributes ra){
+    public  String esqueciSenha3(String email, RedirectAttributes ra){
 
         try {
             motoristaService.pedidoAlterarSenha(email);

@@ -18,12 +18,12 @@ public class UsuarioRedefinirSenhaController {
     private UsuarioServive usuarioServive;
 
 
-    @GetMapping("/usuario/esqueci/senha")
+    @GetMapping("/esqueceu/senha")
     public String esqueciSenha(){
         return "/usuario_html/esqueceu_senha_usuario";
     }
 
-    @PostMapping("/usuario/esqueci/senha")
+    @PostMapping("/esqueceu/senha")
     public  String esqueciSenha2(String email, RedirectAttributes ra){
 
         try {
@@ -34,15 +34,15 @@ public class UsuarioRedefinirSenhaController {
             ra.addFlashAttribute("msgErroAdd", me.getMessage());
             ra.addFlashAttribute("style","margin-left: 140px; color: red;");
         }
-        return "redirect:/usuario/esqueci/senha";
+        return "redirect:/esqueceu/senha";
     }
 
-    @GetMapping("/usuario/redefinir/senha")
+    @GetMapping("/redefinindo/senha")
     public String redefinirSenha(){
         return "/usuario_html/redefinindo_senha_usuario";
     }
 
-    @PostMapping("/usuario/redefinir/senha")
+    @PostMapping("/redefinindo/senha")
     public String redefinirSenha2(Usuario usuario, String validPassword, Model model, RedirectAttributes ra) throws UserInvalid {
 
         try {
@@ -53,13 +53,13 @@ public class UsuarioRedefinirSenhaController {
             ra.addFlashAttribute("msgSenhaAlterada","Senha alterada com sucesso");
             ra.addFlashAttribute("style","margin-left: 50px; color: green;");
 
-            return "redirect:/usuario/redefinir/senha";
+            return "redirect:/redefinindo/senha";
 
         } catch (UserInvalid u) {
             ra.addFlashAttribute("msgError3");
             ra.addFlashAttribute("style","margin-left: 140px; color: red;");
         }
-        return "redirect:/usuario/redefinir/senha";
+        return "redirect:/redefinindo/senha";
     }
 
 }
