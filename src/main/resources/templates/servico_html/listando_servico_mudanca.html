@@ -24,39 +24,39 @@
  <h3 style="width:100%">Lista dos Motorista Disponiveis para serviço de Mudanças</h3>
 <br>
 
-<div class="card mb-3" style="max-width: 840px; padding: 0.62rem;box-shadow: 1px 1px 10px #403aaaef;"  th:each="# :${#}">
+<div class="card mb-3" style="max-width: 840px; padding: 0.62rem;box-shadow: 1px 1px 10px #403aaaef;"  >
  <div class="row g-0" >
    <div class="col-md-4">
-     <img src="/principal/img/servico_img/mudanca_servico.JPG" style=" width: 400px; height: 200px;  box-shadow: 1px 1px 5px #403aaaef; " class="img-fluid rounded-start"   alt="...">
+     <img th:src="@{/img/servico_img/caminhao.jpg}" style=" width: 400px; height: 200px;  box-shadow: 1px 1px 5px #403aaaef; " class="img-fluid rounded-start"   alt="...">
    </div> 
    <div class="col-md-8" >
      <div class="card">
        <div class="label-card" >
          <div class="group" >
        <label for="" style="font-size: 0.83rem;">Nome do motorista</label>
-       <h5 class="card-title"><span th:text="$ {#.#}">jose silva</span></h5>
+       <h5 class="card-title"><span >Pedro Barbosa</span></h5>
          </div>
 
          <div class="group">
        <label for="" style="font-size: 0.83rem;">Nome/Modelo veiculo</label>
-       <h5 class="card-title"><span th:text="$ {#.#}">Hilux 4x4</span></h5>
+       <h5 class="card-title"><span >Mercedes Benz</span></h5>
      </div>
    </div>
 
    <div class="label-card">
      <div class="group">
        <label for="" style="font-size: 0.83rem;">Carga Maxima Litros</label>
-       <h5 class="card-title"><span th:text="$ {#.#}">1000Litros</span></h5>
+       <h5 class="card-title"><span>2000 KG</span></h5>
      </div>
 
      <div class="group">
        <label for="" style="font-size: 0.83rem;">Ano Veiculo</label>
-       <h5 class="card-title"><span th:text="$ {#.#}">2022</span></h5>
+       <h5 class="card-title"><span>2018</span></h5>
      </div>
    </div>
    <div class="group">
        <label for="" style="font-size: 0.83rem;">obeservações adicionais</label>
-       <h6 class="card-text"><span th:utext="${#strings.abbreviate (#.#, 100)} ">estou disponiveil para realizar fretes, meu veiculo possui ar-codicionado e tv
+       <h6 class="card-text" ><span style="font-size: 0.93rem;">Estou disponivel para realizar mudanças em quaquer lugar.
        </div>
          
        </span></h6>   
@@ -64,10 +64,13 @@
    </div>
  </div>
  <div class="btn-cadastrar">
-   <button id="btn-cadastrar" type="submit"><a th:href="@{/usuario/solicitacao}">Gostei desse Motorista</a> </button>
+   <button id="btn-cadastrar" type="submit" style="color: white;"><a  th:href="@{/usuario/formSolicitacao}">Gostei desse Motorista</a> </button>
 </div>
 
+
 </div>
+
+
 
 
 </section>

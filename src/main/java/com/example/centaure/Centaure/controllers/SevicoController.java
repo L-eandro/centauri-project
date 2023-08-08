@@ -26,4 +26,9 @@ public class SevicoController {
     //metodo para mostrar os motorista disponieis no site de acordo com oque o usuairo escolher na escolher_servico.
 
 
+        @GetMapping("/usuario/formSolicitacao")
+        public String servico(){
+        return "/servico_html/form_solicitacao_servico";
+    }
+
 }
